@@ -1,69 +1,63 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Vite + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Marco Cronje",
+  description: "Full Stack Developer & IoT Systems Engineer based in Johannesburg.",
   navItems: [
     {
       label: "Home",
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "Projects",
+      href: "/projects",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Skills",
+      href: "/skills",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "Experience",
+      href: "/experience",
     },
     {
       label: "About",
       href: "/about",
     },
+    {
+      label: "Contact",
+      href: "/contact",
+    },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
-    },
-    {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Home",
+      href: "/",
     },
     {
       label: "Projects",
       href: "/projects",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "Skills",
+      href: "/skills",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
+      label: "Experience",
+      href: "/experience",
     },
     {
-      label: "Settings",
-      href: "/settings",
+      label: "About",
+      href: "/about",
     },
     {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Contact",
+      href: "/contact",
     },
   ],
   links: {
-    github: "https://github.com/frontio-ai/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/mcronje912",
+    linkedin: "https://www.linkedin.com/in/marco-cronje/",
+    email: "mailto:marcocronje@gmail.com",
   },
 };
