@@ -1,10 +1,15 @@
+// src/pages/about.tsx
 import { Card, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
+import { ProfileImage } from "@/components/ProfileImage";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function AboutPage() {
+  const { theme } = useTheme();
+
   const certificates = [
     "IBM - Full Stack Developer (in progress)",
     "IBM - iOS and Android Mobile App Developer",
@@ -31,14 +36,15 @@ export default function AboutPage() {
       <section className="py-12">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row gap-10">
-            {/* Left column - Image and basic info */}
+            {/* Left column - Profile image and basic info */}
             <div className="w-full md:w-1/3">
               <div className="sticky top-24">
-                <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 rounded-lg flex items-center justify-center mb-6">
-                  <p className="text-white text-xl font-medium">
-                    Profile Image Placeholder
-                  </p>
-                </div>
+                {/* Vector portrait image */}
+                <ProfileImage
+                  className="mb-6 mx-auto rounded-lg overflow-hidden"
+                  effectVariant="subtle"
+                  size="md"
+                />
 
                 <Card className="mb-6">
                   <CardBody>
@@ -114,7 +120,7 @@ export default function AboutPage() {
                     <div key={index} className="flex justify-between">
                       <div>
                         <h3 className="font-medium">{edu.institution}</h3>
-                        <p className="text-default-600">{edu.degree}</p>
+                        <p className={theme.textStyles.body2}>{edu.degree}</p>
                       </div>
                       <Chip size="sm" variant="flat">
                         {edu.years}
@@ -135,19 +141,57 @@ export default function AboutPage() {
                 </div>
 
                 <h2 className="text-2xl font-heading font-bold mb-4">
-                  My Approach
+                  Development Approach
                 </h2>
                 <p className="mb-4">
-                  I believe in creating practical solutions that solve real
-                  business problems. My development philosophy focuses on
+                  My development philosophy centers on creating practical
+                  solutions that solve real business problems. I believe in
                   building systems that not only meet current requirements but
                   are also maintainable and adaptable to future needs.
                 </p>
 
+                <p className="mb-4">
+                  Every development project I undertake follows these core
+                  principles:
+                </p>
+
+                <ul className="mb-4 list-disc pl-5 space-y-2">
+                  <li>
+                    <strong>User-Centered Design:</strong> Solutions that
+                    prioritize user needs and experience
+                  </li>
+                  <li>
+                    <strong>Clean, Maintainable Code:</strong> Well-organized
+                    architecture with thorough documentation
+                  </li>
+                  <li>
+                    <strong>Full Integration:</strong> Seamless connections
+                    between hardware and software components
+                  </li>
+                  <li>
+                    <strong>Automation:</strong> Reducing manual processes
+                    through intelligent system design
+                  </li>
+                  <li>
+                    <strong>Future-Proofing:</strong> Scalable architectures
+                    that can adapt to changing requirements
+                  </li>
+                </ul>
+
+                <h2 className="text-2xl font-heading font-bold mb-4">
+                  Beyond Coding
+                </h2>
+                <p className="mb-4">
+                  When I&apos;m not developing software or integrating IoT
+                  devices, I enjoy exploring new technologies, contributing to
+                  open-source open-source projects, and continuously expanding
+                  my skill set online courses and technical challenges.
+                </p>
+
                 <p>
-                  When I&apos;m not coding, you can find me exploring new
-                  technologies, contributing to open-source projects, or
-                  enjoying the outdoors around Johannesburg.
+                  I&apos;m also interested in 3D modeling with Fusion 360, which
+                  complements my IoT work by allowing me to design and visualize
+                  hardware components.
                 </p>
               </div>
             </div>

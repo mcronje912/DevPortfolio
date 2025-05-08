@@ -1,7 +1,8 @@
+// src/components/Hero.tsx
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-
 import { title, subtitle } from "@/components/primitives";
+import { ProfileImage } from "@/components/ProfileImage";
 
 export const Hero = () => {
   return (
@@ -14,36 +15,36 @@ export const Hero = () => {
               <span className={title({ color: "blue" })}>Marco Cronje</span>
             </h1>
             <p className={subtitle({ class: "max-w-md mb-8" })}>
-              Full Stack Developer & IoT Systems Engineer creating end-to-end
-              solutions that connect hardware and software in the electronics
-              manufacturing industry.
+              Full Stack Developer & IoT Systems Engineer creating end-to-end solutions 
+              that connect hardware and software in the electronics manufacturing industry.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button
-                as={Link}
-                className="bg-cerulean hover:bg-cerulean-600"
-                color="primary"
-                href="/projects"
+              <Button 
+                as={Link} 
+                href="/projects" 
+                color="primary" 
                 variant="shadow"
+                className="bg-cerulean hover:bg-cerulean-600"
               >
                 View My Projects
               </Button>
               <Button
                 as={Link}
-                className="border-cerulean text-cerulean"
                 href="/contact"
                 variant="bordered"
+                className="border-cerulean text-cerulean"
               >
                 Contact Me
               </Button>
             </div>
           </div>
-          <div className="w-full md:w-1/2">
-            <div className="bg-gradient-to-br from-cerulean to-verdigris h-96 rounded-lg flex items-center justify-center">
-              <p className="text-white text-xl font-medium">
-                Profile Image Placeholder
-              </p>
-            </div>
+          <div className="w-full md:w-1/2 flex justify-center">
+            {/* Using the ProfileImage component with subtle accent effect */}
+            <ProfileImage 
+              size="lg" 
+              effectVariant="accent"
+              className="shadow-xl" 
+            />
           </div>
         </div>
       </div>

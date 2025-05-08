@@ -16,7 +16,23 @@ export const BackgroundPattern: React.FC = () => {
   
   return (
     <>
-      {/* Main pattern background with fade effect */}
+      {/* Base gradient background */}
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: isDark
+            ? 'linear-gradient(135deg, #0b2027 0%, #40798c 100%)'  // Dark mode gradient
+            : 'linear-gradient(135deg, #f6f1d1 0%, #70a9a1 100%)', // Light mode gradient
+          zIndex: -2,
+          pointerEvents: 'none',
+        }}
+      />
+      
+      {/* Pattern overlay with INCREASED prominence */}
       <div 
         style={{
           position: 'fixed',
@@ -25,33 +41,16 @@ export const BackgroundPattern: React.FC = () => {
           right: 0,
           bottom: 0,
           backgroundImage: 'url("/pattern.svg")',
-          backgroundSize: '180px', // Smaller pattern for more density
+          backgroundSize: '800',
           backgroundRepeat: 'repeat',
-          opacity: isDark ? 0.25 : 0.35, // Much higher opacity
+          opacity: isDark ? .5 : 0.65, // INCREASED from 0.35/0.45 to 0.5/0.65
           zIndex: -1,
           pointerEvents: 'none',
-          filter: isDark 
-            ? 'brightness(0.8) contrast(1.2)' // Added contrast for dark mode
-            : 'contrast(1.1)', // Slight contrast boost for light mode
-          // Adjusted gradient to keep more pattern visible
-          maskImage: 'linear-gradient(to bottom right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 85%)',
-          WebkitMaskImage: 'linear-gradient(to bottom right, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.2) 30%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0) 85%)',
-        }}
-      />
-      
-      {/* Enhanced corner accent */}
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          right: 0,
-          width: '60%', // Larger area
-          height: '60%', // Larger area
-          backgroundImage: isDark 
-            ? 'radial-gradient(circle at top right, rgba(64, 121, 140, 0.25), transparent 75%)' // More visible
-            : 'radial-gradient(circle at top right, rgba(112, 169, 161, 0.3), transparent 75%)', // More visible
-          zIndex: -1,
-          pointerEvents: 'none',
+          mixBlendMode: isDark ? 'lighten' : 'multiply', 
+          filter: isDark ? 'contrast(1.4) brightness(1.1)' : 'contrast(1.3)', // ENHANCED filters
+          // Slightly adjusted mask for more visibility
+          maskImage: 'linear-gradient(to bottom right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 90%)',
+          WebkitMaskImage: 'linear-gradient(to bottom right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.4) 30%, rgba(0,0,0,0.3) 60%, rgba(0,0,0,0) 90%)',
         }}
       />
     </>
