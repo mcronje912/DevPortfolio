@@ -19,8 +19,12 @@ export default {
         'cornsilk': { DEFAULT: '#f6f1d1', 100: '#4c440f', 200: '#98871e', 300: '#d8c339', 400: '#e7da84', 500: '#f6f1d1', 600: '#f8f4da', 700: '#f9f6e3', 800: '#fbf9ec', 900: '#fdfcf6' }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        heading: ['Poppins', 'sans-serif'],
+        raleway: ['Raleway', 'sans-serif'],
+        opensans: ['Open Sans', 'sans-serif'],
+      },
+      backgroundImage: {
+        'pattern': "url('/pattern.svg')", // Your provided SVG pattern
+        'gradient-primary': 'linear-gradient(to right bottom, var(--cerulean), var(--verdigris))',
       }
     },
   },

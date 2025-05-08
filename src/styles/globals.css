@@ -1,3 +1,204 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS Variables for theme colors - helps with dynamic theming */
+:root {
+  /* Light theme */
+  --rich-black: #0b2027;
+  --cerulean: #40798c;
+  --verdigris: #70a9a1;
+  --ash-gray: #cfd7c7;
+  --cornsilk: #f6f1d1;
+  
+  /* Font families */
+  --font-heading: 'Raleway', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  
+  /* Common spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+}
+
+/* Dark theme overrides */
+.dark {
+  --rich-black: #0b2027;
+  --cerulean: #81b4c5; /* Lighter shade for dark mode */
+  --verdigris: #a9cbc7; /* Lighter shade for dark mode */
+  --ash-gray: #7c9167; /* Darker shade for readability */
+  --cornsilk: #4c440f; /* Darker shade for contrast */
+}
+
+/* Define base styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-opensans bg-cornsilk-800 dark:bg-rich-black-400 text-rich-black-500 dark:text-ash-gray-600;
+  }
+  
+  /* Global background pattern on body */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/pattern.svg');
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: -9999;
+    pointer-events: none;
+  }
+  
+  .dark body::before {
+    opacity: 0.08;
+    filter: brightness(0.5);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-raleway font-bold;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  h5 {
+    @apply text-lg;
+  }
+  
+  h6 {
+    @apply text-base;
+  }
+  
+  a {
+    @apply text-cerulean hover:text-cerulean-600 transition-colors;
+  }
+}
+
+/* Utility classes */
+@layer utilities {
+  /* For card or section backgrounds */
+  .bg-pattern {
+    background-image: url('/pattern.svg');
+    background-size: 200px;
+    background-repeat: repeat;
+  }
+  
+  /* Pattern overlay for sections */
+  .bg-pattern-overlay {
+    position: relative;
+  }
+
+  .bg-pattern-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/pattern.svg');
+    background-size: 200px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .bg-pattern-overlay > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @apply bg-gradient-to-r from-cerulean to-verdigris;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* Component classes for common elements */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md font-medium transition-colors 
+           focus:outline-none focus:ring-2 focus:ring-cerulean-400 focus:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-cerulean text-white hover:bg-cerulean-600 dark:bg-cerulean-500 dark:hover:bg-cerulean-400;
+  }
+  
+  .btn-secondary {
+    @apply bg-verdigris text-white hover:bg-verdigris-600 dark:bg-verdigris-500 dark:hover:bg-verdigris-400;
+  }
+  
+  .btn-outline {
+    @apply border border-cerulean text-cerulean hover:bg-cerulean-100
+           dark:border-cerulean-400 dark:text-cerulean-400 dark:hover:bg-cerulean-900;
+  }
+  
+  .btn-sm {
+    @apply text-sm py-1 px-3;
+  }
+  
+  .btn-md {
+    @apply text-base py-2 px-4;
+  }
+  
+  .btn-lg {
+    @apply text-lg py-3 px-6;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-rich-black-500 rounded-lg overflow-hidden shadow-md;
+  }
+  
+  .chip {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .chip-primary {
+    @apply bg-cerulean-100 text-cerulean-800 dark:bg-cerulean-900 dark:text-cerulean-200;
+  }
+  
+  .chip-secondary {
+    @apply bg-verdigris-100 text-verdigris-800 dark:bg-verdigris-900 dark:text-verdigris-200;
+  }
+  
+  .section {
+    @apply py-12 md:py-16;
+  }
+  
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+}
