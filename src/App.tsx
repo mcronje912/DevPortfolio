@@ -1,5 +1,5 @@
-// src/App.tsx
 import { Route, Routes } from "react-router-dom";
+import { ThemeLoader } from "@/components/ThemeLoader";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
 
 import IndexPage from "@/pages/index";
@@ -12,7 +12,10 @@ import ContactPage from "@/pages/contact";
 function App() {
   return (
     <>
-      {/* Background pattern - placed here to be rendered by React */}
+      {/* Theme loader injects fonts and applies global styles */}
+      <ThemeLoader />
+      
+      {/* Background pattern */}
       <BackgroundPattern />
       
       <Routes>

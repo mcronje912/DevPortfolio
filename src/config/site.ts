@@ -1,3 +1,4 @@
+// src/config/site.ts
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
@@ -29,6 +30,7 @@ export const siteConfig = {
       href: "/contact",
     },
   ],
+  // Use the same items for the mobile menu for consistency
   navMenuItems: [
     {
       label: "Home",
