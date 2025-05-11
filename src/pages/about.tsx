@@ -15,19 +15,6 @@ export default function AboutPage() {
     "Autodesk - 3D Model Creation with Fusion 360",
   ];
 
-  const education = [
-    {
-      institution: "Damelin, Johannesburg",
-      degree: "Certificate in Media Design Technology",
-      years: "2003 - 2004",
-    },
-    {
-      institution: "Hoerskool President, Johannesburg",
-      degree: "High School Senior Certificate",
-      years: "2002",
-    },
-  ];
-
   return (
     <DefaultLayout>
       <section className="py-12">
@@ -84,67 +71,63 @@ export default function AboutPage() {
             <div className="w-full md:w-2/3">
               <h1 className={title({ size: "lg", class: "mb-6" })}>About Me</h1>
 
-              <div className="prose max-w-none mb-10">
+              <div className="prose max-w-none mb-8">
+                <h2 className="text-2xl font-heading font-bold mb-4">Professional Overview</h2>
                 <p className="text-lg mb-4">
-                  As a Full Stack Developer & IoT Systems Engineer, I create
-                  end-to-end technology solutions that connect hardware and
-                  software across multiple platforms. My work spans from mobile
-                  applications built with Flutter to web dashboards created with
-                  React, all integrated with various backend systems and IoT
-                  devices.
+                  As a <strong>Full Stack Developer</strong>, I create comprehensive software solutions that solve real business challenges across web, mobile, and cloud platforms. My passion lies in building systems that handle real-time data effectively, creating responsive applications that deliver immediate value to users.
+                </p>
+                
+                <p className="mb-6">
+                  I&apos;m comfortable working throughout the entire development stack—from crafting intuitive user interfaces to implementing efficient backend systems and database architectures. This versatility allows me to approach projects holistically and select the right technologies for each specific challenge, whether it involves web applications, mobile development, IoT connectivity, or data processing systems.
                 </p>
 
+                <h2 className="text-2xl font-heading font-bold mb-4">Key Achievements</h2>
                 <p className="mb-4">
-                  My expertise extends across the entire development stack -
-                  from responsive front-end interfaces to robust back-end
-                  systems and cloud infrastructure. I specialize in connecting
-                  digital and physical systems through IoT, BLE communications,
-                  and real-time data synchronization, providing clients with
-                  comprehensive solutions that bridge hardware and software
-                  domains.
+                  At Joint Ventures Electronic Services, I identified a critical opportunity when our team was struggling with a legacy application. Taking initiative, I developed a comprehensive <strong>cross-platform mobile application using Flutter</strong> that integrated with proprietary hardware through BLE communications.
                 </p>
 
+                <p className="mb-6">
+                  The solution was so effective that management decided to replace their original B4A app with my implementation—<strong>improving user experience while eliminating external development costs</strong>. This transformation showcased my ability to recognize opportunities and execute solutions that exceed expectations.
+                </p>
+
+                <h2 className="text-2xl font-heading font-bold mb-4">Technical Expertise</h2>
+                <p className="mb-2">My technical skills encompass:</p>
+                <ul className="mb-6 list-disc pl-5 space-y-1">
+                  <li><strong>Mobile & Web Development</strong>: Building cross-platform applications with Flutter and responsive web interfaces with React and TypeScript</li>
+                  <li><strong>Database & Cloud Systems</strong>: Designing efficient data architectures and implementing real-time synchronization using Firebase, Supabase, and similar technologies</li>
+                  <li><strong>Serverless Functions</strong>: Developing cloud functions for automated business processes, data transformations, and system integrations without requiring dedicated server infrastructure</li>
+                  <li><strong>API Development</strong>: Creating robust interfaces between systems, including RESTful services and real-time communication protocols</li>
+                  <li><strong>Integration Solutions</strong>: Connecting software systems with various platforms, devices, and third-party services to create cohesive solutions</li>
+                </ul>
+
+                <h2 className="text-2xl font-heading font-bold mb-4">Professional Background</h2>
                 <p className="mb-4">
-                  Git is an essential part of my daily workflow. I use it not
-                  only for version control but as a central hub for project
-                  management, feature planning, and deployment pipelines. This
-                  structured approach to development helps me maintain
-                  high-quality standards while adapting to emerging technologies
-                  and client needs.
+                  Since 2010, I&apos;ve built valuable experience in graphic design, print production management, and digital marketing while managing my company&apos;s digital printing department. This background has developed my eye for visual design, attention to detail, and understanding of business operations.
+                </p>
+                <p className="mb-6">
+                  My experience includes developing automated workflows that increased production efficiency, implementing technical systems for tracking production status, and executing digital marketing strategies including website optimization and targeted campaigns. These skills have proven highly transferable to software development, particularly in understanding user requirements and designing intuitive interfaces.
                 </p>
 
-                <p className="mb-8">
-                  Driven by a passion for solving real-world problems, I focus
-                  on building systems that address actual business challenges.
-                  My approach combines technical development with business
-                  process automation, delivering solutions that enhance
-                  efficiency and operate independently. When presented with a
-                  need, I prefer developing custom solutions rather than
-                  settling for existing options that don&apos;t fully address the
-                  requirements.
+                <h2 className="text-2xl font-heading font-bold mb-4">Development Philosophy</h2>
+                <p className="mb-2">My approach centers on creating practical solutions for real business problems:</p>
+                <ul className="mb-6 list-disc pl-5 space-y-1">
+                  <li><strong>Problem-First Thinking</strong>: Thoroughly understanding challenges before developing solutions</li>
+                  <li><strong>User-Centered Design</strong>: Creating systems that prioritize intuitive user experiences</li>
+                  <li><strong>Clean, Maintainable Code</strong>: Building well-organized architectures with clear documentation</li>
+                  <li><strong>Business-Focused Outcomes</strong>: Focusing on solutions that deliver measurable value</li>
+                </ul>
+
+                <h2 className="text-2xl font-heading font-bold mb-4">Technical Versatility</h2>
+                <p className="mb-4">
+                  My projects span multiple domains—from IoT systems and mobile applications to data science implementations. This versatility allows me to approach problems holistically and select the most appropriate technologies for each specific challenge.
+                </p>
+                <p className="mb-6">
+                  While primarily focused on full-stack development with Flutter, React, and cloud databases, I also work with Python for specialized integrations and custom business tools.
                 </p>
 
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Education
-                </h2>
-                <div className="space-y-4 mb-8">
-                  {education.map((edu, index) => (
-                    <div key={index} className="flex justify-between">
-                      <div>
-                        <h3 className="font-medium">{edu.institution}</h3>
-                        <p className="text-default-600 text-sm">{edu.degree}</p>
-                      </div>
-                      <Chip size="sm" variant="flat">
-                        {edu.years}
-                      </Chip>
-                    </div>
-                  ))}
-                </div>
-
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Certifications
-                </h2>
-                <div className="flex flex-wrap gap-2 mb-8">
+                <h2 className="text-2xl font-heading font-bold mb-4">Education & Certifications</h2>
+                <p className="mb-2">I hold a Certificate in Media Design Technology from Damelin (2003-2004) and continuously expand my skills through professional certifications:</p>
+                <div className="flex flex-wrap gap-2 mb-6">
                   {certificates.map((cert, index) => (
                     <Chip key={index} color="secondary" variant="flat">
                       {cert}
@@ -152,83 +135,9 @@ export default function AboutPage() {
                   ))}
                 </div>
 
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Development Approach
-                </h2>
+                <h2 className="text-2xl font-heading font-bold mb-4">Beyond Code</h2>
                 <p className="mb-4">
-                  My development philosophy centers on creating practical
-                  solutions that solve real business problems. I believe in
-                  building systems that not only meet current requirements but
-                  are also maintainable and adaptable to future needs.
-                </p>
-
-                <p className="mb-4">
-                  I take advantage of modern development tools and approaches,
-                  including AI-assisted coding, to accelerate development while
-                  maintaining high quality. This allows me to focus on
-                  architecture, user experience, and business logic rather than
-                  repetitive coding tasks.
-                </p>
-
-                <p className="mb-4">
-                  Every development project I undertake follows these core
-                  principles:
-                </p>
-
-                <ul className="mb-4 list-disc pl-5 space-y-2">
-                  <li>
-                    <strong>User-Centered Design:</strong> Solutions that
-                    prioritize user needs and experience
-                  </li>
-                  <li>
-                    <strong>Clean, Maintainable Code:</strong> Well-organized
-                    architecture with thorough documentation
-                  </li>
-                  <li>
-                    <strong>Full Integration:</strong> Seamless connections
-                    between hardware and software components
-                  </li>
-                  <li>
-                    <strong>Automation:</strong> Reducing manual processes
-                    through intelligent system design
-                  </li>
-                  <li>
-                    <strong>Future-Proofing:</strong> Scalable architectures
-                    that can adapt to changing requirements
-                  </li>
-                </ul>
-
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Tech Diversity
-                </h2>
-                <p className="mb-4">
-                  My projects span multiple domains and technologies, from IoT
-                  systems and mobile applications to data science and machine
-                  learning implementations. This technical diversity allows me
-                  to approach problems from various angles and select the most
-                  appropriate technologies for each specific challenge.
-                </p>
-                <p className="mb-4">
-                  While my primary focus is on full-stack development with
-                  Flutter, React, and cloud databases, I also work with Python
-                  for ML projects, specialized hardware integrations, and custom
-                  business tools.
-                </p>
-
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Beyond Coding
-                </h2>
-                <p className="mb-4">
-                  When I&apos;m not developing software or integrating IoT
-                  devices, I enjoy exploring new technologies, contributing to
-                  open-source projects, and continuously expanding my skill set
-                  through online courses and technical challenges.
-                </p>
-
-                <p>
-                  I&apos;m also interested in 3D modeling with Fusion 360, which
-                  complements my IoT work by allowing me to design and visualize
-                  hardware components.
+                  When not developing software or integrating IoT devices, I enjoy exploring emerging technologies and expanding my skill set through continuous learning. I&apos;m also passionate about 3D modeling with Fusion 360, which complements my IoT work by allowing me to visualize hardware components and their interactions with software systems.
                 </p>
               </div>
             </div>
