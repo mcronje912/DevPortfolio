@@ -1,3 +1,4 @@
+// src/data/skills.ts
 export interface Skill {
   name: string;
   level: number; // 1-10
@@ -16,10 +17,9 @@ export const skillsData: SkillCategory[] = [
       { name: "Flutter/Dart", level: 9 },
       { name: "BLE Integration", level: 9 },
       { name: "Cross-Platform Development", level: 9 },
+      { name: "Xcode", level: 6 },
+      { name: "Android Studio", level: 3 },
       { name: "App Store Deployment", level: 8 },
-      { name: "RevenueCat Integration", level: 7 },
-      { name: "Push Notifications", level: 8 },
-      { name: "Offline-First Design", level: 8 },
     ],
   },
   {
@@ -39,19 +39,21 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "Supabase", level: 9 },
       { name: "Firebase", level: 8 },
-      { name: "Node.js", level: 8 },
+      { name: "Node.js/Express", level: 6 },
       { name: "Python", level: 7 },
       { name: "Django", level: 6 },
+      { name: "FastAPI", level: 5 },
+      { name: "GraphQL", level: 3 },
       { name: "RESTful APIs", level: 9 },
-      { name: "Real-time Databases", level: 9 },
       { name: "PostgreSQL", level: 8 },
       { name: "SQLite", level: 8 },
     ],
   },
   {
-    name: "DevOps & Deployment",
+    name: "DevOps & Cloud Services",
     skills: [
       { name: "Git/GitHub", level: 8 },
+      { name: "Google Cloud Platform", level: 7 },
       { name: "Vercel", level: 8 },
       { name: "Cloud Functions", level: 7 },
       { name: "CI/CD", level: 7 },
@@ -60,15 +62,24 @@ export const skillsData: SkillCategory[] = [
     ],
   },
   {
+    name: "Data Science & ML",
+    skills: [
+      { name: "Jupyter Notebook", level: 7 },
+      { name: "Computer Vision", level: 6 },
+      { name: "OCR Implementation", level: 7 },
+      { name: "Sentiment Analysis", level: 6 },
+      { name: "Data Visualization", level: 7 },
+      { name: "Text Processing", level: 6 },
+    ],
+  },
+  {
     name: "Specialized Capabilities",
     skills: [
       { name: "IoT Integration", level: 9 },
       { name: "Real-time Sync", level: 9 },
-      { name: "PDF Generation", level: 8 },
-      { name: "Digital Signature Capture", level: 8 },
+      { name: "AES Communication", level: 8 },
       { name: "Business Process Automation", level: 9 },
       { name: "Payment Integration", level: 7 },
-      { name: "Data Visualization", level: 8 },
     ],
   },
   {

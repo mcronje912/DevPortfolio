@@ -139,4 +139,39 @@ export const projects: Project[] = [
     ],
     completed: "2025 (Ongoing)",
   },
+  {
+    id: "emotion-detection",
+    title: "Emotion Detection Web App",
+    description:
+      "An AI-powered web application that analyzes text to identify emotional content across five primary emotions, using local NLP models.",
+    longDescription:
+      "The Emotion Detection Web App is an AI-powered tool that analyzes text for emotional content across five primary emotions: joy, sadness, anger, fear, and disgust. Built as part of the IBM Full Stack Developer program, this application showcases the successful integration of the Hugging Face Transformers library instead of the recommended Watson NLP, creating a privacy-focused local solution.",
+    imageUrl: "/projects/emotion-detection-placeholder.jpg",
+    tags: ["AI/ML", "Python", "Flask", "NLP"],
+    projectUrl: "/projects/emotion-detection",
+    featured: false,
+    technologies: [
+      "Python",
+      "Flask",
+      "Hugging Face",
+      "HTML/CSS/JS",
+      "Transformers",
+      "Unittest",
+    ],
+    completed: "2024",
+  },
+  {
+    id: "license-plate-recognition",
+    title: "License Plate Recognition System",
+    description:
+      "An exploratory R&D project that uses computer vision and OCR to automatically detect and recognize vehicle license plates from images.",
+    longDescription:
+      "This License Plate Recognition System is an R&D project developed to investigate computer vision capabilities for automatically identifying license plates. Built with Python, FastAPI, and OpenCV, it identifies South African license plates in images with custom text merging algorithms to improve OCR accuracy. This technology has direct applications for our company's parking guidance systems.",
+    imageUrl: "/projects/license-plate-recognition-placeholder.jpg",
+    tags: ["Computer Vision", "Python", "FastAPI", "R&D"],
+    projectUrl: "/projects/license-plate-recognition",
+    featured: true,
+    technologies: ["Python", "FastAPI", "OpenCV", "EasyOCR", "NumPy", "RegEx"],
+    completed: "2024",
+  },
 ];
