@@ -4,15 +4,15 @@ export const theme = {
   // FONTS - Change these in one place only
   fonts: {
     // Primary fonts
-    heading: 'Lato',
-    body: 'Merriweather',
+    heading: 'Turret Road',
+    body: 'Space Grotesk',
     
     // Full font stacks with fallbacks
-    headingStack: 'Lato, system-ui, sans-serif',
-    bodyStack: 'Merriweather, Georgia, serif',
+    headingStack: 'Turret Road, system-ui, sans-serif',
+    bodyStack: 'Space Grotesk, system-ui, sans-serif',
     
     // Google Fonts URL - ONLY CHANGE THIS LINE to update fonts
-    googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Merriweather:wght@300;400;700&display=swap',
+    googleFontsUrl: 'https://fonts.googleapis.com/css2?family=Turret+Road:wght@400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap',
   },
   
   // COLORS - Your existing palette
@@ -107,7 +107,7 @@ export const theme = {
 export const tailwindTheme = {
   fontFamily: {
     heading: [theme.fonts.heading, 'system-ui', 'sans-serif'],
-    body: [theme.fonts.body, 'Georgia', 'serif'],
+    body: [theme.fonts.body, 'system-ui', 'sans-serif'],
   },
   colors: {
     'rich-black': theme.colors.richBlack,

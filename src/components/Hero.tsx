@@ -19,25 +19,26 @@ export const Hero = () => {
                 Cronje
               </span>
             </h1>
-
             <h2 className="text-2xl md:text-3xl font-medium text-default-600 mb-6">
-              Full Stack Developer & IoT Systems Engineer
+              Full Stack Developer
             </h2>
-
             <p className="text-lg max-w-xl mb-8">
-              I build end-to-end solutions that bridge the gap between hardware
-              and software in the electronics manufacturing industry. From{" "}
+              I build comprehensive software solutions that transform complex
+              business challenges into elegant, efficient systems. From{" "}
               <span className="text-cerulean font-medium">
-                intuitive mobile apps
+                responsive web interfaces
               </span>{" "}
               to{" "}
               <span className="text-cerulean font-medium">
-                smart IoT systems
+                cross-platform mobile apps
+              </span>{" "}
+              and{" "}
+              <span className="text-cerulean font-medium">
+                real-time data platforms
               </span>
-              , I transform complex challenges into elegant, automated
-              solutions.
+              , my versatile approach delivers practical results across multiple
+              domains.
             </p>
-
             <div className="flex flex-wrap gap-4">
               <Button
                 as={Link}
