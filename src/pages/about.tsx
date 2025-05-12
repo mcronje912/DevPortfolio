@@ -20,54 +20,64 @@ export default function AboutPage() {
       <section className="py-12">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row gap-10">
-            {/* Left column - Profile image and basic info */}
+            {/* Left column - Contact info and language cards */}
             <div className="w-full md:w-1/3">
               <div className="sticky top-24">
-                {/* Vector portrait image */}
-                <ProfileImage
-                  className="mb-6 mx-auto rounded-lg overflow-hidden"
-                  effectVariant="subtle"
-                  size="xs"
-                />
-
-                <Card className="mb-6">
-                  <CardBody>
-                    <h2 className="font-heading font-bold text-xl mb-4">
-                      Contact Information
-                    </h2>
-                    <div className="space-y-2">
-                      <p>
-                        <strong>Location:</strong> Johannesburg, South Africa
-                      </p>
-                      <p>
-                        <strong>Email:</strong> marcocronje@gmail.com
-                      </p>
-                      <p>
-                        <strong>Phone:</strong> 083 442 3567
-                      </p>
+                {/* Contact Information Card with Profile Image inside */}
+                <Card className="mb-6 overflow-hidden">
+                  <CardBody className="p-0">
+                    {/* Profile image at top of card */}
+                    <div className="w-full bg-cerulean-900/10 dark:bg-cerulean-700/20 p-4">
+                      <ProfileImage
+                        className="mx-auto rounded-lg overflow-hidden"
+                        effectVariant="subtle"
+                        size="xs"
+                      />
+                    </div>
+                    
+                    {/* Contact information below image */}
+                    <div className="p-5">
+                      <h2 className="font-heading font-bold text-xl mb-4">
+                        Contact Information
+                      </h2>
+                      <div className="space-y-2">
+                        <p>
+                          <strong>Location:</strong> Johannesburg, South Africa
+                        </p>
+                        <p>
+                          <strong>Email:</strong> marcocronje@gmail.com
+                        </p>
+                        {/* Phone number removed as requested */}
+                      </div>
                     </div>
                   </CardBody>
                 </Card>
 
-                <Card>
-                  <CardBody>
+                {/* Languages Card with improved styling */}
+                <Card className="overflow-hidden">
+                  <CardBody className="p-5">
                     <h2 className="font-heading font-bold text-xl mb-4">
                       Languages
                     </h2>
-                    <div className="space-y-2">
-                      <p>
-                        <strong>Fluent:</strong> English, Afrikaans
-                      </p>
-                      <p>
-                        <strong>Beginner:</strong> Italian
-                      </p>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium">Fluent:</span>
+                        <div className="flex gap-2">
+                          <Chip color="primary" size="sm" variant="flat">English</Chip>
+                          <Chip color="primary" size="sm" variant="flat">Afrikaans</Chip>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium">Beginner:</span>
+                        <Chip color="default" size="sm" variant="flat">Italian</Chip>
+                      </div>
                     </div>
                   </CardBody>
                 </Card>
               </div>
             </div>
 
-            {/* Right column - About content */}
+            {/* Right column - About content (exactly as provided in your file) */}
             <div className="w-full md:w-2/3">
               <h1 className={title({ size: "lg", class: "mb-6" })}>About Me</h1>
 

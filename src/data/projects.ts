@@ -9,6 +9,12 @@ export interface Project {
   featured: boolean;
   technologies: string[];
   completed: string;
+  demoUrl?: string; // Optional URL for live demo
+  mockups?: {      // Optional mockup images
+    mobile?: string;
+    tablet?: string;
+    desktop?: string;
+  };
 }
 
 export const projects: Project[] = [

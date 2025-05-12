@@ -1,3 +1,4 @@
+// Updated src/components/projects/ProjectDetail.tsx
 import { Button } from "@heroui/button";
 import { Chip } from "@heroui/chip";
 import { Link } from "@heroui/link";
@@ -5,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 
 import { Project } from "@/data/projects";
 import { title } from "@/components/primitives";
+import { ProjectMockup } from "@/components/mockups/ProjectMockup";
 
 interface ProjectDetailProps {
   project: Project;
@@ -14,7 +16,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   return (
     <div className="py-10">
       <div className="container px-4 mx-auto">
-        {/* Improved header section with better positioning */}
+        {/* Header section */}
         <div className="flex flex-col mb-8">
           <div className="flex items-center mb-4">
             <Link
@@ -40,31 +42,44 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           </div>
         </div>
 
-        {/* Improved image container */}
-        <Card className="mb-10 shadow-md overflow-hidden">
-          <CardBody className="p-0">
-            <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-              {project.imageUrl.includes("placeholder") ? (
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              ) : (
-                <img
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                  src={project.imageUrl}
-                />
-              )}
-            </div>
-          </CardBody>
-        </Card>
+        {/* Device mockups - new section */}
+        {project.mockups?.mobile && project.mockups?.desktop ? (
+          <Card className="mb-10 shadow-md overflow-hidden">
+            <CardBody className="p-8 bg-ash-gray-900 dark:bg-rich-black-600">
+              <ProjectMockup
+                mobileImage={project.mockups.mobile}
+                desktopImage={project.mockups.desktop}
+                alt={project.title}
+              />
+            </CardBody>
+          </Card>
+        ) : project.imageUrl ? (
+          // Fallback to original image display if no mockups
+          <Card className="mb-10 shadow-md overflow-hidden">
+            <CardBody className="p-0">
+              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
+                {project.imageUrl.includes("placeholder") ? (
+                  <div className="text-center px-6">
+                    <p className="text-white text-xl font-medium mb-2">
+                      Project Image
+                    </p>
+                    <p className="text-white-800 text-sm opacity-80">
+                      Screenshots coming soon
+                    </p>
+                  </div>
+                ) : (
+                  <img
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    src={project.imageUrl}
+                  />
+                )}
+              </div>
+            </CardBody>
+          </Card>
+        ) : null}
 
-        {/* Content grid with improved layout */}
+        {/* Content grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="col-span-2">
             <h2 className="text-2xl font-heading font-bold mb-4">
@@ -100,15 +115,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
               </CardBody>
             </Card>
 
-            <Button
-              as={Link}
-              className="w-full mt-4"
-              color="primary"
-              href="#" // You can update this to a demo link or GitHub repo
-              variant="shadow"
-            >
-              View Live Demo
-            </Button>
+            {project.demoUrl && (
+              <Button
+                as={Link}
+                className="w-full mt-4"
+                color="primary"
+                href={project.demoUrl}
+                isExternal
+                variant="shadow"
+              >
+                View Live Demo
+              </Button>
+            )}
           </div>
         </div>
       </div>
