@@ -6,6 +6,196 @@ import { Card, CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import { DeviceMockup } from "@/components/mockups/DeviceMockup";
+import { useEffect, useRef, useState } from "react";
+
+// Define the screenshots with descriptions
+const quizScreenshots = [
+  {
+    id: "dashboard",
+    name: "Topics Dashboard",
+    path: "/screenshots/mobile/react2.png",
+    description: "Main dashboard showing available React topics organized by difficulty levels with progress indicators for each topic."
+  },
+  {
+    id: "progress",
+    name: "Progress Tracking",
+    path: "/screenshots/mobile/react3.png",
+    description: "User progress overview showing completion metrics, achievement badges, and progress by difficulty level."
+  },
+  {
+    id: "concept-map",
+    name: "Concept Map",
+    path: "/screenshots/mobile/react4.png",
+    description: "Visual representation of React concepts organized by difficulty level with brief descriptions."
+  },
+  {
+    id: "navigation",
+    name: "Concept Navigation",
+    path: "/screenshots/mobile/react5.png",
+    description: "Side navigation showing the hierarchical organization of React concepts with expandable categories."
+  },
+  {
+    id: "quiz-correct",
+    name: "Quiz Question (Correct)",
+    path: "/screenshots/mobile/react6.png",
+    description: "Quiz interface showing a correctly answered question about React Hooks with syntax-highlighted code example."
+  },
+  {
+    id: "quiz-code",
+    name: "Quiz Question (Code)",
+    path: "/screenshots/mobile/react7.png",
+    description: "Complex quiz question about Forms & Controlled Components featuring a detailed code example with syntax highlighting."
+  }
+];
+
+// ReactQuizShowcase component with simplified navigation
+const ReactQuizShowcase = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const tabContainerRef = useRef<HTMLDivElement>(null);
+  
+  const currentScreenshot = quizScreenshots[currentIndex];
+  
+  // Navigation functions
+  const goToNext = () => {
+    if (currentIndex < quizScreenshots.length - 1) {
+      setCurrentIndex(prev => prev + 1);
+    }
+  };
+  
+  const goToPrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(prev => prev - 1);
+    }
+  };
+  
+  // Scroll the active tab into view when currentIndex changes
+  useEffect(() => {
+    if (tabContainerRef.current) {
+      const activeTab = tabContainerRef.current.querySelector(`[data-active="true"]`);
+      if (activeTab) {
+        activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [currentIndex]);
+  
+  return (
+    <div className="mb-12">
+      <h2 className="text-2xl font-heading font-bold mb-6">App Showcase</h2>
+      
+      {/* Custom tabs with better mobile support */}
+      <div 
+        className="mb-8 overflow-x-auto scrollbar-hide" 
+        ref={tabContainerRef}
+      >
+        <div className="flex space-x-2 pb-2 min-w-max">
+          {quizScreenshots.map((screenshot, index) => (
+            <button
+              key={screenshot.id}
+              onClick={() => setCurrentIndex(index)}
+              data-active={index === currentIndex}
+              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm transition-colors duration-200 ${
+                index === currentIndex 
+                  ? 'bg-cerulean-300 dark:bg-cerulean-600 text-rich-black-900 dark:text-white font-medium'
+                  : 'bg-default-100 dark:bg-rich-black-300 text-default-700 dark:text-default-400 hover:bg-default-200 dark:hover:bg-rich-black-200'
+              }`}
+              aria-pressed={index === currentIndex}
+            >
+              {screenshot.name}
+            </button>
+          ))}
+        </div>
+      </div>
+      
+      {/* Device mockup and info - simplified without swipe */}
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="w-full md:w-1/2 relative">
+          <Card className="h-full">
+            <CardBody className="flex flex-col items-center justify-center p-8 bg-ash-gray-900 dark:bg-rich-black-600">
+              <DeviceMockup
+                alt={currentScreenshot.name}
+                image={currentScreenshot.path}
+                type="phone"
+              />
+              
+              {/* Navigation arrows */}
+              <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2 pointer-events-none">
+                <button 
+                  onClick={goToPrev}
+                  disabled={currentIndex === 0}
+                  className={`rounded-full w-8 h-8 flex items-center justify-center bg-white/80 shadow-md pointer-events-auto ${
+                    currentIndex === 0 ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  aria-label="Previous screenshot"
+                >
+                  <span className="text-xl font-bold text-rich-black">←</span>
+                </button>
+                <button 
+                  onClick={goToNext}
+                  disabled={currentIndex === quizScreenshots.length - 1}
+                  className={`rounded-full w-8 h-8 flex items-center justify-center bg-white/80 shadow-md pointer-events-auto ${
+                    currentIndex === quizScreenshots.length - 1 ? 'opacity-0' : 'opacity-100'
+                  }`}
+                  aria-label="Next screenshot"
+                >
+                  <span className="text-xl font-bold text-rich-black">→</span>
+                </button>
+              </div>
+              
+              {/* Pagination indicators - FIXED for light mode visibility */}
+              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5" role="group" aria-label="Screenshot pagination">
+                {quizScreenshots.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all border border-white/50 ${
+                      index === currentIndex 
+                        ? 'bg-cerulean-300 w-4 border-cerulean-300' 
+                        : 'bg-gray-500/50'
+                    }`}
+                    aria-label={`Go to screenshot ${index + 1}`}
+                    aria-current={index === currentIndex ? "true" : "false"}
+                  />
+                ))}
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+        
+        <div className="w-full md:w-1/2">
+          <Card className="h-full">
+            <CardBody>
+              <h3 className="text-xl font-heading font-bold mb-4">{currentScreenshot.name}</h3>
+              <p className="text-default-700 mb-6">{currentScreenshot.description}</p>
+              
+              <div className="mb-6">
+                <h4 className="font-medium mb-2">Key Features:</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Interactive quizzes with code examples and explanations</li>
+                  <li>Progress tracking and achievement system</li>
+                  <li>Comprehensive concept map of React topics</li>
+                  <li>Organized learning path from beginner to advanced</li>
+                  <li>Syntax highlighting for code examples</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="font-medium mb-2">Technical Implementation:</h4>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>Built with Flutter for cross-platform support</li>
+                  <li>Offline functionality for learning anywhere</li>
+                  <li>Adaptive quiz difficulty based on user performance</li>
+                  <li>Clean, modern UI with syntax highlighting</li>
+                  <li>Comprehensive progress tracking system</li>
+                </ul>
+              </div>
+            </CardBody>
+          </Card>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function ReactQuizProjectPage() {
   return (
@@ -41,22 +231,6 @@ export default function ReactQuizProjectPage() {
               </Chip>
             </div>
           </div>
-
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -94,7 +268,7 @@ export default function ReactQuizProjectPage() {
                       Dart
                     </Chip>
                     <Chip color="secondary" variant="flat">
-                      Firebase
+                      Gen AI
                     </Chip>
                     <Chip color="secondary" variant="flat">
                       Provider
@@ -129,36 +303,15 @@ export default function ReactQuizProjectPage() {
             </div>
           </div>
 
-          {/* Motivation & Background section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Motivation & Background
-            </h2>
-            <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                I developed this app with a dual purpose: to deepen my own
-                understanding of React concepts through the process of creating
-                educational content, and to challenge myself to build something
-                better than existing offerings in the market. This project
-                reflects my approach to problem-solving—when I identify a need,
-                I&apos;m drawn to developing custom solutions rather than settling
-                for existing options.
-              </p>
-              <p className="mb-4">
-                The project exemplifies my belief in learning through creation.
-                By building a tool to teach others, I strengthened my own
-                technical knowledge while producing something valuable for the
-                developer community.
-              </p>
-            </div>
-          </div>
+          {/* App Showcase Section */}
+          <ReactQuizShowcase />
 
-          {/* Key Features section */}
+          {/* Key Features section - Expanded with more detail */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">
               Key Features
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-default-50">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
@@ -313,12 +466,12 @@ export default function ReactQuizProjectPage() {
             </div>
           </div>
 
-          {/* Development Approach section */}
+          {/* Development Approach section - Now including testing */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">
-              Development Approach
+              Development Approach & Testing
             </h2>
-            <div className="prose max-w-none text-default-700">
+            <div className="prose max-w-none text-default-700 mb-6">
               <p className="mb-4">
                 My approach prioritized building a high-quality, user-focused
                 learning tool. For content creation, I leveraged modern AI tools
@@ -333,6 +486,49 @@ export default function ReactQuizProjectPage() {
                 efficiently manage resources while maintaining quality
                 standards.
               </p>
+              
+              <h3 className="text-xl font-heading font-bold mt-6 mb-3">Comprehensive Testing Strategy</h3>
+              <p className="mb-4">
+                To ensure the app delivered a reliable educational experience, I implemented multiple levels of testing throughout the development process:
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    Unit Testing
+                  </h3>
+                  <p className="text-default-700">
+                    I created comprehensive tests for all model classes and utility functions to verify data parsing, calculation logic, and recommendation algorithms functioned correctly in isolation.
+                  </p>
+                </CardBody>
+              </Card>
+              
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    Integration Testing
+                  </h3>
+                  <p className="text-default-700">
+                    Tests verified that providers correctly interacted with database services, ensuring proper data relationships between questions, topics, and user progress.
+                  </p>
+                </CardBody>
+              </Card>
+              
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    UI & Quiz Logic Testing
+                  </h3>
+                  <p className="text-default-700">
+                    Widget tests ensured UI components rendered correctly, while
+                    specialized tests validated the quiz engine&apos;s answer
+                    validation, option shuffling, and drag-and-drop
+                    functionality.
+                  </p>
+                </CardBody>
+              </Card>
             </div>
           </div>
 
