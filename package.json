@@ -10,7 +10,7 @@
     "lint": "eslint --fix",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist --dotfiles true"
   },
   "dependencies": {
     "@heroui/button": "2.2.19",
