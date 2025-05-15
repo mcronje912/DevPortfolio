@@ -1,90 +1,64 @@
+// src/components/contact/ContactForm.tsx
 import { useState } from "react";
 import { Button } from "@heroui/button";
-import { Input } from "@heroui/input";
-import { Textarea } from "@heroui/input";
 import { Card, CardBody, CardHeader, CardFooter } from "@heroui/card";
+import { Link } from "@heroui/link";
 
 export const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // You'll implement the actual form submission later
-    console.log("Form submitted:", formData);
-    alert("Thanks for your message! I'll get back to you soon.");
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-  };
-
   return (
     <Card className="max-w-xl mx-auto">
       <CardHeader>
         <h2 className="text-2xl font-heading font-bold">Get In Touch</h2>
         <p className="text-default-500">
-          I&apos;d love to hear from you! Fill out the form below.
+          I&apos;d love to hear from you! Please reach out via email or use this form.
         </p>
       </CardHeader>
       <CardBody>
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <Input
-            label="Name"
-            placeholder="Your name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            isRequired
-          />
-          <Input
-            label="Email"
-            placeholder="your.email@example.com"
-            name="email"
-            type="email"
-            value={formData.email}
-            onChange={handleChange}
-            isRequired
-          />
-          <Input
-            label="Subject"
-            placeholder="What's this about?"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            isRequired
-          />
-          <Textarea
-            label="Message"
-            placeholder="Your message here..."
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            isRequired
-            minRows={4}
-          />
+        <div className="mb-6">
+          <h3 className="font-medium mb-2">Contact Information:</h3>
+          <p className="mb-2">
+            <span className="font-medium">Email:</span>{" "}
+            <Link 
+              href="mailto:marcocronje@gmail.com" 
+              className="text-cerulean hover:underline"
+            >
+              marcocronje@gmail.com
+            </Link>
+          </p>
+          <p className="mb-2">
+            <span className="font-medium">Location:</span> Johannesburg, South Africa
+          </p>
+          <p className="text-sm text-default-500 mt-4">
+            Form submission functionality coming soon. In the meantime, please 
+            contact me directly via email for any inquiries.
+          </p>
+        </div>
+        
+        <div className="flex mt-6 gap-4">
           <Button
-            type="submit"
+            as={Link}
+            href="mailto:marcocronje@gmail.com"
             color="primary"
-            fullWidth
-            className="bg-cerulean hover:bg-cerulean-600 mt-4"
+            className="bg-cerulean hover:bg-cerulean-600"
           >
-            Send Message
+            Email Me
           </Button>
-        </form>
+          <Button
+            as={Link}
+            href="https://www.linkedin.com/in/marco-cronje/"
+            isExternal
+            variant="bordered"
+            className="border-cerulean text-cerulean"
+          >
+            Connect on LinkedIn
+          </Button>
+        </div>
       </CardBody>
+      <CardFooter className="flex justify-center text-center text-sm text-default-500">
+        <p>
+          I&apos;ll typically respond to inquiries within 24-48 hours.
+        </p>
+      </CardFooter>
     </Card>
   );
 };
