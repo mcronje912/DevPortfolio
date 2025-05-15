@@ -11,7 +11,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 import { useLocation } from "react-router-dom";
 
