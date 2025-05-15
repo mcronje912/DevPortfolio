@@ -51,15 +51,12 @@ export default function EtamaxProjectPage() {
           {/* Image container */}
           <Card className="mb-10 shadow-md overflow-hidden">
             <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
+              <div className="h-40 w-full">
+                <img 
+                  src="/images/etamax/sun.jpg" 
+                  alt="Etamax Solar Energy System" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </CardBody>
           </Card>
@@ -137,7 +134,7 @@ export default function EtamaxProjectPage() {
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
-                  <p>Lead Full Stack Developer & IoT System Architect</p>
+                  <p>Lead Full Stack Developer</p>
                 </CardBody>
               </Card>
             </div>
