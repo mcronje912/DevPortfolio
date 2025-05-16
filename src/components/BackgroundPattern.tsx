@@ -40,7 +40,7 @@ export const BackgroundPattern: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundImage: 'url("/pattern.svg")',
+          backgroundImage: 'url("/images/global/background-pattern.svg")',
           backgroundSize: '800',
           backgroundRepeat: 'repeat',
           opacity: isDark ? .5 : 0.65, // INCREASED from 0.35/0.45 to 0.5/0.65

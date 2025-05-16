@@ -58,7 +58,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
       <img
         alt="Marco Cronje - Full Stack Developer & IoT Systems Engineer"
         className="w-full h-full"
-        src="/profile-illustration.png"
+        src="/images/global/profile-illustration.png"
         style={{
           filter: getFilterStyle(),
           mixBlendMode: isDark ? "lighten" : "multiply",

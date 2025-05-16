@@ -10,49 +10,49 @@ const quizScreenshots = [
   {
     id: "splash",
     name: "Splash Screen",
-    path: "/screenshots/mobile/react1.png",
+    path: "/images/projects/react-quiz/mobile/splash.png",
     description:
       "App launch screen featuring the ReaQt logo, app name, and tagline 'Compile your React skills' with a loading status indicator.",
   },
   {
     id: "dashboard",
     name: "Topics Dashboard",
-    path: "/screenshots/mobile/react2.png",
+    path: "/images/projects/react-quiz/mobile/dashboard.png",
     description:
       "Main dashboard showing available React topics organized by difficulty levels with progress indicators for each topic.",
   },
   {
     id: "progress",
     name: "Progress Tracking",
-    path: "/screenshots/mobile/react3.png",
+    path: "/images/projects/react-quiz/mobile/progress.png",
     description:
       "User progress overview showing completion metrics, achievement badges, and progress by difficulty level.",
   },
   {
     id: "concept-map",
     name: "Concept Map",
-    path: "/screenshots/mobile/react4.png",
+    path: "/images/projects/react-quiz/mobile/concept-map.png",
     description:
       "Visual representation of React concepts organized by difficulty level with brief descriptions.",
   },
   {
     id: "navigation",
     name: "Concept Navigation",
-    path: "/screenshots/mobile/react5.png",
+    path: "/images/projects/react-quiz/mobile/navigation.png",
     description:
       "Side navigation showing the hierarchical organization of React concepts with expandable categories.",
   },
   {
     id: "quiz-correct",
     name: "Quiz Question (Correct)",
-    path: "/screenshots/mobile/react6.png",
+    path: "/images/projects/react-quiz/mobile/quiz-correct.png",
     description:
       "Quiz interface showing a correctly answered question about React Hooks with syntax-highlighted code example.",
   },
   {
     id: "quiz-code",
     name: "Quiz Question (Code)",
-    path: "/screenshots/mobile/react7.png",
+    path: "/images/projects/react-quiz/mobile/quiz-code.png",
     description:
       "Complex quiz question about Forms & Controlled Components featuring a detailed code example with syntax highlighting.",
   },

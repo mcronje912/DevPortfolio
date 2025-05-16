@@ -10,19 +10,19 @@ const mobileScreenshots = [
   {
     id: "etamax-home",
     name: "Etamax Home",
-    path: "/screenshots/mobile/etamax-home.PNG",
+    path: "/images/projects/etamax/mobile/home.png",
     description: "Main screen of the Etamax solar monitoring app showing system status and controls"
   },
   {
     id: "etamax-dashboard",
     name: "Etamax Dashboard",
-    path: "/screenshots/mobile/etamax-dashboard.png",
+    path: "/images/projects/etamax/web/dashboard.png",
     description: "Energy monitoring dashboard with detailed analytics and usage patterns"
   },
   {
     id: "etamax-3",
     name: "Etamax Details",
-    path: "/screenshots/mobile/etamax-3.png",
+    path: "/images/projects/etamax/mobile/details.png",
     description: "Detailed view of the solar energy system performance metrics"
   }
 ];
@@ -98,8 +98,8 @@ export const MockupDemo: React.FC = () => {
       <Card>
         <CardBody className="p-8 bg-ash-gray-900 dark:bg-rich-black-600">
           <ProjectMockup 
-            mobileImage="/screenshots/mobile/etamax-home.PNG"
-            desktopImage="/screenshots/mobile/etamax-dashboard.png" // Using dashboard as desktop for now
+            mobileImage="/images/projects/etamax/mobile/home.png"
+            desktopImage="/images/projects/etamax/web/dashboard.png" 
             alt="Etamax Project Showcase"
           />
         </CardBody>
@@ -113,7 +113,7 @@ export const MockupDemo: React.FC = () => {
             <h3 className="text-lg font-medium mb-4 text-center text-white">Phone View</h3>
             <DeviceMockup 
               type="phone" 
-              image="/screenshots/mobile/etamax-home.PNG"
+              image="/images/projects/etamax/mobile/home.png"
               alt="Etamax on Phone" 
             />
           </CardBody>
@@ -124,7 +124,7 @@ export const MockupDemo: React.FC = () => {
             <h3 className="text-lg font-medium mb-4 text-center text-white">Tablet View</h3>
             <DeviceMockup 
               type="tablet" 
-              image="/screenshots/mobile/etamax-dashboard.png"
+              image="/images/projects/etamax/web/dashboard.png"
               alt="Etamax on Tablet" 
               className="scale-[0.6] origin-top"
             />
@@ -136,7 +136,7 @@ export const MockupDemo: React.FC = () => {
             <h3 className="text-lg font-medium mb-4 text-center text-white">Laptop View</h3>
             <DeviceMockup 
               type="laptop" 
-              image="/screenshots/mobile/etamax-3.png"
+              image="/images/projects/etamax/mobile/details.png"
               alt="Etamax on Laptop" 
             />
           </CardBody>
