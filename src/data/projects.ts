@@ -101,9 +101,9 @@ export const projects: Project[] = [
   },
   {
     id: "workflow-manager",
-    title: "Print Quote System",
+    title: "Workflow Manager System",
     description:
-      "An in-house business management system that streamlines print production workflows with automated quote generation and material optimization.",
+      "An in-house business management system that streamlines production workflows with automated quote generation and material optimization.",
     longDescription:
       "Workflow Manager is a custom business tool I developed to streamline operations within my printing business. This full-stack application combines a React frontend with a Django backend to automate complex printing calculations, optimize material usage, and generate accurate quotes—transforming a previously time-consuming manual process into an efficient digital workflow.",
     thumbnailUrl: "/images/projects/thumbnails/workflow-manager.png",
