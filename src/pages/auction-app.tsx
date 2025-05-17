@@ -6,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import { AuctionAppShowcase } from "@/components/projects/AuctionAppShowcase";
 
 export default function AuctionAppProjectPage() {
   return (
@@ -45,21 +46,8 @@ export default function AuctionAppProjectPage() {
             </div>
           </div>
 
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
+          {/* App Showcase Section */}
+          <AuctionAppShowcase />
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -68,22 +56,20 @@ export default function AuctionAppProjectPage() {
               <div className="prose max-w-none text-default-700">
                 <p className="mb-4">
                   This real-time auction platform is a full-stack web
-                  application designed to create a seamless bidding experience
-                  for buyers and sellers. Built with Next.js, React, and
-                  Supabase, it showcases my ability to develop complex,
-                  interactive web applications with modern technologies.
+                  application built with Next.js, React, and Supabase. It allows
+                  users to create auction listings, browse items, place bids,
+                  and track auctions in real-time. The platform demonstrates my
+                  ability to implement complex features including real-time data
+                  synchronization, user authentication, and responsive design
+                  using modern web technologies.
                 </p>
                 <p className="mb-4">
-                  The platform allows users to create auction listings, browse
-                  available items, place bids, and track auctions in real-time.
-                  It demonstrates implementation of user authentication,
-                  real-time data synchronization, responsive design, and modern
-                  React development practices.
-                </p>
-                <p className="mb-4">
-                  This project is currently in active development, with core
-                  functionality implemented and several features still being
-                  refined.
+                  A key technical achievement in this implementation was
+                  successfully integrating Supabase&apos;s real-time
+                  subscriptions for instant bid updates across all connected
+                  clients. This creates an engaging auction experience similar
+                  to in-person events, where all participants see bid changes
+                  immediately.
                 </p>
               </div>
             </div>
@@ -193,61 +179,6 @@ export default function AuctionAppProjectPage() {
                   </ul>
                 </CardBody>
               </Card>
-
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    Authentication
-                  </h3>
-                  <p className="text-default-700">
-                    After evaluating several authentication solutions, I
-                    selected Supabase Auth for its straightforward
-                    implementation and comprehensive feature set. Having worked
-                    with NextAuth and Clerk on previous projects, I found
-                    Supabase to be more flexible and easier to integrate,
-                    particularly in how it connects authentication with database
-                    permissions.
-                  </p>
-                </CardBody>
-              </Card>
-
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    Code Organization
-                  </h3>
-                  <p className="text-default-700">
-                    The codebase follows modern React best practices with a
-                    clean organization structure:
-                  </p>
-                  <ul className="list-disc pl-5 space-y-1 mt-2">
-                    <li>
-                      <span className="font-semibold">/app</span> - Next.js
-                      pages and layouts
-                    </li>
-                    <li>
-                      <span className="font-semibold">/components</span> -
-                      Reusable UI components
-                    </li>
-                    <li>
-                      <span className="font-semibold">/hooks</span> - Custom
-                      React hooks for shared logic
-                    </li>
-                    <li>
-                      <span className="font-semibold">/services</span> - API and
-                      data services
-                    </li>
-                    <li>
-                      <span className="font-semibold">/types</span> - TypeScript
-                      type definitions
-                    </li>
-                    <li>
-                      <span className="font-semibold">/lib</span> - Utility
-                      functions and configurations
-                    </li>
-                  </ul>
-                </CardBody>
-              </Card>
             </div>
           </div>
 
@@ -340,64 +271,6 @@ export default function AuctionAppProjectPage() {
                   </p>
                 </CardBody>
               </Card>
-            </div>
-          </div>
-
-          {/* Development Journey & Technical Challenges */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Development Journey & Learning
-            </h2>
-            <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                This project has been particularly valuable for deepening my
-                understanding of Next.js app directory structure compared to
-                traditional Vite-based React projects. Working with
-                Next.js&apos;s newer architecture has provided practical
-                experience with its routing system and organizational patterns.
-              </p>
-              <p className="mb-4">
-                Implementing the real-time bidding functionality has been the
-                most technically challenging aspect, requiring careful
-                consideration of data synchronization and state management
-                across multiple users. This has improved my skills in developing
-                reactive interfaces that respond instantly to external events.
-              </p>
-              <p className="mb-6">
-                My experience with different authentication providers led me to
-                select Supabase Auth after finding it more straightforward than
-                alternatives like NextAuth and Clerk. This project has confirmed
-                Supabase as my preferred solution for authentication, database,
-                and real-time services due to its comprehensive feature set and
-                developer-friendly API.
-              </p>
-
-              <h3 className="text-xl font-heading font-bold mb-3">
-                Current Status & Next Steps
-              </h3>
-              <p className="mb-4">
-                The auction platform is currently in active development with
-                approximately 60% of planned functionality implemented. Core
-                features like listing creation, browsing, and the basic bidding
-                system are working, while more advanced features are still in
-                progress.
-              </p>
-              <p className="mb-4">Upcoming development priorities include:</p>
-              <ul className="list-disc pl-5 space-y-1 mb-4">
-                <li>
-                  Completing the real-time bidding system with notifications
-                </li>
-                <li>Implementing role-based access control (RBAC)</li>
-                <li>Enhancing auction management tools for sellers</li>
-                <li>
-                  Developing more robust user profiles and history tracking
-                </li>
-              </ul>
-              <p>
-                Longer-term plans include payment integration, escrow services
-                for high-value items, and potentially mobile applications to
-                complement the web platform.
-              </p>
             </div>
           </div>
 

@@ -6,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import { EmotionDetectionShowcase } from "@/components/projects/EmotionDetectionShowcase";
 
 export default function EmotionDetectionProjectPage() {
   return (
@@ -45,21 +46,8 @@ export default function EmotionDetectionProjectPage() {
             </div>
           </div>
 
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
+          {/* App Showcase Section */}
+          <EmotionDetectionShowcase />
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -132,7 +120,7 @@ export default function EmotionDetectionProjectPage() {
                   <Link
                     isExternal
                     className="text-cerulean hover:underline"
-                    href="https://github.com/mcronje912/NLP-Sentiment-Analysis-practice-project"
+                    href="https://github.com/mcronje912/emotion-detector-IBM-final-project"
                   >
                     View Repository
                   </Link>
@@ -208,171 +196,6 @@ export default function EmotionDetectionProjectPage() {
             </div>
           </div>
 
-          {/* Key Features section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Key Features
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    Multi-Emotion Detection
-                  </h3>
-                  <p className="text-default-700">
-                    The application analyzes text for five primary emotions:
-                    joy, sadness, anger, fear, and disgust, providing a
-                    comprehensive emotional profile of the content.
-                  </p>
-                </CardBody>
-              </Card>
-
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    Dominant Emotion Identification
-                  </h3>
-                  <p className="text-default-700">
-                    Beyond detecting multiple emotions, the system identifies
-                    the strongest emotional signal present in the text, giving
-                    users clear insight into the primary emotional tone.
-                  </p>
-                </CardBody>
-              </Card>
-
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    Real-time Analysis
-                  </h3>
-                  <p className="text-default-700">
-                    Users receive immediate feedback on the emotional content of
-                    their text, with results processed and displayed in
-                    real-time through the web interface.
-                  </p>
-                </CardBody>
-              </Card>
-
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    Privacy-Focused Design
-                  </h3>
-                  <p className="text-default-700">
-                    All text processing occurs locally without external API
-                    calls, ensuring that sensitive content remains private and
-                    is not transmitted to third-party services.
-                  </p>
-                </CardBody>
-              </Card>
-
-              <Card className="bg-default-50">
-                <CardBody>
-                  <h3 className="text-lg font-heading font-bold mb-3">
-                    User-Friendly Interface
-                  </h3>
-                  <p className="text-default-700">
-                    The application provides an intuitive web interface for
-                    submitting text and viewing emotion analysis results, making
-                    advanced NLP technology accessible to users.
-                  </p>
-                </CardBody>
-              </Card>
-            </div>
-          </div>
-
-          {/* Technical Challenges section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Technical Challenges Overcome
-            </h2>
-            <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                Several technical challenges were addressed during development:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 mb-4">
-                <li>
-                  Configuring the NLP environment with compatible package
-                  versions
-                </li>
-                <li>
-                  Implementing an alternative model while maintaining accuracy
-                  requirements
-                </li>
-                <li>
-                  Creating comprehensive error handling for various edge cases
-                </li>
-                <li>Achieving a perfect PyLint code quality score of 10/10</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Future Improvements section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Future Improvements
-            </h2>
-            <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                Planned enhancements for future iterations include:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 mb-4">
-                <li>Enhanced visualization of emotion scores</li>
-                <li>Support for analyzing longer text passages</li>
-                <li>Historical analysis of multiple inputs</li>
-                <li>Multi-language emotion detection support</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Skills Demonstrated section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Skills Demonstrated
-            </h2>
-            <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                This project showcases several important technical capabilities:
-              </p>
-              <ul className="list-disc pl-5 space-y-1 mb-4">
-                <li>
-                  Integration of advanced AI/ML models into web applications
-                </li>
-                <li>
-                  Adaptation and problem-solving when implementing alternative
-                  technologies
-                </li>
-                <li>
-                  Application of software engineering best practices (testing,
-                  code quality)
-                </li>
-                <li>
-                  Creation of user-friendly interfaces for complex AI
-                  functionality
-                </li>
-              </ul>
-              <p className="mb-4">
-                As AI becomes increasingly important across various
-                applications, this project demonstrates the ability to
-                effectively integrate these technologies into practical,
-                user-facing solutions.
-              </p>
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="flex justify-center mt-12">
-            <Button
-              isExternal
-              as={Link}
-              className="px-8"
-              color="primary"
-              href="https://github.com/mcronje912/NLP-Sentiment-Analysis-practice-project"
-              variant="shadow"
-            >
-              View GitHub Repository
-            </Button>
-          </div>
         </div>
       </div>
     </DefaultLayout>

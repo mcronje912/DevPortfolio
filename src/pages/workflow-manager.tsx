@@ -6,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import { WorkflowManagerShowcase } from "@/components/projects/WorkflowManagerShowcase";
 
 export default function WorkflowManagerProjectPage() {
   return (
@@ -26,7 +27,7 @@ export default function WorkflowManagerProjectPage() {
             </div>
 
             <h1 className={title({ size: "lg", class: "mb-4" })}>
-              Workflow Manager
+              Print Quote System
             </h1>
 
             <div className="flex flex-wrap gap-2 mb-6">
@@ -37,29 +38,16 @@ export default function WorkflowManagerProjectPage() {
                 Business Tool
               </Chip>
               <Chip color="primary" variant="flat">
-                React
+                Docker
               </Chip>
               <Chip color="primary" variant="flat">
-                Django
+                Process Automation
               </Chip>
             </div>
           </div>
 
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
+          {/* App Showcase Section */}
+          <WorkflowManagerShowcase />
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -67,20 +55,20 @@ export default function WorkflowManagerProjectPage() {
               <h2 className="text-2xl font-heading font-bold mb-4">Overview</h2>
               <div className="prose max-w-none text-default-700">
                 <p className="mb-4">
-                  Workflow Manager is a comprehensive business management tool I
-                  developed to streamline operations within my printing
-                  business. This full-stack application combines a React
-                  frontend with a Django backend to automate complex printing
-                  calculations, optimize material usage, and generate accurate
-                  quotes—transforming a previously time-consuming manual process
-                  into an efficient digital workflow.
+                  This comprehensive business management system was developed to
+                  address a specific pain point in my printing business
+                  operations - the time-intensive process of creating quotes. By
+                  automating dimension calculations, material cost estimation,
+                  and layout optimization, I can now create accurate quotes in
+                  minutes rather than hours.
                 </p>
                 <p className="mb-4">
-                  Unlike generic business software, this custom solution was
-                  designed specifically for the unique challenges of print
-                  production management, with particular focus on material
-                  optimization and accurate pricing calculations based on
-                  precise measurements and material selection.
+                  What began as a quoting tool has evolved into a more
+                  comprehensive solution that streamlines multiple aspects of
+                  print production management. The system combines a
+                  React/TypeScript frontend with a Django/Python backend, all
+                  containerized with Docker for consistent deployment across
+                  environments.
                 </p>
               </div>
             </div>
@@ -105,7 +93,7 @@ export default function WorkflowManagerProjectPage() {
                       Python
                     </Chip>
                     <Chip color="secondary" variant="flat">
-                      HeroUI
+                      Docker
                     </Chip>
                     <Chip color="secondary" variant="flat">
                       Tailwind CSS
@@ -120,9 +108,9 @@ export default function WorkflowManagerProjectPage() {
               <Card className="bg-default-50">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
-                    Completed
+                    Development Period
                   </h3>
-                  <p>2025 (Ongoing Development)</p>
+                  <p>3 months (Ongoing Improvements)</p>
                 </CardBody>
               </Card>
 
@@ -131,7 +119,7 @@ export default function WorkflowManagerProjectPage() {
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
-                  <p>Full Stack Developer</p>
+                  <p>Full Stack Developer & Business Analyst</p>
                 </CardBody>
               </Card>
             </div>
@@ -144,23 +132,27 @@ export default function WorkflowManagerProjectPage() {
             </h2>
             <div className="prose max-w-none text-default-700 mb-6">
               <p>
-                The application leverages modern web technologies to create a
-                powerful yet user-friendly tool:
+                This application leverages a modern tech stack designed for
+                performance, maintainability, and consistent deployment:
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Card className="bg-default-50">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
-                    Frontend
+                    Frontend Architecture
                   </h3>
+                  <p className="text-default-700 mb-4">
+                    Built with React and TypeScript, the frontend follows a
+                    component-based architecture with clean separation of
+                    concerns. Tailwind CSS provides responsive styling while
+                    custom hooks manage complex business logic.
+                  </p>
                   <p className="text-default-700">
-                    Built with React and TypeScript for a responsive, type-safe
-                    interface using the HeroUI component library and Tailwind
-                    CSS for styling. This combination provides a clean,
-                    professional interface that maintains consistency with my
-                    other development work while offering an intuitive user
-                    experience.
+                    State management is implemented using React&apos;s built-in
+                    useState and useEffect hooks, with service modules handling
+                    API communication through Axios. The UI emphasizes workflow
+                    efficiency with a clean, functional design.
                   </p>
                 </CardBody>
               </Card>
@@ -168,14 +160,49 @@ export default function WorkflowManagerProjectPage() {
               <Card className="bg-default-50">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
-                    Backend
+                    Backend Architecture
+                  </h3>
+                  <p className="text-default-700 mb-4">
+                    Powered by Django and Django REST Framework, the backend
+                    provides robust API endpoints for materials, quotes, and PDF
+                    processing. Python&apos;s PyPDF2 and Tesseract OCR handle
+                    document analysis and text extraction.
+                  </p>
+                  <p className="text-default-700">
+                    The application follows Django&apos;s app-based structure
+                    with separate modules for different business domains. SQLite
+                    provides data persistence appropriate for the internal
+                    tool&apos;s scale and usage patterns.
+                  </p>
+                </CardBody>
+              </Card>
+
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    Docker Containerization
                   </h3>
                   <p className="text-default-700">
-                    Powered by Django and Python, featuring robust PDF
-                    processing capabilities using PyPDF2 for automatic dimension
-                    extraction. The backend provides RESTful API endpoints for
-                    materials, quotes, and PDF analysis, with SQLite database
-                    storage suitable for internal business use.
+                    The entire application is containerized using Docker and
+                    Docker Compose, ensuring consistent behavior across
+                    development and production environments. This approach
+                    resolved cross-architecture compatibility challenges,
+                    particularly between Apple Silicon and x86 systems.
+                  </p>
+                </CardBody>
+              </Card>
+
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    Development Workflow
+                  </h3>
+                  <p className="text-default-700">
+                    The development process follows an agile-inspired approach
+                    with iterative improvements based on real business needs.
+                    Git version control with a trunk-based development approach
+                    maintains code quality, while Docker volumes optimize the
+                    development experience.
                   </p>
                 </CardBody>
               </Card>
@@ -187,16 +214,19 @@ export default function WorkflowManagerProjectPage() {
             <h2 className="text-2xl font-heading font-bold mb-4">
               Key Features
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-default-50">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     PDF Upload & Analysis
                   </h3>
                   <p className="text-default-700">
-                    Users can upload PDF artwork, and the system automatically
-                    extracts dimensions using PyPDF2, eliminating the need for
-                    manual measurements and reducing human error.
+                    Clients often provide artwork as PDFs without clear
+                    dimensions. The system automatically extracts these
+                    dimensions using PyPDF2, eliminating the need for manual
+                    measurements and reducing human error. A robust PDF
+                    processing pipeline includes fallback options for
+                    consistency.
                   </p>
                 </CardBody>
               </Card>
@@ -207,10 +237,10 @@ export default function WorkflowManagerProjectPage() {
                     Material Management
                   </h3>
                   <p className="text-default-700">
-                    Comprehensive system for managing printing materials,
-                    including vinyl, laminates, and other production materials
-                    with their associated costs, specifications, and inventory
-                    levels.
+                    Comprehensive material management tracks inventory, costs,
+                    and specifications for various printing materials. This
+                    creates a centralized repository that ensures quotes use
+                    up-to-date pricing and availability information.
                   </p>
                 </CardBody>
               </Card>
@@ -221,11 +251,12 @@ export default function WorkflowManagerProjectPage() {
                     Layout Visualization & Optimization
                   </h3>
                   <p className="text-default-700">
-                    An interactive visualization tool that calculates optimal
-                    arrangement of labels or items on materials, maximizing
-                    efficiency and minimizing waste. This feature alone has
-                    saved tremendous time compared to previous manual
-                    calculations.
+                    One of the most innovative features is the interactive
+                    layout visualization tool. It provides a visual
+                    representation of how labels would be arranged on material
+                    and calculates efficiency metrics in real-time. The custom
+                    optimization algorithm considers rotation, spacing, and
+                    material utilization to minimize waste.
                   </p>
                 </CardBody>
               </Card>
@@ -236,9 +267,11 @@ export default function WorkflowManagerProjectPage() {
                     Quote Generation
                   </h3>
                   <p className="text-default-700">
-                    Automated calculation of accurate quotes based on extracted
-                    dimensions, selected materials, and desired profit margins,
-                    ensuring consistent and profitable pricing.
+                    The system automatically calculates accurate quotes based on
+                    material costs, dimensions, labor estimates, and desired
+                    profit margins. This ensures consistent pricing while
+                    accommodating project-specific requirements and client
+                    considerations.
                   </p>
                 </CardBody>
               </Card>
@@ -249,96 +282,225 @@ export default function WorkflowManagerProjectPage() {
                     Business Dashboard
                   </h3>
                   <p className="text-default-700">
-                    Provides at-a-glance information about recent quotes,
-                    material inventory status, and business performance metrics
-                    for quick decision-making.
+                    A comprehensive dashboard provides at-a-glance information
+                    about recent quotes, material inventory status, and business
+                    performance metrics. This enables quick decision-making and
+                    highlights areas that need attention.
+                  </p>
+                </CardBody>
+              </Card>
+
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    API-Driven Architecture
+                  </h3>
+                  <p className="text-default-700">
+                    The application&apos;s API-driven design separates concerns
+                    between frontend and backend, enabling future integrations
+                    with other business systems. This architecture supports the
+                    system&apos;s evolution into a more comprehensive business
+                    management platform.
                   </p>
                 </CardBody>
               </Card>
             </div>
           </div>
 
-          {/* Development Challenges section */}
+          {/* Technical Challenges section */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">
-              Development Challenges
+              Technical Challenges Overcome
             </h2>
             <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                The most significant technical challenge has been implementing
-                OCR functionality to automatically process customer purchase
-                orders. Since customers provide scanned PDFs of varying quality,
-                creating a robust solution that can accurately extract
-                information from these documents has proven difficult. I&apos;m
-                currently working on refining the OCR implementation to handle
-                low-quality scans more effectively.
-              </p>
-              <p className="mb-4">
-                Another challenge was designing the layout optimization
-                algorithm to efficiently calculate how many items can fit within
-                a given space while accounting for various constraints like
-                bleed areas and cutting margins. Solving this problem
-                dramatically reduced the time spent on manual calculations.
-              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <Card className="bg-default-50">
+                  <CardBody>
+                    <h3 className="text-lg font-heading font-bold mb-3">
+                      Cross-Architecture Docker Compatibility
+                    </h3>
+                    <p className="text-default-700">
+                      One of the most significant challenges was ensuring
+                      consistent Docker operation across different CPU
+                      architectures, particularly between Apple Silicon and x86
+                      systems. After several iterations, I resolved these issues
+                      by using specific Node.js container versions, configuring
+                      environment variables to bypass architecture-specific
+                      dependencies, and creating a custom Docker configuration
+                      with appropriate volume mounts.
+                    </p>
+                  </CardBody>
+                </Card>
+
+                <Card className="bg-default-50">
+                  <CardBody>
+                    <h3 className="text-lg font-heading font-bold mb-3">
+                      PDF Dimension Extraction Accuracy
+                    </h3>
+                    <p className="text-default-700">
+                      Ensuring consistent dimension extraction from various PDF
+                      formats presented significant challenges. Client files
+                      often came in diverse formats with inconsistent metadata.
+                      I developed a robust processing pipeline with multiple
+                      extraction methods and fallback options to handle edge
+                      cases and maintain accuracy regardless of the source
+                      file&apos;s quality or structure.
+                    </p>
+                  </CardBody>
+                </Card>
+
+                <Card className="bg-default-50">
+                  <CardBody>
+                    <h3 className="text-lg font-heading font-bold mb-3">
+                      Layout Optimization Algorithm
+                    </h3>
+                    <p className="text-default-700">
+                      Developing an algorithm that could efficiently calculate
+                      the optimal arrangement of labels on material required
+                      careful consideration of mathematical constraints and
+                      performance optimization. The solution balances
+                      calculation speed with layout efficiency, providing
+                      real-time updates as parameters change while maximizing
+                      material utilization.
+                    </p>
+                  </CardBody>
+                </Card>
+
+                <Card className="bg-default-50">
+                  <CardBody>
+                    <h3 className="text-lg font-heading font-bold mb-3">
+                      Canvas-Based Visualization
+                    </h3>
+                    <p className="text-default-700">
+                      The interactive layout visualization component initially
+                      faced performance issues with larger label arrangements.
+                      Through careful optimization of the rendering logic,
+                      including use of React&apos;s useMemo hook to prevent
+                      unnecessary recalculations, the visualization now
+                      maintains responsiveness even with complex layouts.
+                    </p>
+                  </CardBody>
+                </Card>
+              </div>
             </div>
           </div>
 
-          {/* Impact & Results section */}
+          {/* Business Impact section */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">
-              Impact & Results
+              Business Impact & Results
             </h2>
             <div className="prose max-w-none text-default-700">
               <p className="mb-4">
-                This application has transformed my business operations by:
+                This application has transformed our business operations with
+                measurable improvements:
               </p>
-              <ul className="list-disc pl-5 space-y-1 mb-4">
+              <ul className="list-disc pl-5 space-y-2 mb-4">
                 <li>
-                  Eliminating time-consuming manual calculations for material
-                  usage
+                  <strong>Time efficiency:</strong> Quote creation time reduced
+                  from 30+ minutes to less than 5 minutes per quote
                 </li>
                 <li>
-                  Standardizing the quoting process for consistency and accuracy
+                  <strong>Accuracy improvement:</strong> Elimination of manual
+                  calculation errors has improved quote precision
                 </li>
                 <li>
-                  Reducing human error in dimension measurements and price
-                  calculations
+                  <strong>Material optimization:</strong> Layout visualization
+                  has reduced material waste by identifying efficient
+                  arrangements
                 </li>
                 <li>
-                  Creating a centralized system for managing materials and
-                  quotes
+                  <strong>Process standardization:</strong> Consistent quoting
+                  approach across all team members
                 </li>
                 <li>
-                  Providing data-driven insights into business performance
+                  <strong>Business intelligence:</strong> Better visibility into
+                  quote histories and conversion rates
                 </li>
               </ul>
+              <p className="mb-4">
+                The system has become an essential part of our daily operations,
+                enabling faster response to customer inquiries and more
+                competitive pricing strategies.
+              </p>
             </div>
           </div>
 
-          {/* Ongoing Development section */}
+          {/* Future Development section */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">
-              Ongoing Development
+              Future Development Plans
             </h2>
             <div className="prose max-w-none text-default-700">
               <p className="mb-4">
-                The system is currently in active use while continuing to
-                evolve. Future enhancements include:
+                The system will continue to evolve with several planned
+                enhancements:
               </p>
               <ul className="list-disc pl-5 space-y-1 mb-4">
-                <li>Improved OCR processing for customer purchase orders</li>
                 <li>Stock items management and inventory tracking</li>
-                <li>Customer information management</li>
+                <li>
+                  Customer information database with relationship management
+                </li>
                 <li>Purchase order creation and tracking</li>
-                <li>Delivery note generation</li>
-                <li>Enhanced analytics and reporting capabilities</li>
+                <li>Order analytics dashboard with profitability metrics</li>
+                <li>Delivery note generation and shipping integration</li>
+                <li>User authentication with role-based permissions</li>
+                <li>Migration to PostgreSQL for improved data integrity</li>
+                <li>Comprehensive test coverage implementation</li>
               </ul>
               <p className="mb-4">
-                This project demonstrates my ability to identify operational
-                inefficiencies and develop comprehensive full-stack solutions
-                that address real business needs, combining frontend and backend
-                technologies to create practical, value-adding tools.
+                These enhancements will transform the current quoting system
+                into a comprehensive business management platform tailored to
+                the specific needs of our printing operations.
               </p>
+            </div>
+          </div>
+
+          {/* Learning & Growth Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-heading font-bold mb-4">
+              Key Learnings & Technical Growth
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    Technical Skills Gained
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>
+                      Docker containerization and multi-container architecture
+                    </li>
+                    <li>Cross-platform compatibility troubleshooting</li>
+                    <li>Advanced React patterns with TypeScript</li>
+                    <li>Django REST Framework implementation</li>
+                    <li>Canvas-based visualization programming</li>
+                    <li>PDF processing and analysis techniques</li>
+                  </ul>
+                </CardBody>
+              </Card>
+
+              <Card className="bg-default-50">
+                <CardBody>
+                  <h3 className="text-lg font-heading font-bold mb-3">
+                    Development Approach Insights
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1">
+                    <li>The importance of early cross-platform testing</li>
+                    <li>
+                      The value of containerization for consistent environments
+                    </li>
+                    <li>
+                      The balance between custom solutions and existing
+                      libraries
+                    </li>
+                    <li>The critical role of comprehensive error handling</li>
+                    <li>
+                      The effectiveness of business-focused technology decisions
+                    </li>
+                  </ul>
+                </CardBody>
+              </Card>
             </div>
           </div>
 

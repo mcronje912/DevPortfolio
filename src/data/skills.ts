@@ -38,8 +38,7 @@ const unsortedSkillsData: SkillCategory[] = [
   {
     name: "Backend Development",
     skills: [
-      { name: "Supabase", level: 9 },
-      { name: "Firebase", level: 9 },
+      { name: "Supabase/Firebase", level: 9 },
       { name: "Node.js/Express", level: 7 },
       { name: "Python", level: 7 },
       { name: "Django", level: 6 },
@@ -56,10 +55,12 @@ const unsortedSkillsData: SkillCategory[] = [
       { name: "Git/GitHub", level: 8 },
       { name: "Google Cloud Platform", level: 8 },
       { name: "Vercel", level: 8 },
-      { name: "Cloud Functions", level: 8 },
+      { name: "Serverless Functions", level: 8 },
       { name: "CI/CD", level: 7 },
       { name: "App Store Submission", level: 8 },
       { name: "Google Play Submission", level: 8 },
+      { name: "Docker", level: 6 },
+
     ],
   },
   {

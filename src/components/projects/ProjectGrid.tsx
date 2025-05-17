@@ -1,5 +1,5 @@
+// src/components/projects/ProjectGrid.tsx
 import { ProjectCard } from "./ProjectCard";
-
 import { Project } from "@/data/projects";
 
 interface ProjectGridProps {
@@ -13,10 +13,11 @@ export const ProjectGrid: React.FC<ProjectGridProps> = ({ projects }) => {
         <ProjectCard
           key={project.id}
           description={project.description}
-          imageUrl={project.imageUrl}
+          thumbnailUrl={project.thumbnailUrl}
           projectUrl={`/projects/${project.id}`}
           tags={project.tags}
           title={project.title}
+          deviceType={project.deviceType}
         />
       ))}
     </div>
