@@ -63,16 +63,16 @@ export const projects: Project[] = [
     id: "portfolio",
     title: "Developer Portfolio",
     description:
-      "A responsive portfolio website built with React, TypeScript, and Hero UI.",
+      "A responsive portfolio website built with React, TypeScript, and HeroUI to showcase my projects and skills.",
     longDescription:
-      "This portfolio website showcases my development skills and projects. Built with React, TypeScript, and Hero UI, it features a responsive design that works seamlessly across all devices. The site includes interactive components, dynamic content loading, and implements both light and dark themes.",
-    thumbnailUrl: "/images/projects/thumbnails/placeholder.png",
-    deviceType: "desktop", // Added property
-    tags: ["Web", "Portfolio", "Responsive"],
+      "This portfolio website demonstrates my approach to web development using React and TypeScript. It features responsive design, accessibility considerations, and interactive elements like project showcases with device mockups and lightbox modals.",
+    thumbnailUrl: "/images/projects/thumbnails/portfolio.png", // Update with actual thumbnail
+    deviceType: "desktop",
+    tags: ["Web App", "Portfolio", "React"],
     projectUrl: "/projects/portfolio",
     featured: false,
-    technologies: ["React", "TypeScript", "Hero UI", "Tailwind CSS"],
-    completed: "2023",
+    technologies: ["React", "TypeScript", "HeroUI", "Tailwind CSS", "Vite"],
+    completed: "2024",
   },
   {
     id: "auction-app",
@@ -215,12 +215,15 @@ export const projects: Project[] = [
       "An exploratory R&D project that uses computer vision and OCR to automatically detect and recognize vehicle license plates from images.",
     longDescription:
       "This License Plate Recognition System is an R&D project developed to investigate computer vision capabilities for automatically identifying license plates. Built with Python, FastAPI, and OpenCV, it identifies South African license plates in images with custom text merging algorithms to improve OCR accuracy. This technology has direct applications for our company's parking guidance systems.",
-    thumbnailUrl: "/images/projects/thumbnails/placeholder.png",
-    deviceType: "desktop", // Added property
+    thumbnailUrl: "/images/projects/thumbnails/lic-thumb.png",
+    deviceType: "desktop",
     tags: ["Computer Vision", "Python", "FastAPI", "R&D"],
     projectUrl: "/projects/license-plate-recognition",
     featured: true,
     technologies: ["Python", "FastAPI", "OpenCV", "EasyOCR", "NumPy", "RegEx"],
     completed: "2024",
+    mockups: {
+      desktop: "/images/projects/license-plate-recognition/lic-1.png",
+    },
   },
 ];

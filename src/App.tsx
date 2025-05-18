@@ -17,6 +17,7 @@ import ExperiencePage from "@/pages/experience";
 import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
 import { MockupDemo } from "@/components/mockups/MockupDemo";
+import PortfolioProjectPage from "./pages/portfolio";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           element={<LicensePlateRecognitionPage />}
           path="/projects/license-plate-recognition"
         />
+        <Route element={<PortfolioProjectPage />} path="/projects/portfolio" />
         <Route element={<MockupDemo />} path="/mockup-demo" />{" "}
         {/* Add License Plate route */}
         <Route element={<SkillsPage />} path="/skills" />
