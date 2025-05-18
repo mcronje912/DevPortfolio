@@ -198,5 +198,5 @@ Edit the content in `src/config/site.ts` to update:
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by Marco Cronje</sub>
+  <sub>Built with ❤️ by Marco Cronje.</sub>
 </div>
