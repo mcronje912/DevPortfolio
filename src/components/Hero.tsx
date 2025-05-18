@@ -1,10 +1,32 @@
 // src/components/Hero.tsx
+import { useState, useEffect } from "react";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
+import { motion, AnimatePresence } from "framer-motion";
 
-import { ProfileImage } from "@/components/ProfileImage";
+// Later we can expand this to multiple images for rotation
+const mockupImages = [
+  "/images/mockups/hero-mockup.png", // This will be your downloaded mockup
+];
 
 export const Hero = () => {
+  // State for controlling which image is currently shown
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  // Image rotation logic (for future use when you add more images)
+  useEffect(() => {
+    // Only setup rotation if there are multiple images
+    if (mockupImages.length <= 1) return;
+    
+    const rotationInterval = setInterval(() => {
+      setCurrentImageIndex(prevIndex => 
+        prevIndex === mockupImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // Change image every 5 seconds
+    
+    return () => clearInterval(rotationInterval);
+  }, []);
+
   return (
     <section className="flex flex-col items-center justify-center py-20 md:py-28">
       <div className="container px-4 mx-auto">
@@ -60,18 +82,25 @@ export const Hero = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-2/5 flex justify-center relative">
-            {/* Profile image with animated accent effect */}
-            <div className="relative">
-              <ProfileImage
-                className="shadow-xl z-10 relative"
-                effectVariant="accent"
-                size="sm"
-              />
-              {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-verdigris rounded-full opacity-30 blur-md animate-pulse-subtle" />
-              <div className="absolute -top-4 -left-4 w-16 h-16 bg-cerulean rounded-full opacity-30 blur-md animate-pulse-subtle delay-300" />
-            </div>
+          {/* Mockup display area - with transparent background */}
+          <div className="w-full md:w-2/5 flex justify-center">
+            {/* Image container with animation capabilities */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentImageIndex}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                {/* Clean mockup image without card frame or glowing orbs */}
+                <img
+                  src={mockupImages[currentImageIndex]}
+                  alt="Project mockup showcase"
+                  className="w-full h-auto max-w-[380px] object-contain"
+                />
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </div>

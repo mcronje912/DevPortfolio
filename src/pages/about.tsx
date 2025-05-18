@@ -44,9 +44,7 @@ export default function AboutPage() {
                         <p>
                           <strong>Location:</strong> Johannesburg, South Africa
                         </p>
-                        <p>
-                          <strong>Email:</strong> marcocronje@gmail.com
-                        </p>
+
                         {/* Phone number removed as requested */}
                       </div>
                     </div>
