@@ -133,8 +133,8 @@ export const projects: Project[] = [
       "A cross-platform invoicing application built with Flutter for personal business management with comprehensive client, product, and invoice tracking.",
     longDescription:
       "InvoiceCompanion is a full-featured invoicing solution I developed to address my own business needs. Built with Flutter, this cross-platform app provides complete invoice management including customer tracking, product catalogs, quote and invoice generation with PDF export, and business analytics—all with an intuitive interface that works seamlessly across devices.",
-    thumbnailUrl: "/images/projects/thumbnails/placeholder.png",
-    deviceType: "mobile", // Added property
+    thumbnailUrl: "/images/projects/thumbnails/inv-thumb-left.png", // Update with actual thumbnail
+    deviceType: "mobile",
     tags: ["Mobile App", "Flutter", "Cross-Platform", "Business Tool"],
     projectUrl: "/projects/invoice-companion",
     featured: true,
@@ -147,6 +147,9 @@ export const projects: Project[] = [
       "PDF Generation",
     ],
     completed: "2024 (Ongoing)",
+    mockups: {
+      mobile: "/images/projects/invoice-companion/inv1.PNG",
+    },
   },
   {
     id: "logistics-management-system",

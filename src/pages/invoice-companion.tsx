@@ -6,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 
 import { title } from "../components/primitives"; 
 import DefaultLayout from "../layouts/default";
+import { InvoiceShowcase } from "@/components/projects/InvoiceShowcase";
 
 export default function InvoiceCompanionProjectPage() {
   return (
@@ -45,21 +46,8 @@ export default function InvoiceCompanionProjectPage() {
             </div>
           </div>
 
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
+          {/* Mobile App Showcase */}
+          <InvoiceShowcase />
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
