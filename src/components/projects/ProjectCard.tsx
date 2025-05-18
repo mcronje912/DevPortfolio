@@ -1,4 +1,4 @@
-// src/components/projects/ProjectCard.tsx (updated with divider)
+// src/components/projects/ProjectCard.tsx (with wider divider and improved responsiveness)
 import { Card, CardFooter } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
@@ -29,7 +29,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Background gradient - improved for light mode */}
         <div className="absolute inset-0 bg-gradient-to-br from-cerulean-200/80 to-cerulean-600/50 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
 
-        {/* Image container */}
+        {/* Image container with improved desktop image responsiveness */}
         <div className="relative h-full w-full flex items-center justify-center">
           {deviceType === "mobile" ? (
             // Mobile device - centered, enlarged sizing
@@ -39,12 +39,15 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               className="h-[230px] w-auto max-w-[50%] object-contain z-10"
             />
           ) : (
-            // Desktop/laptop - fill container
-            <img
-              src={thumbnailUrl}
-              alt={title}
-              className="w-full h-full object-cover"
-            />
+            // Desktop/laptop - improved responsiveness
+            <div className="w-full h-full overflow-hidden flex items-center justify-center">
+              <img
+                src={thumbnailUrl}
+                alt={title}
+                className="w-auto h-auto min-w-[100%] min-h-[100%] object-cover object-center"
+                // This combination makes images responsive while ensuring they always cover the container
+              />
+            </div>
           )}
         </div>
       </div>
@@ -53,9 +56,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       <CardFooter className="flex flex-col flex-grow items-start p-5 bg-white dark:bg-rich-black-900 border-t border-gray-100 dark:border-rich-black-900">
         {/* Heading with decorative divider beneath it */}
         <div className="w-full mb-3">
-          <h4 className="font-heading font-bold text-xl text-cerulean-700 dark:text-cerulean-300">{title}</h4>
-          {/* Stylish gradient divider */}
-          <div className="mt-2 h-[2px] w-30 bg-gradient-to-r from-cerulean-400 to-cerulean-600/30 dark:from-cerulean-600 dark:to-cerulean-900/50 rounded-full"></div>
+          <h4 className="font-heading font-extrabold text-2xl tracking-tight text-cerulean-700 dark:text-cerulean-300">{title}</h4>
+          {/* Wider gradient divider */}
+          <div className="mt-2 h-[3px] w-36 bg-gradient-to-r from-cerulean-500 to-cerulean-600/30 dark:from-cerulean-500 dark:to-cerulean-800/50 rounded-full"></div>
         </div>
         
         <p className="text-sm text-rich-black-600 dark:text-ash-gray-300">{description}</p>

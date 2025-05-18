@@ -6,6 +6,10 @@ import { Card, CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import {
+  AdminDashboardShowcase,
+  MobileAppShowcase,
+} from "@/components/projects/LogisticsShowcase";
 
 export default function LogisticsManagementSystemPage() {
   return (
@@ -44,22 +48,6 @@ export default function LogisticsManagementSystemPage() {
               </Chip>
             </div>
           </div>
-
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -117,7 +105,7 @@ export default function LogisticsManagementSystemPage() {
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Completed
                   </h3>
-                  <p>2025 (Ongoing Development)</p>
+                  <p>2025 (Proof of concept)</p>
                 </CardBody>
               </Card>
 
@@ -129,6 +117,106 @@ export default function LogisticsManagementSystemPage() {
                   <p>Full Stack Developer</p>
                 </CardBody>
               </Card>
+            </div>
+          </div>
+
+          {/* Admin Dashboard Showcase */}
+          <AdminDashboardShowcase />
+
+          {/* Mobile App + Description Side by Side Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-heading font-bold mb-6">
+              Driver Mobile Application
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Mobile showcase - narrower, takes up 1/3 of the width */}
+              <div className="md:col-span-1">
+                <MobileAppShowcase />
+              </div>
+
+              {/* Description text - takes up 2/3 of the width */}
+              <div className="md:col-span-2">
+                <Card className="h-full">
+                  <CardBody>
+                    <h3 className="text-xl font-heading font-bold mb-4">
+                      Mobile App Design & Features
+                    </h3>
+                    <p className="text-default-700 mb-6">
+                      The mobile application was designed specifically for
+                      drivers transporting hazardous materials, with particular
+                      attention to ease of use while on the road. By digitizing
+                      all aspects of the delivery process, we&apos;ve created a
+                      solution that enhances safety, efficiency, and compliance.
+                    </p>
+
+                    <div className="mb-6">
+                      <h4 className="font-medium mb-2">Key Mobile Features:</h4>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          <strong>Digital Signature Capture:</strong> Secure,
+                          legally-binding electronic signatures that eliminate
+                          the need for paper documentation while maintaining
+                          compliance with transportation regulations.
+                        </li>
+                        <li>
+                          <strong>Offline Functionality:</strong> Critical data
+                          is stored locally and synchronized when connectivity
+                          is restored, ensuring drivers can continue operations
+                          in remote areas with limited cell service.
+                        </li>
+                        <li>
+                          <strong>Real-time Updates:</strong> Drivers receive
+                          immediate notifications about route changes, delivery
+                          updates, and new assignments without needing to
+                          contact dispatch.
+                        </li>
+                        <li>
+                          <strong>Hazardous Materials Documentation:</strong>{" "}
+                          Digital access to all required hazmat documentation,
+                          safety data sheets, and handling instructions specific
+                          to each shipment.
+                        </li>
+                        <li>
+                          <strong>Intuitive Interface:</strong> Designed for
+                          minimal distraction with large buttons, clear visuals,
+                          and voice feedback to maintain driver safety.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="font-medium mb-2">
+                        Technical Implementation:
+                      </h4>
+                      <p className="text-default-700 mb-4">
+                        Built with Flutter to ensure consistent performance
+                        across both iOS and Android devices, the mobile
+                        application incorporates various technical solutions to
+                        address the unique challenges of hazardous materials
+                        logistics:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          <strong>Encrypted Data Storage:</strong> All sensitive
+                          information is stored using AES-256 encryption,
+                          meeting industry compliance requirements.
+                        </li>
+                        <li>
+                          <strong>Optimized Battery Usage:</strong> Intelligent
+                          location tracking that balances accuracy with battery
+                          preservation during long routes.
+                        </li>
+                        <li>
+                          <strong>Conflict Resolution:</strong> Sophisticated
+                          data synchronization system that correctly handles
+                          conflicts between offline changes and server updates.
+                        </li>
+                      </ul>
+                    </div>
+                  </CardBody>
+                </Card>
+              </div>
             </div>
           </div>
 

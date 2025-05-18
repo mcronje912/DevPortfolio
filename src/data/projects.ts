@@ -12,7 +12,8 @@ export interface Project {
   technologies: string[];
   completed: string;
   demoUrl?: string; // Optional URL for live demo
-  mockups?: {      // Optional mockup images
+  mockups?: {
+    // Optional mockup images
     mobile?: string;
     tablet?: string;
     desktop?: string;
@@ -27,7 +28,7 @@ export const projects: Project[] = [
       "An intelligent solar geyser monitoring system that helps users optimize their solar energy usage.",
     longDescription:
       "Etamax is a comprehensive solution for solar energy optimization. I developed both the cross-platform mobile application using Flutter and the React-based management dashboard. The system provides real-time monitoring of solar geyser performance, enabling users to maximize energy efficiency and reduce costs. The solution incorporates IoT device integration through BLE communications, providing users with actionable insights about their solar energy usage.",
-    thumbnailUrl: "/images/projects/thumbnails/placeholder.png",
+    thumbnailUrl: "/images/projects/thumbnails/etamax-thumb.png",
     deviceType: "dual", // Added property
     tags: ["Mobile App", "Web Dashboard", "IoT Integration"],
     projectUrl: "/projects/etamax",
@@ -36,8 +37,8 @@ export const projects: Project[] = [
     completed: "2024",
     mockups: {
       mobile: "/images/projects/etamax/mobile/home.png",
-      desktop: "/images/projects/etamax/web/dashboard.png"
-    }
+      desktop: "/images/projects/etamax/web/dashboard.png",
+    },
   },
   {
     id: "react-quiz",
@@ -54,9 +55,9 @@ export const projects: Project[] = [
     technologies: ["Flutter", "Dart", "Firebase", "State Management"],
     completed: "2022",
     mockups: {
-      mobile: "/images/projects/react-quiz/mobile/react-splash.png", 
-      desktop: "/images/projects/react-quiz/mobile/concept-map.png"
-    }
+      mobile: "/images/projects/react-quiz/mobile/react-splash.png",
+      desktop: "/images/projects/react-quiz/mobile/concept-map.png",
+    },
   },
   {
     id: "portfolio",
@@ -96,8 +97,8 @@ export const projects: Project[] = [
     completed: "In Development (2024)",
     mockups: {
       desktop: "/images/projects/auction-app/auction1.png",
-      mobile: "/images/projects/auction-app/auction2.png"
-    }
+      mobile: "/images/projects/auction-app/auction2.png",
+    },
   },
   {
     id: "workflow-manager",
@@ -122,8 +123,8 @@ export const projects: Project[] = [
     ],
     completed: "2025 (Ongoing)",
     mockups: {
-      desktop: "/images/projects/workflow-manager/bm1.png"
-    }
+      desktop: "/images/projects/workflow-manager/bm1.png",
+    },
   },
   {
     id: "invoice-companion",
@@ -154,9 +155,15 @@ export const projects: Project[] = [
       "A comprehensive platform for hazardous materials logistics with real-time tracking, digital signatures, and operational management.",
     longDescription:
       "This logistics management system was developed for an international logistics company specializing in hazardous materials transport. It features a Flutter-based mobile app for drivers and a React-based admin dashboard with real-time synchronization, digital signature capture, and comprehensive job management.",
-    thumbnailUrl: "/images/projects/thumbnails/placeholder.png",
-    deviceType: "dual", // Added property
-    tags: ["Full Stack", "Mobile App", "Admin Dashboard", "Real-time"],
+    thumbnailUrl: "/images/projects/thumbnails/hazmat-mobile.png", // Update with an actual thumbnail
+    deviceType: "mobile",
+    tags: [
+      "Full Stack",
+      "Mobile App",
+      "Admin Dashboard",
+      "Real-time",
+      "Business Tool",
+    ],
     projectUrl: "/projects/logistics-management-system",
     featured: true,
     technologies: [
@@ -168,6 +175,10 @@ export const projects: Project[] = [
       "Secure Cloud Database",
     ],
     completed: "2025 (Ongoing)",
+    mockups: {
+      mobile: "/images/projects/logistics/mobile/haz-mobile1.PNG",
+      desktop: "/images/projects/logistics/web/haz-admin1.png",
+    },
   },
   {
     id: "emotion-detection",
@@ -176,7 +187,7 @@ export const projects: Project[] = [
       "An AI-powered web application that analyzes text to identify emotional content across five primary emotions, using local NLP models.",
     longDescription:
       "The Emotion Detection Web App is an AI-powered tool that analyzes text for emotional content across five primary emotions: joy, sadness, anger, fear, and disgust. Built as part of the IBM Full Stack Developer program, this application showcases the successful integration of the Hugging Face Transformers library instead of the recommended Watson NLP, creating a privacy-focused local solution.",
-    thumbnailUrl: "/images/projects/thumbnails/placeholder.png",
+    thumbnailUrl: "/images/projects/thumbnails/nlp-thumb.png",
     deviceType: "desktop", // Added property
     tags: ["AI/ML", "Python", "Flask", "NLP"],
     projectUrl: "/projects/emotion-detection",
@@ -191,8 +202,8 @@ export const projects: Project[] = [
     ],
     completed: "2024",
     mockups: {
-      desktop: "/images/projects/emotion-detection/nlp1.png"
-    }
+      desktop: "/images/projects/emotion-detection/nlp1.png",
+    },
   },
   {
     id: "license-plate-recognition",
