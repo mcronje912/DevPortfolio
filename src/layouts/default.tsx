@@ -50,20 +50,6 @@ export default function DefaultLayout({
                 </li>
               </ul>
             </div>
-            
-            <div>
-              <h3 className="text-xl font-heading font-bold mb-4">Contact</h3>
-              <ul className="space-y-2">
-                <li className="text-ash-gray-500">
-                  Email: <Link href="mailto:marcocronje@gmail.com" className="hover:text-white">
-                    marcocronje@gmail.com
-                  </Link>
-                </li>
-                <li className="text-ash-gray-500">
-                  Phone: +27 83 442 3567
-                </li>
-              </ul>
-            </div>
           </div>
           
           <div className="border-t border-ash-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
