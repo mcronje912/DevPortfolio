@@ -1,6 +1,5 @@
 // src/pages/emotion-detection.tsx
 import { Chip } from "@heroui/chip";
-import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Card, CardBody } from "@heroui/card";
 

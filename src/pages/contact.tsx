@@ -1,13 +1,11 @@
 // src/pages/contact.tsx
 import { Card, CardBody } from "@heroui/card";
 import { Link } from "@heroui/link";
-import { Divider } from "@heroui/divider";
 import { motion } from "framer-motion";
 
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { GithubIcon } from "@/components/icons";
 
 export default function ContactPage() {
   return (
@@ -17,16 +15,18 @@ export default function ContactPage() {
           {/* Header Section with improved spacing */}
           <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.5 }}
             >
               <h1 className={title({ size: "lg", class: "mb-6" })}>
                 Contact Me
               </h1>
               <p className="text-default-600 mt-4 max-w-2xl mx-auto text-xl">
-                Have a project in mind or want to discuss potential opportunities?
-                <br />I&apos;d love to hear from you!
+                Have a project in mind or want to discuss potential
+                opportunities?
+                <br />
+                I&apos;d love to hear from you!
               </p>
             </motion.div>
           </div>
@@ -36,8 +36,8 @@ export default function ContactPage() {
             {/* Contact Information - Left Column */}
             <div className="lg:col-span-4 space-y-6">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
                 <h2 className="text-2xl font-heading font-bold mb-6">
@@ -52,8 +52,8 @@ export default function ContactPage() {
                     </h3>
                     <Link
                       isExternal
-                      href="https://www.linkedin.com/in/marco-cronje/"
                       className="text-cerulean hover:text-cerulean-400 font-medium text-lg"
+                      href="https://www.linkedin.com/in/marco-cronje/"
                     >
                       linkedin.com/in/marco-cronje
                     </Link>
@@ -66,10 +66,10 @@ export default function ContactPage() {
                     <h3 className="text-xl font-heading font-medium mb-2 text-white">
                       GitHub
                     </h3>
-                    <Link 
-                      isExternal 
-                      href="https://github.com/mcronje912"
+                    <Link
+                      isExternal
                       className="text-cerulean hover:text-cerulean-400 font-medium text-lg"
+                      href="https://github.com/mcronje912"
                     >
                       github.com/mcronje912
                     </Link>
@@ -96,8 +96,8 @@ export default function ContactPage() {
             {/* Form Column - Takes more space */}
             <div className="lg:col-span-8">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
                 <Card className="bg-white/5 dark:bg-rich-black-600/50 backdrop-blur-sm border-0 shadow-xl overflow-hidden">

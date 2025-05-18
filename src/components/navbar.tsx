@@ -11,7 +11,6 @@ import {
   NavbarMenu,
   NavbarMenuItem,
 } from "@heroui/navbar";
-import { link as linkStyles } from "@heroui/theme";
 import clsx from "clsx";
 import { useLocation } from "react-router-dom";
 
@@ -29,23 +28,23 @@ export const Navbar = () => {
   };
 
   return (
-    <HeroUINavbar 
-      maxWidth="xl" 
-      position="sticky" 
-      isMenuOpen={isMenuOpen} 
-      onMenuOpenChange={setIsMenuOpen}
+    <HeroUINavbar
       className="bg-default-100/70 dark:bg-rich-black-400/80 backdrop-blur-md border-b border-default-200 dark:border-rich-black-300"
+      isMenuOpen={isMenuOpen}
+      maxWidth="xl"
+      position="sticky"
+      onMenuOpenChange={setIsMenuOpen}
     >
       {/* Logo section */}
       <NavbarContent className="pr-4" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="lg:hidden" 
+          className="lg:hidden"
         />
         <NavbarBrand className="ml-2">
           <Link
-            href="/"
             className="flex items-center gap-1 font-heading font-bold text-xl text-cerulean hover:scale-105 duration-200"
+            href="/"
           >
             MC
           </Link>
@@ -59,9 +58,9 @@ export const Navbar = () => {
             <Link
               className={clsx(
                 "relative px-2 py-1",
-                isActive(item.href) 
-                  ? "text-cerulean font-semibold" 
-                  : "text-default-600 dark:text-default-400 hover:text-cerulean"
+                isActive(item.href)
+                  ? "text-cerulean font-semibold"
+                  : "text-default-600 dark:text-default-400 hover:text-cerulean",
               )}
               href={item.href}
             >
@@ -79,25 +78,25 @@ export const Navbar = () => {
       <NavbarContent justify="end">
         <div className="flex items-center gap-3">
           {/* GitHub icon */}
-          <Link 
-            isExternal 
-            href={siteConfig.links.github} 
+          <Link
+            isExternal
             className="text-default-600 dark:text-default-400 hover:scale-110"
+            href={siteConfig.links.github}
           >
             <GithubIcon className="h-5 w-5" />
           </Link>
-          
+
           {/* Theme toggle */}
           <ThemeSwitch />
-          
+
           {/* Contact Button */}
           <NavbarItem className="hidden sm:flex">
             <Button
               as={Link}
-              href="/contact"
               className="bg-cerulean text-white hover:bg-cerulean-600"
-              size="sm"
+              href="/contact"
               radius="full"
+              size="sm"
             >
               Contact Me
             </Button>
@@ -111,14 +110,14 @@ export const Navbar = () => {
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item.label}-${index}`}>
               <Link
-                href={item.href}
-                size="lg"
                 className={clsx(
                   "relative pl-2",
-                  isActive(item.href) 
-                    ? "text-cerulean font-semibold" 
-                    : "text-default-600 dark:text-default-400"
+                  isActive(item.href)
+                    ? "text-cerulean font-semibold"
+                    : "text-default-600 dark:text-default-400",
                 )}
+                href={item.href}
+                size="lg"
               >
                 {item.label}
                 {/* Static indicator for mobile menu */}
@@ -131,10 +130,10 @@ export const Navbar = () => {
           <NavbarMenuItem className="mt-6 sm:hidden">
             <Button
               as={Link}
-              href="/contact"
               className="bg-cerulean text-white w-full hover:bg-cerulean-600"
-              size="md"
+              href="/contact"
               radius="full"
+              size="md"
             >
               Contact Me
             </Button>
