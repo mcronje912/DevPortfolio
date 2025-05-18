@@ -24,9 +24,9 @@ export const BackgroundPattern: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: isDark
-            ? 'linear-gradient(135deg, #0b2027 0%, #40798c 100%)'  // Dark mode gradient
-            : 'linear-gradient(135deg, #f6f1d1 0%, #70a9a1 100%)', // Light mode gradient
+background: isDark
+  ? 'linear-gradient(135deg, #030e12 0%, #1e3f4a 100%)' // Much darker dark mode
+  : 'linear-gradient(135deg, #f6f1d1 0%, #70a9a1 100%)', // Light mode unchanged
           zIndex: -2,
           pointerEvents: 'none',
         }}
@@ -41,7 +41,7 @@ export const BackgroundPattern: React.FC = () => {
           right: 0,
           bottom: 0,
           backgroundImage: 'url("/images/global/background-pattern.svg")',
-          backgroundSize: '800',
+          backgroundSize: '900',
           backgroundRepeat: 'repeat',
           opacity: isDark ? .5 : 0.65, // INCREASED from 0.35/0.45 to 0.5/0.65
           zIndex: -1,

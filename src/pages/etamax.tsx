@@ -1,4 +1,4 @@
-// src/pages/projects/etamax.tsx or can be used in your project-detail.tsx with the etamax ID
+// src/pages/etamax.tsx
 import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
@@ -6,6 +6,8 @@ import { Card, CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
+import { EtamaxWebShowcase } from "@/components/projects/EtamaxWebShowcase";
+import { EtamaxMobileShowcase } from "@/components/projects/EtamaxMobileShowcase";
 
 export default function EtamaxProjectPage() {
   return (
@@ -47,22 +49,6 @@ export default function EtamaxProjectPage() {
               </Chip>
             </div>
           </div>
-
-          {/* Image container */}
-          <Card className="mb-10 shadow-md overflow-hidden">
-            <CardBody className="p-0">
-              <div className="bg-gradient-to-br from-cerulean to-verdigris h-80 w-full flex items-center justify-center">
-                <div className="text-center px-6">
-                  <p className="text-white text-xl font-medium mb-2">
-                    Project Image
-                  </p>
-                  <p className="text-white-800 text-sm opacity-80">
-                    Screenshots coming soon
-                  </p>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
 
           {/* Overview section */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -143,6 +129,133 @@ export default function EtamaxProjectPage() {
             </div>
           </div>
 
+          {/* Web Dashboard Showcase */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-heading font-bold mb-6">
+              Administrative Dashboard
+            </h2>
+            <EtamaxWebShowcase />
+
+            {/* Admin Features Card */}
+            <Card className="bg-default-50">
+              <CardBody>
+                <h3 className="text-lg font-heading font-bold mb-3">
+                  Admin Dashboard Features
+                </h3>
+                <ul className="list-disc pl-5 space-y-1">
+                  <li>
+                    Real-time device monitoring across the entire deployment
+                    ecosystem
+                  </li>
+                  <li>Energy usage analytics with detailed historical data</li>
+                  <li>User management and role-based access control</li>
+                  <li>Alert system for device issues and maintenance needs</li>
+                  <li>
+                    Comprehensive reporting tools for system performance
+                    analysis
+                  </li>
+                </ul>
+              </CardBody>
+            </Card>
+          </div>
+
+          {/* Mobile App + Description Side by Side Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-heading font-bold mb-6">
+              Mobile Application
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Mobile showcase - narrower, takes up 1/3 of the width */}
+              <div className="md:col-span-1">
+                <EtamaxMobileShowcase />
+              </div>
+
+              {/* Description text - takes up 2/3 of the width */}
+              <div className="md:col-span-2">
+                <Card className="h-full">
+                  <CardBody>
+                    <h3 className="text-xl font-heading font-bold mb-4">
+                      Mobile App Design & Features
+                    </h3>
+                    <p className="text-default-700 mb-6">
+                      The Etamax mobile application provides homeowners with
+                      intuitive control over their solar water heating systems.
+                      By focusing on ease of use and real-time data
+                      visualization, the app helps users make informed decisions
+                      about their energy usage and maximize solar power
+                      utilization.
+                    </p>
+
+                    <div className="mb-6">
+                      <h4 className="font-medium mb-2">Key Mobile Features:</h4>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          <strong>Real-time Temperature Monitoring:</strong>{" "}
+                          View current water temperature and track changes
+                          throughout the day.
+                        </li>
+                        <li>
+                          <strong>Energy Usage Visualization:</strong>{" "}
+                          Interactive graphs showing solar vs. grid energy
+                          consumption with cost savings.
+                        </li>
+                        <li>
+                          <strong>Custom Heating Schedules:</strong> Set
+                          personalized schedules to optimize energy usage based
+                          on your household routine.
+                        </li>
+                        <li>
+                          <strong>Boost Mode Control:</strong> Manually activate
+                          heating when needed, with intelligent timing
+                          suggestions to minimize grid power use.
+                        </li>
+                        <li>
+                          <strong>System Alerts:</strong> Receive notifications
+                          about potential issues, including leak detection and
+                          maintenance reminders.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4 className="font-medium mb-2">
+                        Technical Implementation:
+                      </h4>
+                      <p className="text-default-700 mb-4">
+                        Built with Flutter to ensure consistent performance
+                        across both iOS and Android devices, with several
+                        technical innovations:
+                      </p>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          <strong>Robust BLE Architecture:</strong> Custom
+                          implementation of Bluetooth Low Energy connectivity
+                          with automatic reconnection and data validation.
+                        </li>
+                        <li>
+                          <strong>Efficient State Management:</strong> Using
+                          Provider pattern for predictable state updates and
+                          responsive UI.
+                        </li>
+                        <li>
+                          <strong>Offline Capability:</strong> Local data
+                          storage ensures the app remains functional even
+                          without internet connectivity.
+                        </li>
+                        <li>
+                          <strong>Analytics Engine:</strong> On-device
+                          processing of usage data to deliver personalized
+                          energy-saving recommendations.
+                        </li>
+                      </ul>
+                    </div>
+                  </CardBody>
+                </Card>
+              </div>
+            </div>
+          </div>
+
           {/* My Role section */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">My Role</h2>
@@ -172,154 +285,6 @@ export default function EtamaxProjectPage() {
                   integration
                 </li>
               </ul>
-            </div>
-          </div>
-
-          {/* System Components section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              System Components
-            </h2>
-
-            {/* Mobile Application sub-section */}
-            <div className="mb-8">
-              <h3 className="text-xl font-heading font-bold mb-3">
-                Mobile Application
-              </h3>
-              <Card className="mb-6 bg-default-50">
-                <CardBody className="p-0">
-                  <div className="bg-gradient-to-r from-cornsilk-700 to-cornsilk-600 h-64 w-full flex items-center justify-center">
-                    <div className="text-center px-6">
-                      <p className="text-rich-black text-xl font-medium mb-2">
-                        Mobile App Screenshots
-                      </p>
-                      <p className="text-rich-black-400 text-sm opacity-80">
-                        Coming soon
-                      </p>
-                    </div>
-                  </div>
-                </CardBody>
-              </Card>
-              <div className="prose max-w-none text-default-700">
-                <p className="mb-4">
-                  The Etamax mobile application provides homeowners with
-                  real-time control and monitoring of their solar water heating
-                  system. Built with Flutter to ensure a consistent experience
-                  across both iOS and Android platforms.
-                </p>
-
-                <h4 className="text-lg font-bold mt-4 mb-2">Key Features:</h4>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>Real-time temperature and energy monitoring</li>
-                  <li>Solar vs. grid energy usage visualization</li>
-                  <li>
-                    Custom heating schedules to maximize solar utilization
-                  </li>
-                  <li>Leak detection alerts and notifications</li>
-                  <li>Holiday mode for optimal energy management</li>
-                  <li>
-                    Multi-device management for households with multiple units
-                  </li>
-                </ul>
-
-                <h4 className="text-lg font-bold mt-4 mb-2">
-                  Technical Implementation:
-                </h4>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>
-                    Robust BLE connection management with automatic reconnection
-                  </li>
-                  <li>
-                    Efficient data synchronization between device and cloud
-                  </li>
-                  <li>
-                    Stream-based reactive programming for real-time updates
-                  </li>
-                  <li>Comprehensive data validation and error handling</li>
-                  <li>Local caching for offline functionality</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Admin Dashboard sub-section */}
-            <div>
-              <h3 className="text-xl font-heading font-bold mb-3">
-                Administrative Dashboard
-              </h3>
-              <Card className="mb-6 bg-default-50">
-                <CardBody className="p-0">
-                  <div className="bg-gradient-to-r from-ash-gray-700 to-ash-gray-600 h-64 w-full flex items-center justify-center">
-                    <div className="text-center px-6">
-                      <p className="text-rich-black text-xl font-medium mb-2">
-                        Admin Dashboard Screenshots
-                      </p>
-                      <p className="text-rich-black-400 text-sm opacity-80">
-                        Coming soon
-                      </p>
-                    </div>
-                  </div>
-                </CardBody>
-              </Card>
-              <div className="prose max-w-none text-default-700">
-                <p className="mb-4">
-                  The web-based dashboard provides system administrators with
-                  comprehensive tools for monitoring, managing, and analyzing
-                  the entire Etamax device ecosystem.
-                </p>
-
-                <h4 className="text-lg font-bold mt-4 mb-2">Key Features:</h4>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>
-                    Real-time device status monitoring across the deployment
-                    ecosystem
-                  </li>
-                  <li>Installation tracking with location data</li>
-                  <li>Energy usage analytics and reporting</li>
-                  <li>Alert management for system issues</li>
-                  <li>User management and access control</li>
-                  <li>
-                    Device lifecycle management (from testing to retirement)
-                  </li>
-                </ul>
-
-                <h4 className="text-lg font-bold mt-4 mb-2">
-                  Technical Implementation:
-                </h4>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>
-                    React and TypeScript frontend with modular component
-                    architecture
-                  </li>
-                  <li>Supabase for real-time data synchronization</li>
-                  <li>Comprehensive data visualization</li>
-                  <li>Role-based access control</li>
-                  <li>
-                    Scalable architecture to support growing device deployments
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Development Journey section */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-4">
-              Development Journey
-            </h2>
-            <div className="prose max-w-none text-default-700">
-              <p className="mb-4">
-                This project represented a significant evolution in our approach
-                to IoT device management. I identified an opportunity to create
-                a more robust, user-friendly system that would work flawlessly
-                across platforms while providing powerful management tools.
-              </p>
-              <p className="mb-4">
-                Taking initiative, I developed a solution that expanded the
-                capabilities of the original concept, introducing cloud
-                connectivity, data analytics, and an intuitive interface—all
-                while ensuring seamless compatibility with the existing hardware
-                infrastructure.
-              </p>
             </div>
           </div>
 
@@ -406,6 +371,7 @@ export default function EtamaxProjectPage() {
               </p>
             </div>
           </div>
+
 
           {/* CTA Section */}
           <div className="flex justify-center mt-12">

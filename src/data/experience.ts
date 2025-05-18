@@ -20,12 +20,12 @@ export const experiences: Experience[] = [
     description:
       "Leading development of cross-platform applications and IoT systems integration for electronic equipment.",
     achievements: [
-      "Developed cross-platform mobile applications using Flutter interfacing with proprietary hardware through BLE",
-      "Built comprehensive React-based admin panels with TypeScript for device management and user tracking",
-      "Established in-house development capability, eliminating external outsourcing needs",
-      "Engineered Node.js/Express backend systems with efficient database architectures",
-      "Implemented secure IoT communication protocols between mobile applications and custom hardware devices",
-      "Architected scalable cloud infrastructure using Firebase/Supabase and Google Cloud Platform",
+      "Developed Etamax Solar Monitoring System with Flutter mobile app and React dashboard, demonstrating full-stack implementation capabilities",
+      "Created specialized workflow management tools that transformed paper-based processes into efficient digital systems",
+      "Established complete in-house development capability, eliminating external outsourcing costs while maintaining proprietary technology control",
+      "Implemented secure IoT communication with BLE protocols and AES encryption between mobile applications and custom hardware",
+      "Built real-time data synchronization systems across mobile and web platforms using Supabase/Firebase",
+      "Designed and deployed production-ready applications to both iOS and Android app stores with continuous integration pipelines",
     ],
   },
   {

@@ -1,0 +1,194 @@
+// src/components/projects/EtamaxMobileShowcase.tsx
+import React, { useState } from "react";
+import { Card, CardBody } from "@heroui/card";
+import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
+
+import { DeviceMockup } from "../mockups/DeviceMockup";
+
+// Define mobile screenshots
+const mobileScreenshots = [
+  {
+    id: "mobile1",
+    name: "Home Screen",
+    path: "/images/projects/etamax/mobile/etamax-mobile1.jpg",
+    description:
+      "Main dashboard showing solar geyser status and energy metrics",
+  },
+  {
+    id: "mobile2",
+    name: "Energy Usage",
+    path: "/images/projects/etamax/mobile/etamax-mobile2.jpg",
+    description:
+      "Detailed view of energy consumption patterns and solar efficiency",
+  },
+  {
+    id: "mobile3",
+    name: "Settings",
+    path: "/images/projects/etamax/mobile/etamax-mobile3.jpg",
+    description:
+      "System configuration settings for optimizing solar energy usage",
+  },
+  {
+    id: "mobile4",
+    name: "Schedules",
+    path: "/images/projects/etamax/mobile/etamax-mobile4.jpg",
+    description:
+      "Custom scheduling options to maximize solar energy utilization",
+  },
+];
+
+export const EtamaxMobileShowcase: React.FC = () => {
+  // State for the mobile images
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Lightbox state
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Navigation functions for mobile screenshots
+  const goToNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % mobileScreenshots.length);
+  };
+
+  const goToPrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) =>
+      prev === 0 ? mobileScreenshots.length - 1 : prev - 1,
+    );
+  };
+
+  const currentScreenshot = mobileScreenshots[currentIndex];
+
+  return (
+    <>
+      <Card className="overflow-hidden h-full">
+        <CardBody className="flex flex-col items-center justify-center p-4 relative bg-ash-gray-900 dark:bg-rich-black-600">
+          {/* Gradient background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-cerulean-900/30 to-rich-black-500/60 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
+
+          {/* Mobile mockup */}
+          <div
+            aria-label="View full screen mobile screenshot"
+            className="relative z-10 cursor-pointer transition-transform hover:scale-[1.02] duration-300"
+            role="button"
+            tabIndex={0}
+            onClick={onOpen}
+          >
+            <DeviceMockup
+              alt={`Etamax Mobile App - ${currentScreenshot.name}`}
+              image={currentScreenshot.path}
+              type="phone"
+            />
+          </div>
+
+          {/* Navigation arrows */}
+          <div className="absolute inset-x-0 top-1/2 flex justify-between px-2 -translate-y-1/2 pointer-events-none z-20">
+            <button
+              aria-label="Previous mobile screenshot"
+              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+              onClick={goToPrev}
+            >
+              <span className="text-lg font-bold">←</span>
+            </button>
+            <button
+              aria-label="Next mobile screenshot"
+              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+              onClick={goToNext}
+            >
+              <span className="text-lg font-bold">→</span>
+            </button>
+          </div>
+        </CardBody>
+      </Card>
+
+      {/* Pagination indicators */}
+      <div
+        aria-label="Mobile screenshot pagination"
+        className="flex justify-center gap-1.5 mt-3"
+        role="group"
+      >
+        {mobileScreenshots.map((_, index) => (
+          <button
+            key={index}
+            aria-current={index === currentIndex ? "true" : "false"}
+            aria-label={`Go to mobile screenshot ${index + 1}`}
+            className={`w-2 h-2 rounded-full transition-all ${
+              index === currentIndex
+                ? "bg-cerulean w-4"
+                : "bg-default-300 dark:bg-rich-black-300"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
+
+      {/* Lightbox Modal for enlarged view */}
+      <Modal
+        backdrop="blur"
+        className="px-2"
+        isOpen={isOpen}
+        size="5xl"
+        onClose={onClose}
+      >
+        <ModalContent>
+          <ModalBody className="p-0 overflow-hidden">
+            <div className="relative">
+              {/* Close button */}
+              <button
+                aria-label="Close fullscreen view"
+                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors"
+                onClick={onClose}
+              >
+                <svg
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M6 18L18 6M6 6l12 12"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                  />
+                </svg>
+              </button>
+
+              {/* Large centered image */}
+              <img
+                alt={`Etamax Mobile App - ${currentScreenshot.name}`}
+                className="w-full object-contain max-h-[80vh]"
+                src={currentScreenshot.path}
+              />
+
+              {/* Navigation in fullscreen */}
+              <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2">
+                <button
+                  aria-label="Previous screenshot (fullscreen)"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
+                  onClick={goToPrev}
+                >
+                  <span className="text-2xl font-bold">←</span>
+                </button>
+                <button
+                  aria-label="Next screenshot (fullscreen)"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
+                  onClick={goToNext}
+                >
+                  <span className="text-2xl font-bold">→</span>
+                </button>
+              </div>
+
+              {/* Screenshot name and description */}
+              <div className="absolute bottom-4 left-0 right-0 mx-auto max-w-3xl bg-white/80 dark:bg-rich-black-500/80 backdrop-blur-sm p-3 rounded-lg text-center">
+                <h3 className="font-bold text-lg">{currentScreenshot.name}</h3>
+                <p className="text-sm">{currentScreenshot.description}</p>
+              </div>
+            </div>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+  );
+};

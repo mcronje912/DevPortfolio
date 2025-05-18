@@ -18,7 +18,7 @@ export default function DefaultLayout({
             <div>
               <h3 className="text-xl font-heading font-bold mb-4">Marco Cronje</h3>
               <p className="text-ash-gray-500 mb-4">
-                Full Stack Developer & IoT Systems Engineer
+                Full Stack Developer
               </p>
               <p className="text-ash-gray-500">
                 Johannesburg, South Africa
@@ -59,9 +59,6 @@ export default function DefaultLayout({
             <div className="flex gap-4 mt-4 md:mt-0">
               <Link href="https://github.com/mcronje912" isExternal className="text-ash-gray-500 hover:text-white">
                 GitHub
-              </Link>
-              <Link href="https://www.linkedin.com/in/marco-cronje/" isExternal className="text-ash-gray-500 hover:text-white">
-                LinkedIn
               </Link>
             </div>
           </div>

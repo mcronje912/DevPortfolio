@@ -44,22 +44,6 @@ export default function ContactPage() {
                   Contact Information
                 </h2>
 
-                {/* LinkedIn Card */}
-                <Card className="mb-6 bg-rich-black-500/60 dark:bg-rich-black-600/70 backdrop-blur-sm border-0 shadow-md overflow-hidden">
-                  <CardBody className="py-6">
-                    <h3 className="text-xl font-heading font-medium mb-2 text-white">
-                      LinkedIn
-                    </h3>
-                    <Link
-                      isExternal
-                      className="text-cerulean hover:text-cerulean-400 font-medium text-lg"
-                      href="https://www.linkedin.com/in/marco-cronje/"
-                    >
-                      linkedin.com/in/marco-cronje
-                    </Link>
-                  </CardBody>
-                </Card>
-
                 {/* GitHub Card */}
                 <Card className="mb-6 bg-rich-black-500/60 dark:bg-rich-black-600/70 backdrop-blur-sm border-0 shadow-md overflow-hidden">
                   <CardBody className="py-6">

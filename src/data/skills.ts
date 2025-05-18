@@ -36,6 +36,19 @@ const unsortedSkillsData: SkillCategory[] = [
     ],
   },
   {
+    name: "Design & User Experience",
+    skills: [
+      { name: "UI Design", level: 8 },
+      { name: "UX Design", level: 8 },
+      { name: "Prototyping", level: 7 },
+      { name: "User Research", level: 7 },
+      { name: "Figma", level: 8 },
+      { name: "Adobe Illustrator", level: 9 },
+      { name: "Adobe Photoshop", level: 9 },
+
+    ],
+  },
+  {
     name: "Backend Development",
     skills: [
       { name: "Supabase/Firebase", level: 9 },
@@ -60,7 +73,6 @@ const unsortedSkillsData: SkillCategory[] = [
       { name: "App Store Submission", level: 8 },
       { name: "Google Play Submission", level: 8 },
       { name: "Docker", level: 6 },
-
     ],
   },
   {
@@ -79,24 +91,14 @@ const unsortedSkillsData: SkillCategory[] = [
     name: "Specialized Capabilities",
     skills: [
       { name: "IoT Integration", level: 8 },
-      { name: "AES Communication", level: 7 },
+      { name: "AES Communication", level: 6 },
       { name: "Business Process Automation", level: 8 },
-      { name: "Payment Integration", level: 6 },
+      { name: "Payment Integration", level: 5 },
       { name: "ESP32", level: 8 },
       { name: "MQTT", level: 7 },
-      { name: "Adobe Creative Suite", level: 9 },
+      { name: "Digital Marketing & Ecommerce", level: 8 },
 
-    ],
-  },
-  {
-    name: "Project Management",
-    skills: [
-      { name: "Requirements Analysis", level: 8 },
-      { name: "System Architecture", level: 8 },
-      { name: "Solution Design", level: 9 },
-      { name: "Client Communication", level: 8 },
-      { name: "Documentation", level: 7 },
-      { name: "Project Planning", level: 8 },
+      
     ],
   },
 ];
