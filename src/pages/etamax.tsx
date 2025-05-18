@@ -28,7 +28,7 @@ export default function EtamaxProjectPage() {
             </div>
 
             <h1 className={title({ size: "lg", class: "mb-4" })}>
-              Etamax Solar Energy Management System
+              Etamax Solar Water Heating System
             </h1>
 
             <div className="flex flex-wrap gap-2 mb-6">

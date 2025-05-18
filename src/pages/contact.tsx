@@ -52,7 +52,7 @@ export default function ContactPage() {
                     </h3>
                     <Link
                       isExternal
-                      className="text-cerulean hover:text-cerulean-400 font-medium text-lg"
+                      className="text-cerulean-600 hover:text-cerulean-400 font-medium text-lg"
                       href="https://github.com/mcronje912"
                     >
                       github.com/mcronje912

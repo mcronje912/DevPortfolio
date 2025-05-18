@@ -23,7 +23,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "etamax",
-    title: "Etamax Solar Monitoring System",
+    title: "Etamax Solar Water Heating System",
     description:
       "An intelligent solar geyser monitoring system that helps users optimize their solar energy usage.",
     longDescription:

@@ -9,23 +9,23 @@ import { DeviceMockup } from "../mockups/DeviceMockup";
 const webScreenshots = [
   {
     id: "web1",
-    name: "Admin Dashboard",
+    name: "Historical Data",
     path: "/images/projects/etamax/web/etamax-web1.png",
     description:
-      "Overview dashboard showing system-wide energy usage and device status",
+      "Historical data and performance summary section",
   },
   {
     id: "web2",
-    name: "Analytics Panel",
+    name: "Overview Dashboard",
     path: "/images/projects/etamax/web/etamax-web2.png",
     description:
-      "Detailed analytics showing energy savings and efficiency metrics",
+      "Recent activity and Provincial summary of collective device performance",
   },
   {
     id: "web3",
-    name: "Device Management",
+    name: "Device Detail Page",
     path: "/images/projects/etamax/web/etamax-web3.png",
-    description: "Administrative tools for managing connected Etamax devices",
+    description: "Detailed device and user information, including alerts and notifications",
   },
 ];
 
