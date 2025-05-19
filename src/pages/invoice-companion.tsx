@@ -8,6 +8,7 @@ import { title } from "../components/primitives";
 import DefaultLayout from "../layouts/default";
 
 import { InvoiceShowcase } from "@/components/projects/InvoiceShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function InvoiceCompanionProjectPage() {
   return (
@@ -80,7 +81,7 @@ export default function InvoiceCompanionProjectPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -106,25 +107,25 @@ export default function InvoiceCompanionProjectPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Completed
                   </h3>
                   <p>2024 (Ongoing Development)</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Mobile App Developer</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -134,7 +135,7 @@ export default function InvoiceCompanionProjectPage() {
               Technical Stack & Architecture
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Cross-Platform Development
@@ -146,9 +147,9 @@ export default function InvoiceCompanionProjectPage() {
                     platform-specific performance and user experience.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Local Database
@@ -160,9 +161,9 @@ export default function InvoiceCompanionProjectPage() {
                     offline functionality—essential for a business tool.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     State Management
@@ -174,9 +175,9 @@ export default function InvoiceCompanionProjectPage() {
                     the codebase maintainable and testable.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Subscription Integration
@@ -189,7 +190,7 @@ export default function InvoiceCompanionProjectPage() {
                     beyond that limit.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -199,7 +200,7 @@ export default function InvoiceCompanionProjectPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Customer Management
@@ -211,9 +212,9 @@ export default function InvoiceCompanionProjectPage() {
                     invoicing.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Product/Service Catalog
@@ -225,9 +226,9 @@ export default function InvoiceCompanionProjectPage() {
                     and formatting.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Quote & Invoice Generation
@@ -239,9 +240,9 @@ export default function InvoiceCompanionProjectPage() {
                     paper trail of transactions.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     PDF Export
@@ -253,9 +254,9 @@ export default function InvoiceCompanionProjectPage() {
                     clients.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Data Import/Export
@@ -267,9 +268,9 @@ export default function InvoiceCompanionProjectPage() {
                     security.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Analytics & Reporting
@@ -280,7 +281,7 @@ export default function InvoiceCompanionProjectPage() {
                     payments, and client activity to inform business decisions.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 

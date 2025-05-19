@@ -10,6 +10,7 @@ import {
   AdminDashboardShowcase,
   MobileAppShowcase,
 } from "@/components/projects/LogisticsShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function LogisticsManagementSystemPage() {
   return (
@@ -72,7 +73,7 @@ export default function LogisticsManagementSystemPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -98,25 +99,25 @@ export default function LogisticsManagementSystemPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Completed
                   </h3>
                   <p>2025 (Proof of concept)</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Full Stack Developer</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -137,7 +138,7 @@ export default function LogisticsManagementSystemPage() {
 
               {/* Description text - takes up 2/3 of the width */}
               <div className="md:col-span-2">
-                <Card className="h-full">
+              <GlassCard intensity="heavy">
                   <CardBody>
                     <h3 className="text-xl font-heading font-bold mb-4">
                       Mobile App Design & Features
@@ -183,7 +184,7 @@ export default function LogisticsManagementSystemPage() {
                       </ul>
                     </div>
                   </CardBody>
-                </Card>
+                </GlassCard>
               </div>
             </div>
           </div>
@@ -236,7 +237,7 @@ export default function LogisticsManagementSystemPage() {
               Key Technical Achievements
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Real-Time Synchronization
@@ -251,9 +252,9 @@ export default function LogisticsManagementSystemPage() {
                     on the administrative dashboard.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Push Notification System
@@ -265,9 +266,9 @@ export default function LogisticsManagementSystemPage() {
                     for dynamic rerouting and job assignment throughout the day.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Digital Signature Capture
@@ -280,9 +281,9 @@ export default function LogisticsManagementSystemPage() {
                     as proof of delivery.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Offline Capability
@@ -294,7 +295,7 @@ export default function LogisticsManagementSystemPage() {
                     restored.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 

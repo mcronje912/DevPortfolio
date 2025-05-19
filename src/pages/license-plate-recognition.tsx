@@ -7,6 +7,7 @@ import { Card, CardBody } from "@heroui/card";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { LicensePlateShowcase } from "@/components/projects/LicensePlateShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function LicensePlateRecognitionPage() {
   return (
@@ -79,7 +80,7 @@ export default function LicensePlateRecognitionPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -105,34 +106,34 @@ export default function LicensePlateRecognitionPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Completed
                   </h3>
                   <p>2024</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Full Stack Developer</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Status
                   </h3>
                   <p>R&D Project - Running Locally</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -142,7 +143,7 @@ export default function LicensePlateRecognitionPage() {
               Technical Implementation
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Architecture
@@ -155,9 +156,9 @@ export default function LicensePlateRecognitionPage() {
                     uploaded and processed images.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Image Processing Pipeline
@@ -170,9 +171,9 @@ export default function LicensePlateRecognitionPage() {
                     pattern matching.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Text Merging Algorithm
@@ -185,9 +186,9 @@ export default function LicensePlateRecognitionPage() {
                     recognition accuracy.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     API Implementation
@@ -199,7 +200,7 @@ export default function LicensePlateRecognitionPage() {
                     scores and visual feedback showing the detected regions.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -209,7 +210,7 @@ export default function LicensePlateRecognitionPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     License Plate Detection
@@ -220,9 +221,9 @@ export default function LicensePlateRecognitionPage() {
                     boxes and extracting the text through OCR.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     South African Plate Recognition
@@ -233,9 +234,9 @@ export default function LicensePlateRecognitionPage() {
                     text matches known license plate patterns.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Confidence Scoring
@@ -246,9 +247,9 @@ export default function LicensePlateRecognitionPage() {
                     filter out low-confidence results.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Visual Feedback
@@ -259,9 +260,9 @@ export default function LicensePlateRecognitionPage() {
                     the accuracy of detections at a glance.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Simple API Interface
@@ -272,9 +273,9 @@ export default function LicensePlateRecognitionPage() {
                     result retrieval.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Side-by-Side Comparison
@@ -286,7 +287,7 @@ export default function LicensePlateRecognitionPage() {
                     accuracy.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 

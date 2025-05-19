@@ -6,6 +6,7 @@ import { Link } from "@heroui/link";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { ProfileImage } from "@/components/ProfileImage";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function AboutPage() {
   const certificates = [

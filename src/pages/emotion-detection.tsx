@@ -6,6 +6,7 @@ import { Card, CardBody } from "@heroui/card";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { EmotionDetectionShowcase } from "@/components/projects/EmotionDetectionShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function EmotionDetectionProjectPage() {
   return (
@@ -74,7 +75,7 @@ export default function EmotionDetectionProjectPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -100,18 +101,18 @@ export default function EmotionDetectionProjectPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Project Type
                   </h3>
                   <p>IBM Full Stack Developer Course</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     GitHub Repository
@@ -124,7 +125,7 @@ export default function EmotionDetectionProjectPage() {
                     View Repository
                   </Link>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -134,7 +135,7 @@ export default function EmotionDetectionProjectPage() {
               Technical Implementation
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Architecture
@@ -147,9 +148,9 @@ export default function EmotionDetectionProjectPage() {
                     interaction.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     NLP Implementation
@@ -162,9 +163,9 @@ export default function EmotionDetectionProjectPage() {
                     privacy and eliminates external dependencies.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Testing & Quality
@@ -177,9 +178,9 @@ export default function EmotionDetectionProjectPage() {
                     guidelines.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Error Handling
@@ -191,7 +192,7 @@ export default function EmotionDetectionProjectPage() {
                     messages that enhance the user experience.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 

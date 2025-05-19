@@ -4,6 +4,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
 import { DeviceMockup } from "../mockups/DeviceMockup";
+import { GlassCard } from "../GlassCard";
 
 // Define mobile screenshots
 const mobileScreenshots = [
@@ -185,7 +186,7 @@ export const AdminDashboardShowcase: React.FC = () => {
       </Modal>
 
       {/* Admin Features Card */}
-      <Card className="bg-default-50">
+      <GlassCard intensity="heavy">
         <CardBody>
           <h3 className="text-lg font-heading font-bold mb-3">
             Admin Dashboard Features
@@ -197,7 +198,7 @@ export const AdminDashboardShowcase: React.FC = () => {
             <li>Viewing of signatures for proof of delivery</li>
           </ul>
         </CardBody>
-      </Card>
+      </GlassCard>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 import { DeviceMockup } from "../mockups/DeviceMockup";
+import { GlassCard } from "../GlassCard";
 
 // Define license plate screenshots
 const licensePlateScreenshots = [
@@ -112,7 +113,7 @@ export const LicensePlateShowcase: React.FC = () => {
       
       {/* Highlights Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Computer Vision Pipeline
@@ -121,9 +122,9 @@ export const LicensePlateShowcase: React.FC = () => {
               The system implements a sophisticated image processing pipeline that handles various lighting conditions and angles. It first preprocesses images to enhance features, then uses advanced detection algorithms to locate and isolate license plate regions before performing OCR.
             </p>
           </CardBody>
-        </Card>
+        </GlassCard>
 
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Text Validation & Correction
@@ -132,7 +133,7 @@ export const LicensePlateShowcase: React.FC = () => {
               Recognition accuracy is enhanced through a custom text correction system that validates detected characters against known license plate patterns. The system can merge fragmented text detections and filter out improbable character combinations.
             </p>
           </CardBody>
-        </Card>
+        </GlassCard>
       </div>
       
       {/* Lightbox Modal for enlarged view */}

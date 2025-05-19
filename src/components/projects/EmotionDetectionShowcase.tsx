@@ -4,6 +4,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
 import { DeviceMockup } from "../mockups/DeviceMockup";
+import { GlassCard } from "../GlassCard";
 
 // Define the screenshots
 const nlpScreenshots = [
@@ -124,7 +125,7 @@ export const EmotionDetectionShowcase: React.FC = () => {
 
       {/* Key features section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Key Features:
@@ -137,9 +138,9 @@ export const EmotionDetectionShowcase: React.FC = () => {
               <li>Privacy-focused design with local processing</li>
             </ul>
           </CardBody>
-        </Card>
+        </GlassCard>
 
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Technical Implementation:
@@ -152,7 +153,7 @@ export const EmotionDetectionShowcase: React.FC = () => {
               <li>Front-end built with HTML/CSS/JavaScript</li>
             </ul>
           </CardBody>
-        </Card>
+        </GlassCard>
       </div>
 
       {/* Lightbox Modal for enlarged view */}

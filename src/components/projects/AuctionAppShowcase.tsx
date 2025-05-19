@@ -4,6 +4,7 @@ import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
 import { DeviceMockup } from "../mockups/DeviceMockup";
+import { GlassCard } from "../GlassCard";
 
 // Define the screenshots with WebP paths
 const auctionScreenshots = [
@@ -123,7 +124,7 @@ export const AuctionAppShowcase: React.FC = () => {
 
       {/* Key features section remains below the carousel */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Key Platform Features:
@@ -136,9 +137,9 @@ export const AuctionAppShowcase: React.FC = () => {
               <li>Advanced filtering and search capabilities</li>
             </ul>
           </CardBody>
-        </Card>
+        </GlassCard>
 
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Technical Highlights:
@@ -151,7 +152,7 @@ export const AuctionAppShowcase: React.FC = () => {
               <li>Optimized for performance and SEO</li>
             </ul>
           </CardBody>
-        </Card>
+        </GlassCard>
       </div>
 
       {/* Lightbox Modal for enlarged view */}

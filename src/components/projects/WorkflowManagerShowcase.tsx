@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { DeviceMockup } from "../mockups/DeviceMockup";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
+import { GlassCard } from "../GlassCard";
 
 // Define the screenshots using your actual files
 const workflowScreenshots = [

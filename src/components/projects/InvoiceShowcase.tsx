@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 import { DeviceMockup } from "../mockups/DeviceMockup";
+import { GlassCard } from "../GlassCard";
 
 // Define invoice screenshots
 const invoiceScreenshots = [
@@ -170,7 +171,7 @@ export const InvoiceShowcase: React.FC = () => {
       
       {/* Feature highlights in card grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Customer Management
@@ -179,9 +180,9 @@ export const InvoiceShowcase: React.FC = () => {
               Track comprehensive client information including contact details, payment preferences, transaction history, and notes. The intelligent search and filtering system allows you to quickly find and manage customer records.
             </p>
           </CardBody>
-        </Card>
+        </GlassCard>
 
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Financial Insights
@@ -190,9 +191,9 @@ export const InvoiceShowcase: React.FC = () => {
               Monitor business performance at a glance with visual representations of sales trends, payment statuses, and outstanding invoices. Makes financial planning more informed with clear data visualization.
             </p>
           </CardBody>
-        </Card>
+        </GlassCard>
 
-        <Card className="bg-default-50">
+        <GlassCard intensity="heavy">
           <CardBody>
             <h3 className="text-lg font-heading font-bold mb-3">
               Mobile-First Design
@@ -201,7 +202,7 @@ export const InvoiceShowcase: React.FC = () => {
               Create and manage invoices anywhere with a focus on mobile usability without sacrificing functionality. The interface is optimized for touch interactions while maintaining full feature capabilities.
             </p>
           </CardBody>
-        </Card>
+        </GlassCard>
       </div>
       
       {/* Lightbox Modal */}
