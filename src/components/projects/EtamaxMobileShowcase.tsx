@@ -5,39 +5,37 @@ import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
 import { DeviceMockup } from "../mockups/DeviceMockup";
 
-// Define mobile screenshots with both paths
- // src/components/projects/EtamaxMobileShowcase.tsx
-// Update the mobile screenshots with correct paths
+// Define the screenshots with both paths
 const mobileScreenshots = [
   {
     id: "mobile1",
     name: "Home Screen",
-    path: "/images/etamax-mobile1.jpg", // Updated path
-    webpPath: "/images/etamax-mobile1.webp", // Updated path
+    path: "/images/etamax-mobile1.jpg",
+    webpPath: "/images/etamax-mobile1.webp",
     description:
       "Main dashboard showing solar geyser status and energy metrics",
   },
   {
     id: "mobile2",
     name: "Daily Schedule Setting",
-    path: "/images/etamax-mobile2.jpg", // Updated path
-    webpPath: "/images/etamax-mobile2.webp", // Updated path
+    path: "/images/etamax-mobile2.jpg",
+    webpPath: "/images/etamax-mobile2.webp",
     description:
       "Set a custom daily schedule for the geyser to be boosted by grid",
   },
   {
     id: "mobile3",
     name: "Configuration and Leak Status",
-    path: "/images/etamax-mobile3.jpg", // Updated path
-    webpPath: "/images/etamax-mobile3.webp", // Updated path
+    path: "/images/etamax-mobile3.jpg",
+    webpPath: "/images/etamax-mobile3.webp",
     description:
-      "",
+      "Configuration settings and leak detection status",
   },
   {
     id: "mobile4",
     name: "Settings",
-    path: "/images/etamax-mobile4.jpg", // Updated path
-    webpPath: "/images/etamax-mobile4.webp", // Updated path
+    path: "/images/etamax-mobile4.jpg",
+    webpPath: "/images/etamax-mobile4.webp",
     description:
       "Modify device settings and preferences",
   },
@@ -50,6 +48,24 @@ export const EtamaxMobileShowcase: React.FC = () => {
 
   // Lightbox state
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen) {
+        if (e.key === 'ArrowRight') {
+          goToNext();
+        } else if (e.key === 'ArrowLeft') {
+          goToPrev();
+        } else if (e.key === 'Escape') {
+          onClose();
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, currentIndex, onClose]);
 
   // Check if WebP images exist on mount
   useEffect(() => {
@@ -114,6 +130,11 @@ export const EtamaxMobileShowcase: React.FC = () => {
             role="button"
             tabIndex={0}
             onClick={onOpen}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                onOpen();
+              }
+            }}
           >
             <DeviceMockup
               alt={`Etamax Mobile App - ${currentScreenshot.name}`}
@@ -126,17 +147,17 @@ export const EtamaxMobileShowcase: React.FC = () => {
           <div className="absolute inset-x-0 top-1/2 flex justify-between px-2 -translate-y-1/2 pointer-events-none z-20">
             <button
               aria-label="Previous mobile screenshot"
-              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               onClick={goToPrev}
             >
-              <span className="text-lg font-bold">←</span>
+              <span className="text-lg font-bold" aria-hidden="true">←</span>
             </button>
             <button
               aria-label="Next mobile screenshot"
-              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               onClick={goToNext}
             >
-              <span className="text-lg font-bold">→</span>
+              <span className="text-lg font-bold" aria-hidden="true">→</span>
             </button>
           </div>
         </CardBody>
@@ -153,7 +174,7 @@ export const EtamaxMobileShowcase: React.FC = () => {
             key={index}
             aria-current={index === currentIndex ? "true" : "false"}
             aria-label={`Go to mobile screenshot ${index + 1}`}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-cerulean-500 ${
               index === currentIndex
                 ? "bg-cerulean w-4"
                 : "bg-default-300 dark:bg-rich-black-300"
@@ -170,14 +191,20 @@ export const EtamaxMobileShowcase: React.FC = () => {
         isOpen={isOpen}
         size="5xl"
         onClose={onClose}
+        aria-labelledby="mobile-screenshot-modal-title"
       >
         <ModalContent>
           <ModalBody className="p-0 overflow-hidden">
             <div className="relative">
+              {/* Hidden title for screen readers */}
+              <h2 id="mobile-screenshot-modal-title" className="sr-only">
+                {`Etamax Mobile App - ${currentScreenshot.name}`}
+              </h2>
+              
               {/* Close button */}
               <button
                 aria-label="Close fullscreen view"
-                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors"
+                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={onClose}
               >
                 <svg
@@ -186,6 +213,7 @@ export const EtamaxMobileShowcase: React.FC = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M6 18L18 6M6 6l12 12"

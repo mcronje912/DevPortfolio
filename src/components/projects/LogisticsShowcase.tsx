@@ -1,5 +1,5 @@
 // src/components/projects/LogisticsShowcase.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
@@ -58,6 +58,24 @@ export const AdminDashboardShowcase: React.FC = () => {
   // Lightbox state
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  // Keyboard navigation for admin dashboard
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen) {
+        if (e.key === 'ArrowRight') {
+          goToNextAdmin();
+        } else if (e.key === 'ArrowLeft') {
+          goToPrevAdmin();
+        } else if (e.key === 'Escape') {
+          onClose();
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, currentAdminIndex, onClose]);
+
   // Navigation functions for admin screenshots
   const goToNextAdmin = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -90,9 +108,14 @@ export const AdminDashboardShowcase: React.FC = () => {
               role="button"
               tabIndex={0}
               onClick={onOpen}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  onOpen();
+                }
+              }}
             >
               <DeviceMockup
-                alt="Admin Dashboard"
+                alt={`Logistics Admin Dashboard - Screen ${currentAdminIndex + 1}`}
                 className="w-full"
                 image={adminScreenshots[currentAdminIndex].path}
                 type="laptop"
@@ -102,18 +125,18 @@ export const AdminDashboardShowcase: React.FC = () => {
             {/* Navigation arrows */}
             <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2 pointer-events-none z-20">
               <button
-                aria-label="Previous screenshot"
-                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                aria-label="Previous admin dashboard screenshot"
+                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={goToPrevAdmin}
               >
-                <span className="text-xl font-bold">←</span>
+                <span className="text-xl font-bold" aria-hidden="true">←</span>
               </button>
               <button
-                aria-label="Next screenshot"
-                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                aria-label="Next admin dashboard screenshot"
+                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={goToNextAdmin}
               >
-                <span className="text-xl font-bold">→</span>
+                <span className="text-xl font-bold" aria-hidden="true">→</span>
               </button>
             </div>
           </CardBody>
@@ -130,7 +153,7 @@ export const AdminDashboardShowcase: React.FC = () => {
               key={index}
               aria-current={index === currentAdminIndex ? "true" : "false"}
               aria-label={`Go to admin screenshot ${index + 1}`}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
+              className={`w-2.5 h-2.5 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-cerulean-500 ${
                 index === currentAdminIndex
                   ? "bg-cerulean w-5"
                   : "bg-default-300 dark:bg-rich-black-300"
@@ -148,14 +171,20 @@ export const AdminDashboardShowcase: React.FC = () => {
         isOpen={isOpen}
         size="5xl"
         onClose={onClose}
+        aria-labelledby="logistics-admin-modal-title"
       >
         <ModalContent>
           <ModalBody className="p-0 overflow-hidden">
             <div className="relative">
+              {/* Hidden title for screen readers */}
+              <h2 id="logistics-admin-modal-title" className="sr-only">
+                {`Logistics Admin Dashboard - Screen ${currentAdminIndex + 1}`}
+              </h2>
+              
               {/* Close button */}
               <button
                 aria-label="Close fullscreen view"
-                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors"
+                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={onClose}
               >
                 <svg
@@ -164,6 +193,7 @@ export const AdminDashboardShowcase: React.FC = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M6 18L18 6M6 6l12 12"
@@ -176,7 +206,7 @@ export const AdminDashboardShowcase: React.FC = () => {
 
               {/* Large centered image */}
               <img
-                alt="Admin Dashboard Screenshot"
+                alt={`Logistics Admin Dashboard - Screen ${currentAdminIndex + 1}`}
                 className="w-full object-contain max-h-[80vh]"
                 src={adminScreenshots[currentAdminIndex].path}
               />
@@ -211,6 +241,24 @@ export const MobileAppShowcase: React.FC = () => {
   // Lightbox state
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  // Keyboard navigation for mobile app showcase
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen) {
+        if (e.key === 'ArrowRight') {
+          goToNextMobile();
+        } else if (e.key === 'ArrowLeft') {
+          goToPrevMobile();
+        } else if (e.key === 'Escape') {
+          onClose();
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, currentMobileIndex, onClose]);
+
   // Navigation functions for mobile screenshots
   const goToNextMobile = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -238,9 +286,14 @@ export const MobileAppShowcase: React.FC = () => {
             role="button"
             tabIndex={0}
             onClick={onOpen}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                onOpen();
+              }
+            }}
           >
             <DeviceMockup
-              alt="Logistics Mobile App"
+              alt={`Logistics Mobile App - Screen ${currentMobileIndex + 1}`}
               image={mobileScreenshots[currentMobileIndex].path}
               type="phone"
             />
@@ -250,17 +303,17 @@ export const MobileAppShowcase: React.FC = () => {
           <div className="absolute inset-x-0 top-1/2 flex justify-between px-2 -translate-y-1/2 pointer-events-none z-20">
             <button
               aria-label="Previous mobile screenshot"
-              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               onClick={goToPrevMobile}
             >
-              <span className="text-lg font-bold">←</span>
+              <span className="text-lg font-bold" aria-hidden="true">←</span>
             </button>
             <button
               aria-label="Next mobile screenshot"
-              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+              className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               onClick={goToNextMobile}
             >
-              <span className="text-lg font-bold">→</span>
+              <span className="text-lg font-bold" aria-hidden="true">→</span>
             </button>
           </div>
         </CardBody>
@@ -277,7 +330,7 @@ export const MobileAppShowcase: React.FC = () => {
             key={index}
             aria-current={index === currentMobileIndex ? "true" : "false"}
             aria-label={`Go to mobile screenshot ${index + 1}`}
-            className={`w-2 h-2 rounded-full transition-all ${
+            className={`w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-cerulean-500 ${
               index === currentMobileIndex
                 ? "bg-cerulean w-4"
                 : "bg-default-300 dark:bg-rich-black-300"
@@ -294,14 +347,20 @@ export const MobileAppShowcase: React.FC = () => {
         isOpen={isOpen}
         size="5xl"
         onClose={onClose}
+        aria-labelledby="logistics-mobile-modal-title"
       >
         <ModalContent>
           <ModalBody className="p-0 overflow-hidden">
             <div className="relative">
+              {/* Hidden title for screen readers */}
+              <h2 id="logistics-mobile-modal-title" className="sr-only">
+                {`Logistics Mobile App - Screen ${currentMobileIndex + 1}`}
+              </h2>
+              
               {/* Close button */}
               <button
                 aria-label="Close fullscreen view"
-                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors"
+                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={onClose}
               >
                 <svg
@@ -310,6 +369,7 @@ export const MobileAppShowcase: React.FC = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M6 18L18 6M6 6l12 12"
@@ -322,7 +382,7 @@ export const MobileAppShowcase: React.FC = () => {
 
               {/* Large centered image */}
               <img
-                alt="Mobile App Screenshot"
+                alt={`Logistics Mobile App - Screen ${currentMobileIndex + 1}`}
                 className="w-full object-contain max-h-[80vh]"
                 src={mobileScreenshots[currentMobileIndex].path}
               />

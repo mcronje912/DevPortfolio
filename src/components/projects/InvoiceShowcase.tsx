@@ -1,5 +1,5 @@
 // src/components/projects/InvoiceShowcase.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 import { DeviceMockup } from "../mockups/DeviceMockup";
@@ -40,6 +40,24 @@ export const InvoiceShowcase: React.FC = () => {
   // Lightbox state
   const { isOpen, onOpen, onClose } = useDisclosure();
   
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen) {
+        if (e.key === 'ArrowRight') {
+          goToNext();
+        } else if (e.key === 'ArrowLeft') {
+          goToPrev();
+        } else if (e.key === 'Escape') {
+          onClose();
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, currentIndex, onClose]);
+  
   // Navigation functions for mobile screenshots
   const goToNext = (e?: React.MouseEvent) => {
     e?.stopPropagation();
@@ -71,9 +89,14 @@ export const InvoiceShowcase: React.FC = () => {
                 role="button"
                 tabIndex={0}
                 aria-label="View full screen invoice app screenshot"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    onOpen();
+                  }
+                }}
               >
                 <DeviceMockup
-                  alt="Invoice Companion App"
+                  alt={`Invoice Companion App - Screen ${currentIndex + 1}`}
                   image={invoiceScreenshots[currentIndex].path}
                   type="phone"
                 />
@@ -83,17 +106,17 @@ export const InvoiceShowcase: React.FC = () => {
               <div className="absolute inset-x-0 top-1/2 flex justify-between px-2 -translate-y-1/2 pointer-events-none z-20">
                 <button
                   aria-label="Previous screenshot"
-                  className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                  className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                   onClick={goToPrev}
                 >
-                  <span className="text-lg font-bold">←</span>
+                  <span className="text-lg font-bold" aria-hidden="true">←</span>
                 </button>
                 <button
                   aria-label="Next screenshot"
-                  className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                  className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                   onClick={goToNext}
                 >
-                  <span className="text-lg font-bold">→</span>
+                  <span className="text-lg font-bold" aria-hidden="true">→</span>
                 </button>
               </div>
             </CardBody>
@@ -110,7 +133,7 @@ export const InvoiceShowcase: React.FC = () => {
                 key={index}
                 aria-current={index === currentIndex ? "true" : "false"}
                 aria-label={`Go to screenshot ${index + 1}`}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-cerulean-500 ${
                   index === currentIndex
                     ? "bg-cerulean w-4"
                     : "bg-default-300 dark:bg-rich-black-300"
@@ -212,14 +235,20 @@ export const InvoiceShowcase: React.FC = () => {
         isOpen={isOpen}
         size="5xl"
         onClose={onClose}
+        aria-labelledby="invoice-modal-title"
       >
         <ModalContent>
           <ModalBody className="p-0 overflow-hidden">
             <div className="relative">
+              {/* Hidden title for screen readers */}
+              <h2 id="invoice-modal-title" className="sr-only">
+                {`Invoice Companion App - Screen ${currentIndex + 1}`}
+              </h2>
+              
               {/* Close button */}
               <button
                 aria-label="Close fullscreen view"
-                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors"
+                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={onClose}
               >
                 <svg
@@ -228,6 +257,7 @@ export const InvoiceShowcase: React.FC = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M6 18L18 6M6 6l12 12"
@@ -240,7 +270,7 @@ export const InvoiceShowcase: React.FC = () => {
 
               {/* Large centered image */}
               <img
-                alt="Invoice Companion Screenshot"
+                alt={`Invoice Companion Screenshot ${currentIndex + 1}`}
                 className="w-full object-contain max-h-[80vh]"
                 src={invoiceScreenshots[currentIndex].path}
               />
@@ -249,17 +279,17 @@ export const InvoiceShowcase: React.FC = () => {
               <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2">
                 <button
                   aria-label="Previous screenshot (fullscreen)"
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                   onClick={goToPrev}
                 >
-                  <span className="text-2xl font-bold">←</span>
+                  <span className="text-2xl font-bold" aria-hidden="true">←</span>
                 </button>
                 <button
                   aria-label="Next screenshot (fullscreen)"
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                   onClick={goToNext}
                 >
-                  <span className="text-2xl font-bold">→</span>
+                  <span className="text-2xl font-bold" aria-hidden="true">→</span>
                 </button>
               </div>
             </div>

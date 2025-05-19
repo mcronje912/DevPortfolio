@@ -39,12 +39,13 @@ export const Navbar = () => {
       <NavbarContent className="pr-4" justify="start">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="lg:hidden"
+          className="lg:hidden focus:outline-none focus:ring-2 focus:ring-cerulean-500"
         />
         <NavbarBrand className="ml-2">
           <Link
             className="flex items-center gap-1 font-heading font-bold text-xl text-cerulean hover:scale-105 duration-200"
             href="/"
+            aria-label="Marco Cronje Home"
           >
             MC
           </Link>
@@ -57,17 +58,18 @@ export const Navbar = () => {
           <NavbarItem key={item.href}>
             <Link
               className={clsx(
-                "relative px-2 py-1",
+                "relative px-2 py-1 focus:outline-none focus:ring-2 focus:ring-cerulean-500 rounded",
                 isActive(item.href)
                   ? "text-cerulean font-semibold"
                   : "text-default-600 dark:text-default-500 hover:text-cerulean",
               )}
               href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
             >
               {item.label}
               {/* Static underline for active items - no animation */}
               {isActive(item.href) && (
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cerulean rounded-full" />
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cerulean rounded-full" aria-hidden="true" />
               )}
             </Link>
           </NavbarItem>
@@ -80,10 +82,11 @@ export const Navbar = () => {
           {/* GitHub icon */}
           <Link
             isExternal
-            className="text-default-600 dark:text-default-400 hover:scale-110"
+            className="text-default-600 dark:text-default-400 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cerulean-500 rounded-full p-1"
             href={siteConfig.links.github}
+            aria-label="GitHub Profile"
           >
-            <GithubIcon className="h-5 w-5" />
+            <GithubIcon className="h-5 w-5" aria-hidden="true" />
           </Link>
 
           {/* Theme toggle */}
@@ -93,7 +96,7 @@ export const Navbar = () => {
           <NavbarItem className="hidden sm:flex">
             <Button
               as={Link}
-              className="bg-cerulean text-white hover:bg-cerulean-600"
+              className="bg-cerulean text-white hover:bg-cerulean-600 focus:outline-none focus:ring-2 focus:ring-cerulean-500 focus:ring-offset-2"
               href="/contact"
               radius="full"
               size="sm"
@@ -111,18 +114,19 @@ export const Navbar = () => {
             <NavbarMenuItem key={`${item.label}-${index}`}>
               <Link
                 className={clsx(
-                  "relative pl-2",
+                  "relative pl-2 focus:outline-none focus:ring-2 focus:ring-cerulean-500 rounded",
                   isActive(item.href)
                     ? "text-cerulean font-semibold"
                     : "text-default-600 dark:text-default-400",
                 )}
                 href={item.href}
                 size="lg"
+                aria-current={isActive(item.href) ? "page" : undefined}
               >
                 {item.label}
                 {/* Static indicator for mobile menu */}
                 {isActive(item.href) && (
-                  <span className="absolute left-0 top-0 bottom-0 w-1 bg-cerulean rounded-full" />
+                  <span className="absolute left-0 top-0 bottom-0 w-1 bg-cerulean rounded-full" aria-hidden="true" />
                 )}
               </Link>
             </NavbarMenuItem>
@@ -130,7 +134,7 @@ export const Navbar = () => {
           <NavbarMenuItem className="mt-6 sm:hidden">
             <Button
               as={Link}
-              className="bg-cerulean text-white w-full hover:bg-cerulean-600"
+              className="bg-cerulean text-white w-full hover:bg-cerulean-600 focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               href="/contact"
               radius="full"
               size="md"

@@ -1,5 +1,5 @@
 // src/components/projects/AuctionAppShowcase.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
@@ -24,7 +24,26 @@ export const AuctionAppShowcase: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const goToNext = () => {
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen) {
+        if (e.key === 'ArrowRight') {
+          goToNext();
+        } else if (e.key === 'ArrowLeft') {
+          goToPrev();
+        } else if (e.key === 'Escape') {
+          onClose();
+        }
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, currentIndex, onClose]);
+
+  const goToNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (currentIndex < auctionScreenshots.length - 1) {
       setCurrentIndex((prev) => prev + 1);
     } else {
@@ -32,7 +51,8 @@ export const AuctionAppShowcase: React.FC = () => {
     }
   };
 
-  const goToPrev = () => {
+  const goToPrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
     if (currentIndex > 0) {
       setCurrentIndex((prev) => prev - 1);
     } else {
@@ -53,6 +73,7 @@ export const AuctionAppShowcase: React.FC = () => {
           <CardBody className="flex flex-col items-center justify-center p-6 lg:p-12 relative">
             {/* Beautiful gradient background */}
             <div className="absolute inset-0 bg-gradient-to-br from-cerulean-900/30 to-rich-black-500/60 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
+            
             {/* Mockup with click handler */}
             <div 
               className="relative z-10 w-full max-w-4xl mx-auto cursor-pointer transition-transform hover:scale-[1.01] duration-300"
@@ -78,23 +99,23 @@ export const AuctionAppShowcase: React.FC = () => {
             <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2 pointer-events-none z-20">
               <button
                 aria-label="Previous screenshot"
-                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToPrev();
                 }}
               >
-                <span className="text-xl font-bold">←</span>
+                <span className="text-xl font-bold" aria-hidden="true">←</span>
               </button>
               <button
                 aria-label="Next screenshot"
-                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                className="rounded-full w-10 h-10 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={(e) => {
                   e.stopPropagation();
                   goToNext();
                 }}
               >
-                <span className="text-xl font-bold">→</span>
+                <span className="text-xl font-bold" aria-hidden="true">→</span>
               </button>
             </div>
           </CardBody>
@@ -111,7 +132,7 @@ export const AuctionAppShowcase: React.FC = () => {
               key={index}
               aria-current={index === currentIndex ? "true" : "false"}
               aria-label={`Go to screenshot ${index + 1}`}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${
+              className={`w-2.5 h-2.5 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-cerulean-500 ${
                 index === currentIndex
                   ? "bg-cerulean w-5"
                   : "bg-default-300 dark:bg-rich-black-300"
@@ -162,14 +183,20 @@ export const AuctionAppShowcase: React.FC = () => {
         isOpen={isOpen}
         size="5xl"
         onClose={onClose}
+        aria-labelledby="auction-modal-title"
       >
         <ModalContent>
           <ModalBody className="p-0 overflow-hidden">
             <div className="relative">
+              {/* Hidden title for screen readers */}
+              <h2 id="auction-modal-title" className="sr-only">
+                {`Auction Platform - ${currentScreenshot.name}`}
+              </h2>
+              
               {/* Close button */}
               <button
                 aria-label="Close fullscreen view"
-                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors"
+                className="absolute top-4 right-4 z-50 bg-white/80 dark:bg-rich-black-500/80 rounded-full p-2 shadow-md hover:bg-white dark:hover:bg-rich-black-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                 onClick={onClose}
               >
                 <svg
@@ -178,6 +205,7 @@ export const AuctionAppShowcase: React.FC = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
                 >
                   <path
                     d="M6 18L18 6M6 6l12 12"
@@ -199,23 +227,23 @@ export const AuctionAppShowcase: React.FC = () => {
               <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2">
                 <button
                   aria-label="Previous screenshot (fullscreen)"
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                   onClick={(e) => {
                     e.stopPropagation();
                     goToPrev();
                   }}
                 >
-                  <span className="text-2xl font-bold">←</span>
+                  <span className="text-2xl font-bold" aria-hidden="true">←</span>
                 </button>
                 <button
                   aria-label="Next screenshot (fullscreen)"
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
+                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
                   onClick={(e) => {
                     e.stopPropagation();
                     goToNext();
                   }}
                 >
-                  <span className="text-2xl font-bold">→</span>
+                  <span className="text-2xl font-bold" aria-hidden="true">→</span>
                 </button>
               </div>
             </div>

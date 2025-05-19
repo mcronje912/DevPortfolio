@@ -88,7 +88,7 @@ export const ReactQuizShowcase: React.FC = () => {
                 ))}
               </div>
             </CardBody>
-          </GlassCard>
+          </Card>
         </div>
 
         <div className="w-full md:w-1/2">
@@ -123,7 +123,7 @@ export const ReactQuizShowcase: React.FC = () => {
                 </ul>
               </div>
             </CardBody>
-          </GlassCard>
+          </Card>
         </div>
       </div>
     </div>

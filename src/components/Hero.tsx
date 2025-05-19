@@ -64,7 +64,7 @@ export const Hero = () => {
             <div className="flex flex-wrap gap-4">
               <Button
                 as={Link}
-                className="bg-cerulean hover:bg-cerulean-600 px-6 py-2"
+                className="bg-cerulean hover:bg-cerulean-600 px-6 py-2 focus:outline-none focus:ring-2 focus:ring-cerulean-500 focus:ring-offset-2"
                 color="primary"
                 href="/projects"
                 variant="shadow"
@@ -73,7 +73,7 @@ export const Hero = () => {
               </Button>
               <Button
                 as={Link}
-                className="border-cerulean text-cerulean px-6 py-2"
+                className="border-cerulean text-cerulean px-6 py-2 focus:outline-none focus:ring-2 focus:ring-cerulean-500 focus:ring-offset-2"
                 href="/contact"
                 variant="bordered"
               >
@@ -92,11 +92,12 @@ export const Hero = () => {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
+                aria-hidden="true" // Decorative image
               >
                 {/* Clean mockup image without card frame or glowing orbs */}
                 <img
                   src={mockupImages[currentImageIndex]}
-                  alt="Project mockup showcase"
+                  alt=""
                   className="w-full h-auto max-w-[380px] object-contain"
                 />
               </motion.div>
