@@ -29,23 +29,23 @@ const mobileScreenshots = [
 const adminScreenshots = [
   {
     id: "admin1",
-    path: "/images/projects/logistics/web/haz-admin1.png",
+    path: "/images/haz-admin1.webp",
   },
   {
     id: "admin2",
-    path: "/images/projects/logistics/web/haz-admin2.png",
+    path: "/images/haz-admin2.webp",
   },
   {
     id: "admin3",
-    path: "/images/projects/logistics/web/haz-admin3.png",
+    path: "/images/haz-admin3.webp",
   },
   {
     id: "admin4",
-    path: "/images/projects/logistics/web/haz-admin4.png",
+    path: "/images/haz-admin4.webp",
   },
   {
     id: "admin5",
-    path: "/images/projects/logistics/web/haz-admin5.png",
+    path: "/images/haz-admin5.webp",
   },
 ];
 

@@ -10,22 +10,22 @@ const nlpScreenshots = [
   {
     id: "nlp1",
     name: "NLP Interface",
-    path: "/images/projects/emotion-detection/nlp1.png",
+    path: "/images/nlp1.webp",
   },
   {
     id: "nlp2",
     name: "Emotion Analysis",
-    path: "/images/projects/emotion-detection/nlp2.png",
+    path: "/images/nlp2.webp",
   },
   {
     id: "nlp3",
     name: "Results Visualization",
-    path: "/images/projects/emotion-detection/nlp3.png",
+    path: "/images/nlp3.webp",
   },
   {
     id: "nlp4",
     name: "Detailed Analysis",
-    path: "/images/projects/emotion-detection/nlp4.png",
+    path: "/images/nlp4.webp",
   },
 ];
 

@@ -8,15 +8,15 @@ import { DeviceMockup } from "../mockups/DeviceMockup";
 const licensePlateScreenshots = [
   {
     id: "lic1",
-    path: "/images/projects/license-plate-recognition/lic-1.png",
+    path: "/images/lic-1.webp",
   },
   {
     id: "lic2",
-    path: "/images/projects/license-plate-recognition/lic-2.png",
+    path: "/images/lic-2.webp",
   },
   {
     id: "lic3",
-    path: "/images/projects/license-plate-recognition/lic-3.png",
+    path: "/images/lic-3.webp",
   }
 ];
 
