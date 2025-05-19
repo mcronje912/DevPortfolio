@@ -7,6 +7,7 @@ import { Card, CardBody } from "@heroui/card";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { AuctionAppShowcase } from "@/components/projects/AuctionAppShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function AuctionAppProjectPage() {
   return (
@@ -75,7 +76,7 @@ export default function AuctionAppProjectPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -101,25 +102,25 @@ export default function AuctionAppProjectPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Status
                   </h3>
                   <p>In Development (2024)</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Full Stack Developer</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -136,7 +137,7 @@ export default function AuctionAppProjectPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Frontend
@@ -154,9 +155,9 @@ export default function AuctionAppProjectPage() {
                     and maintainable approach to state across the application.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Backend & Database
@@ -178,7 +179,7 @@ export default function AuctionAppProjectPage() {
                     </li>
                   </ul>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -188,7 +189,7 @@ export default function AuctionAppProjectPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Real-time Bidding
@@ -201,9 +202,9 @@ export default function AuctionAppProjectPage() {
                     events.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Auction Management
@@ -215,9 +216,9 @@ export default function AuctionAppProjectPage() {
                     procedures automatically.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     User Authentication
@@ -229,9 +230,9 @@ export default function AuctionAppProjectPage() {
                     application for personalized experiences.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Responsive Design
@@ -243,9 +244,9 @@ export default function AuctionAppProjectPage() {
                     desktop screens.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Countdown Timers
@@ -256,9 +257,9 @@ export default function AuctionAppProjectPage() {
                     time-sensitive actions like auction closing automatically.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     User Profiles
@@ -270,7 +271,7 @@ export default function AuctionAppProjectPage() {
                     activities.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 

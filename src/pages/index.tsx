@@ -28,7 +28,7 @@ export default function HomePage() {
           <div className="flex justify-between items-center mb-10">
             <h2 className={title({ size: "lg" })}>Featured Projects</h2>
             <Button as={Link} color="primary" href="/projects" variant="light">
-              View All Projects →
+               <Card className="bg-default-50"> →
             </Button>
           </div>
 

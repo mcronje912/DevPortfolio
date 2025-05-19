@@ -7,6 +7,7 @@ import { Card, CardBody } from "@heroui/card";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { WorkflowManagerShowcase } from "@/components/projects/WorkflowManagerShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function WorkflowManagerProjectPage() {
   return (
@@ -74,7 +75,7 @@ export default function WorkflowManagerProjectPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -103,25 +104,25 @@ export default function WorkflowManagerProjectPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Development Period
                   </h3>
                   <p>3 months (Ongoing Improvements)</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Full Stack Developer & Business Analyst</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -137,7 +138,7 @@ export default function WorkflowManagerProjectPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Frontend Architecture
@@ -155,9 +156,9 @@ export default function WorkflowManagerProjectPage() {
                     efficiency with a clean, functional design.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Backend Architecture
@@ -175,9 +176,9 @@ export default function WorkflowManagerProjectPage() {
                     tool&apos;s scale and usage patterns.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Docker Containerization
@@ -190,9 +191,9 @@ export default function WorkflowManagerProjectPage() {
                     particularly between Apple Silicon and x86 systems.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Development Workflow
@@ -205,7 +206,7 @@ export default function WorkflowManagerProjectPage() {
                     development experience.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -215,7 +216,7 @@ export default function WorkflowManagerProjectPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     PDF Upload & Analysis
@@ -229,9 +230,9 @@ export default function WorkflowManagerProjectPage() {
                     consistency.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Material Management
@@ -243,9 +244,9 @@ export default function WorkflowManagerProjectPage() {
                     up-to-date pricing and availability information.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Layout Visualization & Optimization
@@ -259,9 +260,9 @@ export default function WorkflowManagerProjectPage() {
                     material utilization to minimize waste.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Quote Generation
@@ -274,9 +275,9 @@ export default function WorkflowManagerProjectPage() {
                     considerations.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Business Dashboard
@@ -288,9 +289,9 @@ export default function WorkflowManagerProjectPage() {
                     highlights areas that need attention.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     API-Driven Architecture
@@ -303,7 +304,7 @@ export default function WorkflowManagerProjectPage() {
                     management platform.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -314,7 +315,7 @@ export default function WorkflowManagerProjectPage() {
             </h2>
             <div className="prose max-w-none text-default-700">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                   <CardBody>
                     <h3 className="text-lg font-heading font-bold mb-3">
                       Cross-Architecture Docker Compatibility
@@ -330,9 +331,9 @@ export default function WorkflowManagerProjectPage() {
                       with appropriate volume mounts.
                     </p>
                   </CardBody>
-                </Card>
+              </GlassCard>
 
-                <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                   <CardBody>
                     <h3 className="text-lg font-heading font-bold mb-3">
                       PDF Dimension Extraction Accuracy
@@ -347,9 +348,9 @@ export default function WorkflowManagerProjectPage() {
                       file&apos;s quality or structure.
                     </p>
                   </CardBody>
-                </Card>
+              </GlassCard>
 
-                <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                   <CardBody>
                     <h3 className="text-lg font-heading font-bold mb-3">
                       Layout Optimization Algorithm
@@ -364,9 +365,9 @@ export default function WorkflowManagerProjectPage() {
                       material utilization.
                     </p>
                   </CardBody>
-                </Card>
+              </GlassCard>
 
-                <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                   <CardBody>
                     <h3 className="text-lg font-heading font-bold mb-3">
                       Canvas-Based Visualization
@@ -380,7 +381,7 @@ export default function WorkflowManagerProjectPage() {
                       maintains responsiveness even with complex layouts.
                     </p>
                   </CardBody>
-                </Card>
+              </GlassCard>
               </div>
             </div>
           </div>
@@ -462,7 +463,7 @@ export default function WorkflowManagerProjectPage() {
               Key Learnings & Technical Growth
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Technical Skills Gained
@@ -478,9 +479,9 @@ export default function WorkflowManagerProjectPage() {
                     <li>PDF processing and analysis techniques</li>
                   </ul>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Development Approach Insights
@@ -500,7 +501,7 @@ export default function WorkflowManagerProjectPage() {
                     </li>
                   </ul>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 

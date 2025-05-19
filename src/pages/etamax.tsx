@@ -11,6 +11,7 @@ import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { EtamaxWebShowcase } from "@/components/projects/EtamaxWebShowcase";
 import { EtamaxMobileShowcase } from "@/components/projects/EtamaxMobileShowcase";
+import { GlassCard } from "@/components/GlassCard";
 
 export default function EtamaxProjectPage() {
   // State for tracking which code examples are expanded
@@ -100,10 +101,11 @@ export default function EtamaxProjectPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
+                {" "}
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
-                    Technologies
+                     Technologies
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     <Chip color="secondary" variant="flat">
@@ -132,25 +134,25 @@ export default function EtamaxProjectPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Completed
                   </h3>
                   <p>2024</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Lead Full Stack Developer & IoT System Architect</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -206,7 +208,7 @@ export default function EtamaxProjectPage() {
             <EtamaxWebShowcase />
 
             <div className="mt-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Dashboard Features
@@ -234,7 +236,7 @@ export default function EtamaxProjectPage() {
                     <li>Alert systems for potential device issues</li>
                   </ul>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -252,7 +254,7 @@ export default function EtamaxProjectPage() {
 
               {/* Description text - takes up 2/3 of the width */}
               <div className="md:col-span-2">
-                <Card className="h-full">
+              <GlassCard intensity="heavy">
                   <CardBody>
                     <h3 className="text-xl font-heading font-bold mb-4">
                       Mobile App Features
@@ -297,7 +299,7 @@ export default function EtamaxProjectPage() {
                       </ul>
                     </div>
                   </CardBody>
-                </Card>
+                </GlassCard>
               </div>
             </div>
           </div>
@@ -308,7 +310,7 @@ export default function EtamaxProjectPage() {
               Technical Challenges Overcome
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Cross-Platform Reliability
@@ -322,9 +324,9 @@ export default function EtamaxProjectPage() {
                     on all devices.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Robust BLE Communication
@@ -541,9 +543,9 @@ export default function EtamaxProjectPage() {
                     </AnimatePresence>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Data Integrity and Validation
@@ -746,9 +748,9 @@ export default function EtamaxProjectPage() {
                     </AnimatePresence>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Error Logging System
@@ -1003,10 +1005,10 @@ export default function EtamaxProjectPage() {
                     </AnimatePresence>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
 
-            <Card className="bg-default-50 mt-6">
+              <GlassCard intensity="heavy">
               <CardBody>
                 <h3 className="text-lg font-heading font-bold mb-3">
                   Serverless Functions Implementation
@@ -1034,7 +1036,7 @@ export default function EtamaxProjectPage() {
                   </li>
                 </ul>
               </CardBody>
-            </Card>
+            </GlassCard>
           </div>
 
           {/* Business Impact section */}
@@ -1074,7 +1076,7 @@ export default function EtamaxProjectPage() {
             <h2 className="text-2xl font-heading font-bold mb-4">
               Future Development
             </h2>
-            <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
               <CardBody>
                 <p className="text-default-700">
                   The Etamax system continues to evolve with planned
@@ -1085,7 +1087,7 @@ export default function EtamaxProjectPage() {
                   home systems for comprehensive energy optimization.
                 </p>
               </CardBody>
-            </Card>
+            </GlassCard>
           </div>
 
           {/* CTA Section */}

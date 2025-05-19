@@ -8,6 +8,7 @@ import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { DeviceMockup } from "@/components/mockups/DeviceMockup";
 import { useEffect, useRef, useState } from "react";
+import { GlassCard } from "@/components/GlassCard";
 
 // Define the screenshots with descriptions
 const quizScreenshots = [
@@ -110,7 +111,7 @@ const ReactQuizShowcase = () => {
       {/* Device mockup and info - simplified without swipe */}
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-1/2 relative">
-          <Card className="h-full">
+              <GlassCard intensity="heavy">
             <CardBody className="flex flex-col items-center justify-center p-8 bg-ash-gray-900 dark:bg-rich-black-600">
               <DeviceMockup
                 alt={currentScreenshot.name}
@@ -159,11 +160,11 @@ const ReactQuizShowcase = () => {
                 ))}
               </div>
             </CardBody>
-          </Card>
+          </GlassCard>
         </div>
         
         <div className="w-full md:w-1/2">
-          <Card className="h-full">
+              <GlassCard intensity="heavy">
             <CardBody>
               <h3 className="text-xl font-heading font-bold mb-4">{currentScreenshot.name}</h3>
               <p className="text-default-700 mb-6">{currentScreenshot.description}</p>
@@ -190,7 +191,7 @@ const ReactQuizShowcase = () => {
                 </ul>
               </div>
             </CardBody>
-          </Card>
+          </GlassCard>
         </div>
       </div>
     </div>
@@ -255,7 +256,7 @@ export default function ReactQuizProjectPage() {
             </div>
 
             <div className="space-y-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-3">
                     Technologies
@@ -281,25 +282,25 @@ export default function ReactQuizProjectPage() {
                     </Chip>
                   </div>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     Completed
                   </h3>
                   <p>2025</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-xl font-heading font-bold mb-2">
                     My Role
                   </h3>
                   <p>Lead Mobile Developer</p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -312,7 +313,7 @@ export default function ReactQuizProjectPage() {
               Key Features
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Interactive Learning Experiences
@@ -326,9 +327,9 @@ export default function ReactQuizProjectPage() {
                     different learning styles.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Thoughtful Learning Structure
@@ -341,9 +342,9 @@ export default function ReactQuizProjectPage() {
                     learning resource beyond simple quizzes.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Progress Tracking
@@ -355,9 +356,9 @@ export default function ReactQuizProjectPage() {
                     encouraging mastery of the material before progressing.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Offline Functionality
@@ -369,9 +370,9 @@ export default function ReactQuizProjectPage() {
                     real-world use cases where connectivity may be limited.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Polished User Experience
@@ -383,9 +384,9 @@ export default function ReactQuizProjectPage() {
                     accessible while maintaining visual appeal.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Monetization
@@ -397,7 +398,7 @@ export default function ReactQuizProjectPage() {
                     concept to commercial release.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -408,7 +409,7 @@ export default function ReactQuizProjectPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Cross-Platform Development
@@ -420,9 +421,9 @@ export default function ReactQuizProjectPage() {
                     maintaining platform-specific quality.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     State Management
@@ -434,9 +435,9 @@ export default function ReactQuizProjectPage() {
                     application.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Content Management System
@@ -447,9 +448,9 @@ export default function ReactQuizProjectPage() {
                     the app maintainable and expandable for future content.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
 
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     App Store Integration
@@ -462,7 +463,7 @@ export default function ReactQuizProjectPage() {
                     business aspects of app development.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
@@ -494,7 +495,7 @@ export default function ReactQuizProjectPage() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Unit Testing
@@ -503,9 +504,9 @@ export default function ReactQuizProjectPage() {
                     I created comprehensive tests for all model classes and utility functions to verify data parsing, calculation logic, and recommendation algorithms functioned correctly in isolation.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
               
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Integration Testing
@@ -514,9 +515,9 @@ export default function ReactQuizProjectPage() {
                     Tests verified that providers correctly interacted with database services, ensuring proper data relationships between questions, topics, and user progress.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
               
-              <Card className="bg-default-50">
+              <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     UI & Quiz Logic Testing
@@ -528,7 +529,7 @@ export default function ReactQuizProjectPage() {
                     functionality.
                   </p>
                 </CardBody>
-              </Card>
+              </GlassCard>
             </div>
           </div>
 
