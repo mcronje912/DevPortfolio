@@ -1,7 +1,7 @@
 // src/pages/emotion-detection.tsx
 import { Chip } from "@heroui/chip";
 import { Link } from "@heroui/link";
-import { Card, CardBody } from "@heroui/card";
+import { CardBody } from "@heroui/card";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";

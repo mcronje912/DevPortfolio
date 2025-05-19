@@ -2,12 +2,12 @@
 import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-import { Card, CardBody } from "@heroui/card";
+import { CardBody } from "@heroui/card";
+import { useEffect, useRef, useState } from "react";
 
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { DeviceMockup } from "@/components/mockups/DeviceMockup";
-import { useEffect, useRef, useState } from "react";
 import { GlassCard } from "@/components/GlassCard";
 
 // Define the screenshots with descriptions
@@ -16,170 +16,194 @@ const quizScreenshots = [
     id: "dashboard",
     name: "Topics Dashboard",
     path: "/images/projects/react-quiz/mobile/dashboard.png",
-    description: "Main dashboard showing available React topics organized by difficulty levels with progress indicators for each topic."
+    description:
+      "Main dashboard showing available React topics organized by difficulty levels with progress indicators for each topic.",
   },
   {
     id: "progress",
     name: "Progress Tracking",
     path: "/images/projects/react-quiz/mobile/progress.png",
-    description: "User progress overview showing completion metrics, achievement badges, and progress by difficulty level."
+    description:
+      "User progress overview showing completion metrics, achievement badges, and progress by difficulty level.",
   },
   {
     id: "concept-map",
     name: "Concept Map",
     path: "/images/projects/react-quiz/mobile/concept-map.png",
-    description: "Visual representation of React concepts organized by difficulty level with brief descriptions."
+    description:
+      "Visual representation of React concepts organized by difficulty level with brief descriptions.",
   },
   {
     id: "navigation",
     name: "Concept Navigation",
     path: "/images/projects/react-quiz/mobile/navigation.png",
-    description: "Side navigation showing the hierarchical organization of React concepts with expandable categories."
+    description:
+      "Side navigation showing the hierarchical organization of React concepts with expandable categories.",
   },
   {
     id: "quiz-correct",
     name: "Quiz Question (Correct)",
     path: "/images/projects/react-quiz/mobile/quiz-correct.png",
-    description: "Quiz interface showing a correctly answered question about React Hooks with syntax-highlighted code example."
+    description:
+      "Quiz interface showing a correctly answered question about React Hooks with syntax-highlighted code example.",
   },
   {
     id: "quiz-code",
     name: "Quiz Question (Code)",
     path: "/images/projects/react-quiz/mobile/quiz-code.png",
-    description: "Complex quiz question about Forms & Controlled Components featuring a detailed code example with syntax highlighting."
-  }
+    description:
+      "Complex quiz question about Forms & Controlled Components featuring a detailed code example with syntax highlighting.",
+  },
 ];
 
 // ReactQuizShowcase component with simplified navigation
 const ReactQuizShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const tabContainerRef = useRef<HTMLDivElement>(null);
-  
+
   const currentScreenshot = quizScreenshots[currentIndex];
-  
+
   // Navigation functions
   const goToNext = () => {
     if (currentIndex < quizScreenshots.length - 1) {
-      setCurrentIndex(prev => prev + 1);
+      setCurrentIndex((prev) => prev + 1);
     }
   };
-  
+
   const goToPrev = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1);
+      setCurrentIndex((prev) => prev - 1);
     }
   };
-  
+
   // Scroll the active tab into view when currentIndex changes
   useEffect(() => {
     if (tabContainerRef.current) {
-      const activeTab = tabContainerRef.current.querySelector(`[data-active="true"]`);
+      const activeTab =
+        tabContainerRef.current.querySelector(`[data-active="true"]`);
+
       if (activeTab) {
-        activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        activeTab.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
       }
     }
   }, [currentIndex]);
-  
+
   return (
     <div className="mb-12">
       <h2 className="text-2xl font-heading font-bold mb-6">App Showcase</h2>
-      
+
       {/* Custom tabs with better mobile support */}
-      <div 
-        className="mb-8 overflow-x-auto scrollbar-hide" 
+      <div
         ref={tabContainerRef}
+        className="mb-8 overflow-x-auto scrollbar-hide"
       >
         <div className="flex space-x-2 pb-2 min-w-max">
           {quizScreenshots.map((screenshot, index) => (
             <button
               key={screenshot.id}
-              onClick={() => setCurrentIndex(index)}
-              data-active={index === currentIndex}
-              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm transition-colors duration-200 ${
-                index === currentIndex 
-                  ? 'bg-cerulean-300 dark:bg-cerulean-600 text-rich-black-900 dark:text-white font-medium'
-                  : 'bg-default-100 dark:bg-rich-black-300 text-default-700 dark:text-default-400 hover:bg-default-200 dark:hover:bg-rich-black-200'
-              }`}
               aria-pressed={index === currentIndex}
+              className={`px-4 py-2 rounded-full whitespace-nowrap text-sm transition-colors duration-200 ${
+                index === currentIndex
+                  ? "bg-cerulean-300 dark:bg-cerulean-600 text-rich-black-900 dark:text-white font-medium"
+                  : "bg-default-100 dark:bg-rich-black-300 text-default-700 dark:text-default-400 hover:bg-default-200 dark:hover:bg-rich-black-200"
+              }`}
+              data-active={index === currentIndex}
+              onClick={() => setCurrentIndex(index)}
             >
               {screenshot.name}
             </button>
           ))}
         </div>
       </div>
-      
+
       {/* Device mockup and info - simplified without swipe */}
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-1/2 relative">
-              <GlassCard intensity="heavy">
+          <GlassCard intensity="heavy">
             <CardBody className="flex flex-col items-center justify-center p-8 bg-ash-gray-900 dark:bg-rich-black-600">
               <DeviceMockup
                 alt={currentScreenshot.name}
                 image={currentScreenshot.path}
                 type="phone"
               />
-              
+
               {/* Navigation arrows */}
               <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2 pointer-events-none">
-                <button 
-                  onClick={goToPrev}
-                  disabled={currentIndex === 0}
-                  className={`rounded-full w-8 h-8 flex items-center justify-center bg-white/80 shadow-md pointer-events-auto ${
-                    currentIndex === 0 ? 'opacity-0' : 'opacity-100'
-                  }`}
+                <button
                   aria-label="Previous screenshot"
+                  className={`rounded-full w-8 h-8 flex items-center justify-center bg-white/80 shadow-md pointer-events-auto ${
+                    currentIndex === 0 ? "opacity-0" : "opacity-100"
+                  }`}
+                  disabled={currentIndex === 0}
+                  onClick={goToPrev}
                 >
                   <span className="text-xl font-bold text-rich-black">←</span>
                 </button>
-                <button 
-                  onClick={goToNext}
-                  disabled={currentIndex === quizScreenshots.length - 1}
-                  className={`rounded-full w-8 h-8 flex items-center justify-center bg-white/80 shadow-md pointer-events-auto ${
-                    currentIndex === quizScreenshots.length - 1 ? 'opacity-0' : 'opacity-100'
-                  }`}
+                <button
                   aria-label="Next screenshot"
+                  className={`rounded-full w-8 h-8 flex items-center justify-center bg-white/80 shadow-md pointer-events-auto ${
+                    currentIndex === quizScreenshots.length - 1
+                      ? "opacity-0"
+                      : "opacity-100"
+                  }`}
+                  disabled={currentIndex === quizScreenshots.length - 1}
+                  onClick={goToNext}
                 >
                   <span className="text-xl font-bold text-rich-black">→</span>
                 </button>
               </div>
-              
+
               {/* Pagination indicators - FIXED for light mode visibility */}
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5" role="group" aria-label="Screenshot pagination">
+              <div
+                aria-label="Screenshot pagination"
+                className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5"
+                role="group"
+              >
                 {quizScreenshots.map((_, index) => (
                   <button
                     key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all border border-white/50 ${
-                      index === currentIndex 
-                        ? 'bg-cerulean-300 w-4 border-cerulean-300' 
-                        : 'bg-gray-500/50'
-                    }`}
-                    aria-label={`Go to screenshot ${index + 1}`}
                     aria-current={index === currentIndex ? "true" : "false"}
+                    aria-label={`Go to screenshot ${index + 1}`}
+                    className={`w-2 h-2 rounded-full transition-all border border-white/50 ${
+                      index === currentIndex
+                        ? "bg-cerulean-300 w-4 border-cerulean-300"
+                        : "bg-gray-500/50"
+                    }`}
+                    onClick={() => setCurrentIndex(index)}
                   />
                 ))}
               </div>
             </CardBody>
           </GlassCard>
         </div>
-        
+
         <div className="w-full md:w-1/2">
-              <GlassCard intensity="heavy">
+          <GlassCard intensity="heavy">
             <CardBody>
-              <h3 className="text-xl font-heading font-bold mb-4">{currentScreenshot.name}</h3>
-              <p className="text-default-700 mb-6">{currentScreenshot.description}</p>
-              
+              <h3 className="text-xl font-heading font-bold mb-4">
+                {currentScreenshot.name}
+              </h3>
+              <p className="text-default-700 mb-6">
+                {currentScreenshot.description}
+              </p>
+
               <div className="mb-6">
                 <h4 className="font-medium mb-2">Key Features:</h4>
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>Interactive quizzes with code examples and explanations</li>
+                  <li>
+                    Interactive quizzes with code examples and explanations
+                  </li>
                   <li>Progress tracking and achievement system</li>
                   <li>Comprehensive concept map of React topics</li>
                   <li>Organized learning path from beginner to advanced</li>
                   <li>Syntax highlighting for code examples</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-2">Technical Implementation:</h4>
                 <ul className="list-disc pl-5 space-y-1">
@@ -487,13 +511,17 @@ export default function ReactQuizProjectPage() {
                 efficiently manage resources while maintaining quality
                 standards.
               </p>
-              
-              <h3 className="text-xl font-heading font-bold mt-6 mb-3">Comprehensive Testing Strategy</h3>
+
+              <h3 className="text-xl font-heading font-bold mt-6 mb-3">
+                Comprehensive Testing Strategy
+              </h3>
               <p className="mb-4">
-                To ensure the app delivered a reliable educational experience, I implemented multiple levels of testing throughout the development process:
+                To ensure the app delivered a reliable educational experience, I
+                implemented multiple levels of testing throughout the
+                development process:
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
               <GlassCard intensity="heavy">
                 <CardBody>
@@ -501,22 +529,27 @@ export default function ReactQuizProjectPage() {
                     Unit Testing
                   </h3>
                   <p className="text-default-700">
-                    I created comprehensive tests for all model classes and utility functions to verify data parsing, calculation logic, and recommendation algorithms functioned correctly in isolation.
+                    I created comprehensive tests for all model classes and
+                    utility functions to verify data parsing, calculation logic,
+                    and recommendation algorithms functioned correctly in
+                    isolation.
                   </p>
                 </CardBody>
               </GlassCard>
-              
+
               <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">
                     Integration Testing
                   </h3>
                   <p className="text-default-700">
-                    Tests verified that providers correctly interacted with database services, ensuring proper data relationships between questions, topics, and user progress.
+                    Tests verified that providers correctly interacted with
+                    database services, ensuring proper data relationships
+                    between questions, topics, and user progress.
                   </p>
                 </CardBody>
               </GlassCard>
-              
+
               <GlassCard intensity="heavy">
                 <CardBody>
                   <h3 className="text-lg font-heading font-bold mb-3">

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
 import { ContactForm } from "@/components/contact/ContactForm";
-import { GlassCard } from "@/components/GlassCard";
 
 export default function ContactPage() {
   return (

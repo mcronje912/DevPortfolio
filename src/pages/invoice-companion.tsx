@@ -2,7 +2,7 @@
 import { Chip } from "@heroui/chip";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
-import { Card, CardBody } from "@heroui/card";
+import { CardBody } from "@heroui/card";
 
 import { title } from "../components/primitives";
 import DefaultLayout from "../layouts/default";
