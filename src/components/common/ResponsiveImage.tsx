@@ -27,7 +27,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   onLoad,
 }) => {
   const [useWebP, setUseWebP] = useState(true);
-  const [imgLoaded, setImgLoaded] = useState(false);
+  const [, setImgLoaded] = useState(false);
   
   // Check if WebP is supported
   useEffect(() => {
