@@ -9,8 +9,8 @@ export const SkillBadge: React.FC<SkillBadgeProps> = ({ skill }) => {
   return (
     <div className="mb-5">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-default-700 dark:text-default-300">{skill.name}</span>
-        <span className="text-sm text-default-500 dark:text-default-400 bg-default-100 dark:bg-rich-black-400 rounded-full px-2 py-0.5">{skill.level}/10</span>
+        <span className="text-default-700 dark:text-default-600">{skill.name}</span>
+        <span className="text-sm text-default-500 dark:text-default-600 bg-default-100 dark:bg-rich-black-400 rounded-full px-2 py-0.5">{skill.level}/10</span>
       </div>
       <Progress
         classNames={{

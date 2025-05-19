@@ -12,7 +12,7 @@ export const SkillCategory: React.FC<SkillCategoryProps> = ({ category }) => {
   return (
     <Card className="bg-default-50 dark:bg-rich-black-500 shadow-md">
       <CardHeader className="flex-col items-start pt-5 pb-3 px-5 bg-gradient-to-r from-cerulean to-verdigris dark:from-cerulean dark:to-verdigris-700">
-        <h3 className="font-heading font-bold text-xl text-white">
+        <h3 className="font-heading font-bold text-x text-white">
           {category.name}
         </h3>
       </CardHeader>

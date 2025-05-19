@@ -21,7 +21,7 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
 
   // Generate WebP path
   const originalSrc = "/images/global/profile-illustration.png";
-  const webpSrc = "/images/global/profile-illustration.webp";
+  const webpSrc = "/images/profile-illustration.webp";
 
   const sizeClasses = {
     xs: "h-32 w-32",
