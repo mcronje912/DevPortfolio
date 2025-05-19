@@ -60,7 +60,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           <div className="mt-2 h-[2px] w-36 bg-gradient-to-r from-cerulean-500 to-cerulean-600/30 dark:from-cerulean-500 dark:to-cerulean-800/50 rounded-full" />
         </div>
 
-        <p className="text-sm text-rich-black-600 dark:text-ash-gray-300">
+        <p className="text-sm text-rich-black-600 dark:text-ash-gray-200">
           {description}
         </p>
         <div className="flex flex-wrap gap-2 mt-3">

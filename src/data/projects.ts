@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "Etamax is a comprehensive solution for solar energy optimization. I developed both the cross-platform mobile application using Flutter and the React-based management dashboard. The system provides real-time monitoring of solar geyser performance, enabling users to maximize energy efficiency and reduce costs. The solution incorporates IoT device integration through BLE communications, providing users with actionable insights about their solar energy usage.",
     thumbnailUrl: "/images/projects/thumbnails/etamax-thumb.png",
     deviceType: "dual", // Added property
-    tags: ["Mobile App", "Web Dashboard", "IoT Integration"],
+    tags: ["Mobile App", "Web Dashboard", "IoT Integration", "Flutter", "React"],
     projectUrl: "/projects/etamax",
     featured: true,
     technologies: ["Flutter", "React", "TypeScript", "Firebase", "BLE", "IoT"],
@@ -49,7 +49,7 @@ export const projects: Project[] = [
       "The React Learning Quiz App is a comprehensive educational tool designed to help developers strengthen their React knowledge. Built with Flutter for cross-platform functionality, the app features interactive quizzes, coding challenges, and progress tracking to facilitate effective learning. The backend is powered by Firebase, providing real-time updates and secure user authentication.",
     thumbnailUrl: "/images/projects/thumbnails/react-splash.png",
     deviceType: "mobile", // Added property
-    tags: ["Mobile App", "Education", "Cross-Platform"],
+    tags: ["Mobile App", "Education", "Cross-Platform", "Flutter"],
     projectUrl: "/projects/react-quiz",
     featured: true,
     technologies: ["Flutter", "Dart", "Firebase", "State Management"],
@@ -166,6 +166,8 @@ export const projects: Project[] = [
       "Admin Dashboard",
       "Real-time",
       "Business Tool",
+      "Flutter",
+      "React",
     ],
     projectUrl: "/projects/logistics-management-system",
     featured: true,
