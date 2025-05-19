@@ -27,7 +27,7 @@ export default function WorkflowManagerProjectPage() {
             </div>
 
             <h1 className={title({ size: "lg", class: "mb-4" })}>
-              Print Quote System
+              Workflow Manager System
             </h1>
 
             <div className="flex flex-wrap gap-2 mb-6">

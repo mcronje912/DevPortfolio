@@ -5,17 +5,17 @@ import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
 import { DeviceMockup } from "../mockups/DeviceMockup";
 
-// Define the screenshots
+// Define the screenshots with WebP paths
 const auctionScreenshots = [
   {
     id: "listings",
     name: "Auction Listings",
-    path: "/images/projects/auction-app/auction1.png",
+    path: "/images/auction1.webp",
   },
   {
     id: "product-detail",
     name: "Auction Detail View",
-    path: "/images/projects/auction-app/auction2.png",
+    path: "/images/auction2.webp",
   },
 ];
 
@@ -51,28 +51,26 @@ export const AuctionAppShowcase: React.FC = () => {
         <Card className="mb-8 overflow-hidden">
           <CardBody className="flex flex-col items-center justify-center p-6 lg:p-12 relative">
             {/* Beautiful gradient background */}
-{/* Simplified two-color gradient background */}
-<div className="absolute inset-0 bg-gradient-to-br from-cerulean-900/30 to-rich-black-500/60 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
+            <div className="absolute inset-0 bg-gradient-to-br from-cerulean-900/30 to-rich-black-500/60 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
             {/* Mockup with click handler */}
             <div 
-            className="relative z-10 w-full max-w-4xl mx-auto cursor-pointer transition-transform hover:scale-[1.01] duration-300"
-            onClick={onOpen}
-            onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                onOpen();
-                }
-            }}
-            role="button"
-            tabIndex={0}
-            aria-label="Open fullscreen view of auction platform"
+              className="relative z-10 w-full max-w-4xl mx-auto cursor-pointer transition-transform hover:scale-[1.01] duration-300"
+              onClick={onOpen}
+              onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                  onOpen();
+                  }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label="Open fullscreen view of auction platform"
             >
-            <DeviceMockup
-                alt={currentScreenshot.name}
-                image={currentScreenshot.path}
-                type="laptop"
-                className="w-full"
-            />
-            
+              <DeviceMockup
+                  alt={currentScreenshot.name}
+                  image={currentScreenshot.path}
+                  type="laptop"
+                  className="w-full"
+              />
             </div>
 
             {/* Navigation arrows */}

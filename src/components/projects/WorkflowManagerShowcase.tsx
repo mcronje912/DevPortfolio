@@ -9,32 +9,32 @@ const workflowScreenshots = [
   {
     id: "bm1",
     name: "Dashboard View",
-    path: "/images/projects/workflow-manager/bm1.png",
+    path: "/images/bm1.webp",
   },
   {
     id: "bm2",
-    name: "Quote Calculator",
-    path: "/images/projects/workflow-manager/bm2.png",
+    name: "Materials Management",
+    path: "/images/bm2.webp",
   },
   {
     id: "bm3",
-    name: "Layout Optimizer",
-    path: "/images/projects/workflow-manager/bm3.png",
+    name: "Materials Management, add a new item",
+    path: "/images/bm3.webp",
   },
   {
     id: "bm4",
-    name: "Materials Management",
-    path: "/images/projects/workflow-manager/bm4.png",
+    name: "Layout Optimization",
+    path: "/images/bm4.webp",
   },
   {
     id: "bm5",
     name: "PDF Processing",
-    path: "/images/projects/workflow-manager/bm5.png",
+    path: "/images/bm5.webp",
   },
   {
     id: "bm6",
-    name: "System Configuration",
-    path: "/images/projects/workflow-manager/bm6.png",
+    name: "Layout Settings",
+    path: "/images/bm6.webp",
   }
 ];
 
@@ -87,13 +87,6 @@ export const WorkflowManagerShowcase: React.FC = () => {
                 className="w-full"
               />
               
-              {/* Click to enlarge indicator */}
-              <div className="absolute bottom-4 right-4 bg-white/80 dark:bg-rich-black-400/80 backdrop-blur-sm text-xs px-2 py-1 rounded-md shadow-sm text-rich-black-700 dark:text-white flex items-center gap-1 opacity-80 hover:opacity-100 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-                Click to enlarge
-              </div>
             </button>
             
             {/* Navigation arrows */}

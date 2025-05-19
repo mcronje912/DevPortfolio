@@ -19,6 +19,10 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
   const { currentTheme } = useTheme();
   const isDark = currentTheme === "dark";
 
+  // Generate WebP path
+  const originalSrc = "/images/global/profile-illustration.png";
+  const webpSrc = "/images/global/profile-illustration.webp";
+
   const sizeClasses = {
     xs: "h-32 w-32",
     sm: "h-40 w-40",
@@ -55,18 +59,21 @@ export const ProfileImage: React.FC<ProfileImageProps> = ({
       <div className="absolute inset-0 bg-gradient-to-br from-cerulean to-verdigris opacity-20" />
 
       {/* Profile image with filter - FIXED POSITIONING */}
-      <img
-        alt="Marco Cronje - Full Stack Developer & IoT Systems Engineer"
-        className="w-full h-full"
-        src="/images/global/profile-illustration.png"
-        style={{
-          filter: getFilterStyle(),
-          mixBlendMode: isDark ? "lighten" : "multiply",
-          objectFit: "contain", // Changed from object-cover to object-contain
-          objectPosition: "center center", // Center the image
-          padding: "5px", // Add some padding to ensure no cropping
-        }}
-      />
+      <picture className="w-full h-full">
+        <source srcSet={webpSrc} type="image/webp" />
+        <img
+          alt="Marco Cronje - Full Stack Developer & IoT Systems Engineer"
+          className="w-full h-full"
+          src={originalSrc}
+          style={{
+            filter: getFilterStyle(),
+            mixBlendMode: isDark ? "lighten" : "multiply",
+            objectFit: "contain", 
+            objectPosition: "center center",
+            padding: "5px",
+          }}
+        />
+      </picture>
 
       {/* Optional subtle overlay */}
       <div

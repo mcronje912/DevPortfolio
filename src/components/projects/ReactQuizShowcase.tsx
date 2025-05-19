@@ -1,71 +1,32 @@
 // src/components/projects/ReactQuizShowcase.tsx
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardBody } from "@heroui/card";
-import { Tabs, Tab } from "@heroui/tabs";
-
 import { DeviceMockup } from "../mockups/DeviceMockup";
 
-// Define the screenshots with descriptions
+// Define the screenshots with the correct paths from your images directory
 const quizScreenshots = [
-  {
-    id: "splash",
-    name: "Splash Screen",
-    path: "/images/projects/react-quiz/mobile/splash.png",
-    description:
-      "App launch screen featuring the ReaQt logo, app name, and tagline 'Compile your React skills' with a loading status indicator.",
-  },
-  {
-    id: "dashboard",
-    name: "Topics Dashboard",
-    path: "/images/projects/react-quiz/mobile/dashboard.png",
-    description:
-      "Main dashboard showing available React topics organized by difficulty levels with progress indicators for each topic.",
-  },
-  {
-    id: "progress",
-    name: "Progress Tracking",
-    path: "/images/projects/react-quiz/mobile/progress.png",
-    description:
-      "User progress overview showing completion metrics, achievement badges, and progress by difficulty level.",
-  },
-  {
-    id: "concept-map",
-    name: "Concept Map",
-    path: "/images/projects/react-quiz/mobile/concept-map.png",
-    description:
-      "Visual representation of React concepts organized by difficulty level with brief descriptions.",
-  },
-  {
-    id: "navigation",
-    name: "Concept Navigation",
-    path: "/images/projects/react-quiz/mobile/navigation.png",
-    description:
-      "Side navigation showing the hierarchical organization of React concepts with expandable categories.",
-  },
-  {
-    id: "quiz-correct",
-    name: "Quiz Question (Correct)",
-    path: "/images/projects/react-quiz/mobile/quiz-correct.png",
-    description:
-      "Quiz interface showing a correctly answered question about React Hooks with syntax-highlighted code example.",
-  },
-  {
-    id: "quiz-code",
-    name: "Quiz Question (Code)",
-    path: "/images/projects/react-quiz/mobile/quiz-code.png",
-    description:
-      "Complex quiz question about Forms & Controlled Components featuring a detailed code example with syntax highlighting.",
-  },
+  "/public/images/dashboard.webp",     // These are directly in the /images/ folder
+  "/images/progress.webp",      // Not in /images/projects/react-quiz/mobile/
+  "/images/concept-map.webp",
+  "/images/navigation.webp",
+  "/images/quiz-correct.webp",
+  "/images/quiz-code.webp"
 ];
 
 export const ReactQuizShowcase: React.FC = () => {
-  const [selectedScreenshot, setSelectedScreenshot] = React.useState(
-    quizScreenshots[0].id,
-  );
-
-  const currentScreenshot =
-    quizScreenshots.find((s) => s.id === selectedScreenshot) ||
-    quizScreenshots[0];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const goToNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % quizScreenshots.length);
+  };
+  
+  const goToPrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    setCurrentIndex((prev) => 
+      prev === 0 ? quizScreenshots.length - 1 : prev - 1
+    );
+  };
 
   return (
     <div className="mb-12">
@@ -73,29 +34,59 @@ export const ReactQuizShowcase: React.FC = () => {
         React Quiz App Showcase
       </h2>
 
-      <div className="mb-8">
-        <Tabs
-          aria-label="App screenshots"
-          color="primary"
-          selectedKey={selectedScreenshot}
-          variant="underlined"
-          onSelectionChange={(key) => setSelectedScreenshot(key as string)}
-        >
-          {quizScreenshots.map((screenshot) => (
-            <Tab key={screenshot.id} title={screenshot.name} />
-          ))}
-        </Tabs>
-      </div>
-
       <div className="flex flex-col md:flex-row gap-8">
         <div className="w-full md:w-1/2">
           <Card className="h-full">
-            <CardBody className="flex flex-col items-center justify-center p-8 bg-ash-gray-900 dark:bg-rich-black-600">
-              <DeviceMockup
-                alt={currentScreenshot.name}
-                image={currentScreenshot.path}
-                type="phone"
-              />
+            <CardBody className="flex flex-col items-center justify-center p-8 bg-ash-gray-900 dark:bg-rich-black-600 relative">
+              {/* Gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-cerulean-900/30 to-rich-black-500/60 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
+              
+              <div className="relative z-10">
+                <DeviceMockup
+                  alt="React Quiz App Screenshot"
+                  image={quizScreenshots[currentIndex]}
+                  type="phone"
+                />
+              </div>
+              
+              {/* Navigation arrows */}
+              <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2 pointer-events-none z-20">
+                <button
+                  aria-label="Previous screenshot"
+                  className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                  onClick={goToPrev}
+                >
+                  <span className="text-lg font-bold">←</span>
+                </button>
+                <button
+                  aria-label="Next screenshot"
+                  className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors"
+                  onClick={goToNext}
+                >
+                  <span className="text-lg font-bold">→</span>
+                </button>
+              </div>
+              
+              {/* Pagination indicators */}
+              <div
+                aria-label="Screenshot pagination"
+                className="absolute bottom-4 left-0 right-0 flex justify-center gap-1.5"
+                role="group"
+              >
+                {quizScreenshots.map((_, index) => (
+                  <button
+                    key={index}
+                    aria-current={index === currentIndex ? "true" : "false"}
+                    aria-label={`Go to screenshot ${index + 1}`}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentIndex
+                        ? "bg-cerulean w-4"
+                        : "bg-white/70 dark:bg-rich-black-300/70"
+                    }`}
+                    onClick={() => setCurrentIndex(index)}
+                  />
+                ))}
+              </div>
             </CardBody>
           </Card>
         </div>
@@ -104,14 +95,10 @@ export const ReactQuizShowcase: React.FC = () => {
           <Card className="h-full">
             <CardBody>
               <h3 className="text-xl font-heading font-bold mb-4">
-                {currentScreenshot.name}
+                Key App Features
               </h3>
-              <p className="text-default-700 mb-6">
-                {currentScreenshot.description}
-              </p>
-
+              
               <div className="mb-6">
-                <h4 className="font-medium mb-2">Key App Features:</h4>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>
                     Interactive quizzes with code examples and explanations
@@ -123,8 +110,10 @@ export const ReactQuizShowcase: React.FC = () => {
                 </ul>
               </div>
 
+              <h3 className="text-xl font-heading font-bold mb-4">
+                Technical Highlights
+              </h3>
               <div>
-                <h4 className="font-medium mb-2">Technical Highlights:</h4>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>Built with Flutter for cross-platform support</li>
                   <li>Offline functionality for learning anywhere</li>

@@ -1,40 +1,79 @@
 // src/components/projects/EtamaxWebShowcase.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
+// Import DeviceMockup but we'll handle WebP manually
 import { DeviceMockup } from "../mockups/DeviceMockup";
 
 // Define admin dashboard screenshots
+// src/components/projects/EtamaxWebShowcase.tsx
+// Update web screenshots with correct paths
 const webScreenshots = [
   {
     id: "web1",
     name: "Historical Data",
-    path: "/images/projects/etamax/web/etamax-web1.png",
+    path: "/images/etamax-web1.png", // Updated path
+    webpPath: "/images/etamax-web1.webp", // Updated path
     description:
       "Historical data and performance summary section",
   },
   {
     id: "web2",
     name: "Overview Dashboard",
-    path: "/images/projects/etamax/web/etamax-web2.png",
+    path: "/images/etamax-web2.png", // Updated path
+    webpPath: "/images/etamax-web2.webp", // Updated path
     description:
       "Recent activity and Provincial summary of collective device performance",
   },
   {
     id: "web3",
     name: "Device Detail Page",
-    path: "/images/projects/etamax/web/etamax-web3.png",
+    path: "/images/etamax-web3.png", // Updated path
+    webpPath: "/images/etamax-web3.webp", // Updated path
     description: "Detailed device and user information, including alerts and notifications",
   },
 ];
-
 export const EtamaxWebShowcase: React.FC = () => {
   // State for the admin images
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [useWebP, setUseWebP] = useState(true);
 
   // Lightbox state
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Check if WebP images exist on mount
+  useEffect(() => {
+    const checkWebPSupport = async () => {
+      try {
+        // Check if browser supports WebP
+        const webpSupported = document.createElement('canvas')
+          .toDataURL('image/webp')
+          .indexOf('data:image/webp') === 0;
+        
+        if (!webpSupported) {
+          setUseWebP(false);
+          return;
+        }
+        
+        // Try to fetch one WebP image to confirm they exist
+        const testUrl = webScreenshots[0].webpPath;
+        const response = await fetch(testUrl, { method: 'HEAD' });
+        
+        if (!response.ok) {
+          console.log('WebP images not available, using originals');
+          setUseWebP(false);
+        } else {
+          console.log('WebP images available and will be used');
+        }
+      } catch (error) {
+        console.error('Error checking WebP support:', error);
+        setUseWebP(false);
+      }
+    };
+    
+    checkWebPSupport();
+  }, []);
 
   // Navigation functions for admin screenshots
   const goToNext = (e?: React.MouseEvent) => {
@@ -50,6 +89,7 @@ export const EtamaxWebShowcase: React.FC = () => {
   };
 
   const currentScreenshot = webScreenshots[currentIndex];
+  const currentImagePath = useWebP ? currentScreenshot.webpPath : currentScreenshot.path;
 
   return (
     <div className="mb-12">
@@ -70,7 +110,7 @@ export const EtamaxWebShowcase: React.FC = () => {
               <DeviceMockup
                 alt={`Etamax Web Dashboard - ${currentScreenshot.name}`}
                 className="w-full"
-                image={currentScreenshot.path}
+                image={currentImagePath}
                 type="laptop"
               />
             </div>
@@ -154,7 +194,7 @@ export const EtamaxWebShowcase: React.FC = () => {
               <img
                 alt={`Etamax Web Dashboard - ${currentScreenshot.name}`}
                 className="w-full object-contain max-h-[80vh]"
-                src={currentScreenshot.path}
+                src={currentImagePath}
               />
 
               {/* Screenshot name and description */}

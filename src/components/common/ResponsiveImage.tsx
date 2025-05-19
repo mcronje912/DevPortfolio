@@ -1,5 +1,5 @@
 // src/components/common/ResponsiveImage.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 interface ResponsiveImageProps {
   src: string;
@@ -11,6 +11,7 @@ interface ResponsiveImageProps {
   loading?: "lazy" | "eager";
   objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
   objectPosition?: string;
+  onLoad?: () => void;
 }
 
 export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
@@ -23,23 +24,51 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
   loading = "lazy",
   objectFit = "cover",
   objectPosition = "center",
+  onLoad,
 }) => {
-  const [imgError, setImgError] = useState(false);
+  const [useWebP, setUseWebP] = useState(true);
+  const [imgLoaded, setImgLoaded] = useState(false);
   
-  // Check if path already has .webp extension
-  const isAlreadyWebP = src.toLowerCase().endsWith('.webp');
+  // Check if WebP is supported
+  useEffect(() => {
+    // Function to check if image exists
+    const checkImageExists = async (url: string) => {
+      try {
+        const response = await fetch(url, { method: 'HEAD' });
+        return response.ok;
+      } catch (error) {
+        console.error(`Error checking WebP image: ${url}`, error);
+        return false;
+      }
+    };
+    
+    // Check if WebP version exists
+    if (!src.toLowerCase().endsWith('.webp')) {
+      const webpPath = src.replace(/\.(jpe?g|png)$/i, '.webp');
+      checkImageExists(webpPath).then(exists => {
+        if (!exists) {
+          console.log(`WebP version not found: ${webpPath}, using original: ${src}`);
+          setUseWebP(false);
+        }
+      });
+    }
+  }, [src]);
   
   // Generate WebP path
+  const isAlreadyWebP = src.toLowerCase().endsWith('.webp');
   const webpSrc = isAlreadyWebP ? src : src.replace(/\.(jpe?g|png)$/i, '.webp');
 
-  // Handle error for the WebP image
-  const handleError = () => {
-    setImgError(true);
+  // Handle image load
+  const handleLoad = () => {
+    setImgLoaded(true);
+    if (onLoad) {
+      onLoad();
+    }
   };
 
   return (
     <picture className={className}>
-      {!imgError && !isAlreadyWebP && (
+      {useWebP && !isAlreadyWebP && (
         <source srcSet={webpSrc} type="image/webp" />
       )}
       <img
@@ -49,7 +78,7 @@ export const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         height={height}
         loading={loading}
         sizes={sizes}
-        onError={handleError}
+        onLoad={handleLoad}
         style={{ 
           objectFit, 
           objectPosition,

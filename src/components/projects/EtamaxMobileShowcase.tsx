@@ -1,48 +1,88 @@
 // src/components/projects/EtamaxMobileShowcase.tsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
 
 import { DeviceMockup } from "../mockups/DeviceMockup";
 
-// Define mobile screenshots
+// Define mobile screenshots with both paths
+ // src/components/projects/EtamaxMobileShowcase.tsx
+// Update the mobile screenshots with correct paths
 const mobileScreenshots = [
   {
     id: "mobile1",
     name: "Home Screen",
-    path: "/images/projects/etamax/mobile/etamax-mobile1.jpg",
+    path: "/images/etamax-mobile1.jpg", // Updated path
+    webpPath: "/images/etamax-mobile1.webp", // Updated path
     description:
       "Main dashboard showing solar geyser status and energy metrics",
   },
   {
     id: "mobile2",
-    name: "Energy Usage",
-    path: "/images/projects/etamax/mobile/etamax-mobile2.jpg",
+    name: "Daily Schedule Setting",
+    path: "/images/etamax-mobile2.jpg", // Updated path
+    webpPath: "/images/etamax-mobile2.webp", // Updated path
     description:
-      "Detailed view of energy consumption patterns and solar efficiency",
+      "Set a custom daily schedule for the geyser to be boosted by grid",
   },
   {
     id: "mobile3",
-    name: "Settings",
-    path: "/images/projects/etamax/mobile/etamax-mobile3.jpg",
+    name: "Configuration and Leak Status",
+    path: "/images/etamax-mobile3.jpg", // Updated path
+    webpPath: "/images/etamax-mobile3.webp", // Updated path
     description:
-      "System configuration settings for optimizing solar energy usage",
+      "",
   },
   {
     id: "mobile4",
-    name: "Schedules",
-    path: "/images/projects/etamax/mobile/etamax-mobile4.jpg",
+    name: "Settings",
+    path: "/images/etamax-mobile4.jpg", // Updated path
+    webpPath: "/images/etamax-mobile4.webp", // Updated path
     description:
-      "Custom scheduling options to maximize solar energy utilization",
+      "Modify device settings and preferences",
   },
 ];
 
 export const EtamaxMobileShowcase: React.FC = () => {
   // State for the mobile images
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [useWebP, setUseWebP] = useState(true);
 
   // Lightbox state
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // Check if WebP images exist on mount
+  useEffect(() => {
+    const checkWebPSupport = async () => {
+      try {
+        // Check if browser supports WebP
+        const webpSupported = document.createElement('canvas')
+          .toDataURL('image/webp')
+          .indexOf('data:image/webp') === 0;
+        
+        if (!webpSupported) {
+          setUseWebP(false);
+          return;
+        }
+        
+        // Try to fetch one WebP image to confirm they exist
+        const testUrl = mobileScreenshots[0].webpPath;
+        const response = await fetch(testUrl, { method: 'HEAD' });
+        
+        if (!response.ok) {
+          console.log('WebP images not available, using originals');
+          setUseWebP(false);
+        } else {
+          console.log('WebP images available and will be used');
+        }
+      } catch (error) {
+        console.error('Error checking WebP support:', error);
+        setUseWebP(false);
+      }
+    };
+    
+    checkWebPSupport();
+  }, []);
 
   // Navigation functions for mobile screenshots
   const goToNext = (e?: React.MouseEvent) => {
@@ -58,6 +98,7 @@ export const EtamaxMobileShowcase: React.FC = () => {
   };
 
   const currentScreenshot = mobileScreenshots[currentIndex];
+  const currentImagePath = useWebP ? currentScreenshot.webpPath : currentScreenshot.path;
 
   return (
     <>
@@ -76,7 +117,7 @@ export const EtamaxMobileShowcase: React.FC = () => {
           >
             <DeviceMockup
               alt={`Etamax Mobile App - ${currentScreenshot.name}`}
-              image={currentScreenshot.path}
+              image={currentImagePath}
               type="phone"
             />
           </div>
@@ -159,26 +200,8 @@ export const EtamaxMobileShowcase: React.FC = () => {
               <img
                 alt={`Etamax Mobile App - ${currentScreenshot.name}`}
                 className="w-full object-contain max-h-[80vh]"
-                src={currentScreenshot.path}
+                src={currentImagePath}
               />
-
-              {/* Navigation in fullscreen */}
-              <div className="absolute inset-x-0 top-1/2 flex justify-between px-4 -translate-y-1/2">
-                <button
-                  aria-label="Previous screenshot (fullscreen)"
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
-                  onClick={goToPrev}
-                >
-                  <span className="text-2xl font-bold">←</span>
-                </button>
-                <button
-                  aria-label="Next screenshot (fullscreen)"
-                  className="rounded-full w-12 h-12 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md hover:bg-white transition-colors"
-                  onClick={goToNext}
-                >
-                  <span className="text-2xl font-bold">→</span>
-                </button>
-              </div>
 
               {/* Screenshot name and description */}
               <div className="absolute bottom-4 left-0 right-0 mx-auto max-w-3xl bg-white/80 dark:bg-rich-black-500/80 backdrop-blur-sm p-3 rounded-lg text-center">
