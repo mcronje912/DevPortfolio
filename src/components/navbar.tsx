@@ -60,7 +60,7 @@ export const Navbar = () => {
                 "relative px-2 py-1",
                 isActive(item.href)
                   ? "text-cerulean font-semibold"
-                  : "text-default-600 dark:text-default-400 hover:text-cerulean",
+                  : "text-default-600 dark:text-default-500 hover:text-cerulean",
               )}
               href={item.href}
             >

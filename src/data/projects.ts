@@ -30,7 +30,13 @@ export const projects: Project[] = [
       "Etamax is a comprehensive solution for solar energy optimization. I developed both the cross-platform mobile application using Flutter and the React-based management dashboard. The system provides real-time monitoring of solar geyser performance, enabling users to maximize energy efficiency and reduce costs. The solution incorporates IoT device integration through BLE communications, providing users with actionable insights about their solar energy usage.",
     thumbnailUrl: "/images/projects/thumbnails/etamax-thumb.png",
     deviceType: "dual", // Added property
-    tags: ["Mobile App", "Admin Dashboard", "IoT Integration", "Flutter", "React"],
+    tags: [
+      "Mobile App",
+      "Admin Dashboard",
+      "IoT Integration",
+      "Flutter",
+      "React",
+    ],
     projectUrl: "/projects/etamax",
     featured: true,
     technologies: ["Flutter", "React", "TypeScript", "Firebase", "BLE", "IoT"],
