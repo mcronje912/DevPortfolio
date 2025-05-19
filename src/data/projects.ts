@@ -128,7 +128,7 @@ export const projects: Project[] = [
   },
   {
     id: "invoice-companion",
-    title: "InvoiceCompanion",
+    title: "Invoicing Application",
     description:
       "A cross-platform invoicing application built with Flutter for personal business management with comprehensive client, product, and invoice tracking.",
     longDescription:

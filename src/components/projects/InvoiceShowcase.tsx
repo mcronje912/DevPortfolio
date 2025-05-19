@@ -54,10 +54,6 @@ export const InvoiceShowcase: React.FC = () => {
   
   return (
     <div className="mb-12">
-      <h2 className="text-2xl font-heading font-bold mb-6">
-        InvoiceCompanion App Showcase
-      </h2>
-      
       {/* Mobile Showcase with Text Side by Side */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
         {/* Mobile mockup - takes 1/3 width on medium screens */}

@@ -4,8 +4,9 @@ import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Card, CardBody } from "@heroui/card";
 
-import { title } from "../components/primitives"; 
+import { title } from "../components/primitives";
 import DefaultLayout from "../layouts/default";
+
 import { InvoiceShowcase } from "@/components/projects/InvoiceShowcase";
 
 export default function InvoiceCompanionProjectPage() {
@@ -27,7 +28,7 @@ export default function InvoiceCompanionProjectPage() {
             </div>
 
             <h1 className={title({ size: "lg", class: "mb-4" })}>
-              InvoiceCompanion
+              Invoicing Application
             </h1>
 
             <div className="flex flex-wrap gap-2 mb-6">
@@ -372,8 +373,8 @@ export default function InvoiceCompanionProjectPage() {
               </ul>
               <p className="mb-4">
                 These improvements will not only enhance the functionality for
-                my own use but also increase the app&apos;s commercial potential if I
-                decide to release it to a wider audience.
+                my own use but also increase the app&apos;s commercial potential
+                if I decide to release it to a wider audience.
               </p>
             </div>
           </div>
