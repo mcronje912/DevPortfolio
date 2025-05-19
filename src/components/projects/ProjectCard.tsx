@@ -1,4 +1,4 @@
-// src/components/projects/ProjectCard.tsx (with wider divider and improved responsiveness)
+// src/components/projects/ProjectCard.tsx
 import { Card, CardFooter } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
@@ -29,25 +29,24 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         {/* Background gradient - improved for light mode */}
         <div className="absolute inset-0 bg-gradient-to-br from-cerulean-200/80 to-cerulean-600/50 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
 
-        {/* Image container with improved desktop image responsiveness */}
-        <div className="relative h-full w-full flex items-center justify-center">
+        {/* Image container with proper sizing based on device type */}
+        <div className="relative h-full w-full flex items-center justify-center p-4">
           {deviceType === "mobile" ? (
-            // Mobile device - centered, enlarged sizing
+            // Mobile device thumbnails
             <img
               src={thumbnailUrl}
               alt={title}
-              className="h-[230px] w-auto max-w-[50%] object-contain z-10"
+              className="h-auto max-h-[95%] w-auto max-w-[85%] object-contain z-10"
+              loading="lazy"
             />
           ) : (
-            // Desktop/laptop - improved responsiveness
-            <div className="w-full h-full overflow-hidden flex items-center justify-center">
-              <img
-                src={thumbnailUrl}
-                alt={title}
-                className="w-auto h-auto min-w-[100%] min-h-[100%] object-cover object-center"
-                // This combination makes images responsive while ensuring they always cover the container
-              />
-            </div>
+            // Desktop or dual thumbnails
+            <img
+              src={thumbnailUrl}
+              alt={title}
+              className="h-auto max-h-[100%] w-auto max-w-[95%] object-contain z-10"
+              loading="lazy"
+            />
           )}
         </div>
       </div>
