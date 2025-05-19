@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "Etamax is a comprehensive solution for solar energy optimization. I developed both the cross-platform mobile application using Flutter and the React-based management dashboard. The system provides real-time monitoring of solar geyser performance, enabling users to maximize energy efficiency and reduce costs. The solution incorporates IoT device integration through BLE communications, providing users with actionable insights about their solar energy usage.",
     thumbnailUrl: "/images/projects/thumbnails/etamax-thumb.png",
     deviceType: "dual", // Added property
-    tags: ["Mobile App", "Web Dashboard", "IoT Integration", "Flutter", "React"],
+    tags: ["Mobile App", "Admin Dashboard", "IoT Integration", "Flutter", "React"],
     projectUrl: "/projects/etamax",
     featured: true,
     technologies: ["Flutter", "React", "TypeScript", "Firebase", "BLE", "IoT"],
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       "This real-time auction platform is a full-stack web application built with Next.js, React, and Supabase. It allows users to create auction listings, browse items, place bids, and track auctions in real-time. The platform demonstrates my ability to implement complex features including real-time data synchronization, user authentication, and responsive design using modern web technologies.",
     thumbnailUrl: "/images/projects/thumbnails/auction1-front.png",
     deviceType: "desktop", // Added property
-    tags: ["Web App", "Next.js", "Real-time", "Full Stack"],
+    tags: ["Web App", "Next.js", "Real-time"],
     projectUrl: "/projects/auction-app",
     featured: true,
     technologies: [
@@ -109,7 +109,7 @@ export const projects: Project[] = [
       "Workflow Manager is a custom business tool I developed to streamline operations within my printing business. This full-stack application combines a React frontend with a Django backend to automate complex printing calculations, optimize material usage, and generate accurate quotes—transforming a previously time-consuming manual process into an efficient digital workflow.",
     thumbnailUrl: "/images/projects/thumbnails/workflow-manager.png",
     deviceType: "desktop", // Added property
-    tags: ["Full Stack", "Business Tool", "React", "Django"],
+    tags: ["Business Tool", "React", "Django", "Python"],
     projectUrl: "/projects/workflow-manager",
     featured: true,
     technologies: [
@@ -161,7 +161,6 @@ export const projects: Project[] = [
     thumbnailUrl: "/images/projects/thumbnails/hazmat-mobile.png", // Update with an actual thumbnail
     deviceType: "mobile",
     tags: [
-      "Full Stack",
       "Mobile App",
       "Admin Dashboard",
       "Real-time",
