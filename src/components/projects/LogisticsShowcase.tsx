@@ -191,11 +191,10 @@ export const AdminDashboardShowcase: React.FC = () => {
             Admin Dashboard Features
           </h3>
           <ul className="list-disc pl-5 space-y-1">
-            <li>Real-time fleet monitoring with live tracking</li>
+            <li>Real-time job progress monitoring</li>
             <li>Comprehensive delivery management system</li>
             <li>Driver assignment and scheduling tools</li>
-            <li>Regulatory compliance reporting</li>
-            <li>Performance analytics and efficiency metrics</li>
+            <li>Viewing of signatures for proof of delivery</li>
           </ul>
         </CardBody>
       </Card>

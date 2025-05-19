@@ -154,10 +154,10 @@ export default function LogisticsManagementSystemPage() {
                       <h4 className="font-medium mb-2">Key Mobile Features:</h4>
                       <ul className="list-disc pl-5 space-y-2">
                         <li>
-                          <strong>Digital Signature Capture:</strong> Secure,
-                          legally-binding electronic signatures that eliminate
-                          the need for paper documentation while maintaining
-                          compliance with transportation regulations.
+                          <strong>Digital Signature Capture:</strong> Capturing
+                          of electronic signatures that eliminate the need for
+                          paper documentation while maintaining compliance with
+                          regulations.
                         </li>
                         <li>
                           <strong>Offline Functionality:</strong> Critical data
@@ -172,45 +172,13 @@ export default function LogisticsManagementSystemPage() {
                           contact dispatch.
                         </li>
                         <li>
-                          <strong>Hazardous Materials Documentation:</strong>{" "}
-                          Digital access to all required hazmat documentation,
-                          safety data sheets, and handling instructions specific
-                          to each shipment.
+                          <strong>Secure Login:</strong> Drivers are only able
+                          to view jobs that are assigned to them.
                         </li>
                         <li>
                           <strong>Intuitive Interface:</strong> Designed for
                           minimal distraction with large buttons, clear visuals,
                           and voice feedback to maintain driver safety.
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="font-medium mb-2">
-                        Technical Implementation:
-                      </h4>
-                      <p className="text-default-700 mb-4">
-                        Built with Flutter to ensure consistent performance
-                        across both iOS and Android devices, the mobile
-                        application incorporates various technical solutions to
-                        address the unique challenges of hazardous materials
-                        logistics:
-                      </p>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>
-                          <strong>Encrypted Data Storage:</strong> All sensitive
-                          information is stored using AES-256 encryption,
-                          meeting industry compliance requirements.
-                        </li>
-                        <li>
-                          <strong>Optimized Battery Usage:</strong> Intelligent
-                          location tracking that balances accuracy with battery
-                          preservation during long routes.
-                        </li>
-                        <li>
-                          <strong>Conflict Resolution:</strong> Sophisticated
-                          data synchronization system that correctly handles
-                          conflicts between offline changes and server updates.
                         </li>
                       </ul>
                     </div>
@@ -227,15 +195,15 @@ export default function LogisticsManagementSystemPage() {
             </h2>
             <div className="prose max-w-none text-default-700">
               <p className="mb-4">
-                The logistics company faced significant operational challenges
-                with their paper-based system. Their drivers needed to collect
-                customer signatures on physical delivery notes, and office staff
-                had limited visibility of delivery status and driver locations.
-                The process was time-consuming, prone to errors, and created
-                delays in reporting.
+                The company faced significant operational challenges with their
+                paper-based system. Their drivers needed to collect customer
+                signatures on physical delivery notes, and office staff had
+                limited visibility of delivery status and driver locations. The
+                process was time-consuming, prone to errors, and created delays
+                in reporting.
               </p>
               <p className="mb-4">
-                The Logistics Management System transformed their operations by:
+                The Logistics Management System is able to transform operations by:
               </p>
               <ul className="list-disc pl-5 space-y-1 mb-4">
                 <li>
