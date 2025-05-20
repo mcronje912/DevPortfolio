@@ -6,6 +6,7 @@ import clsx from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 import { useTheme } from "./ThemeProvider";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -17,7 +18,22 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   classNames,
 }) => {
   const { currentTheme, toggleTheme } = useTheme();
+  const { trackEvent } = useAnalytics();
   const switchId = useId();
+
+  const handleThemeChange = () => {
+    // Get the current theme before toggle
+    const previousTheme = currentTheme;
+    
+    // Toggle the theme
+    toggleTheme();
+    
+    // Track the theme change
+    trackEvent('theme_switched', {
+      from: previousTheme,
+      to: previousTheme === 'light' ? 'dark' : 'light'
+    });
+  };
 
   const {
     Component,
@@ -28,7 +44,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     getWrapperProps,
   } = useSwitch({
     isSelected: currentTheme === 'light',
-    onChange: toggleTheme,
+    onChange: handleThemeChange,
     'aria-label': currentTheme === 'light' ? "Switch to dark mode" : "Switch to light mode"
   });
 

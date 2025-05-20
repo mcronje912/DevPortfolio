@@ -2,6 +2,7 @@
 import { Card, CardFooter } from "@heroui/card";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 interface ProjectCardProps {
   title: string;
@@ -20,6 +21,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   projectUrl,
   deviceType = "desktop",
 }) => {
+  const { trackEvent } = useAnalytics();
+
+  const handleProjectClick = () => {
+    trackEvent('project_view', { 
+      projectTitle: title,
+      projectUrl,
+      deviceType
+    });
+  };
+
   return (
     <Card className="w-full h-full overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col dark:bg-rich-black-900">
       {/* Image section with improved gradient background */}
@@ -87,6 +98,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           color="primary"
           href={projectUrl}
           aria-label={`View details of ${title} project`}
+          onClick={handleProjectClick}
         >
           View Project
         </Button>

@@ -17,14 +17,26 @@ import { useLocation } from "react-router-dom";
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon } from "@/components/icons";
+import { ExternalLink } from "@/components/ExternalLink";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { trackEvent } = useAnalytics();
 
   // Check if the current route matches a nav item
   const isActive = (href: string) => {
     return location.pathname === href;
+  };
+  
+  // Track internal navigation
+  const handleNavigation = (label: string, href: string) => {
+    trackEvent('navigation_click', {
+      link_name: label,
+      destination: href,
+      current_page: location.pathname
+    });
   };
 
   return (
@@ -46,6 +58,7 @@ export const Navbar = () => {
             className="flex items-center gap-1 font-heading font-bold text-xl text-cerulean hover:scale-105 duration-200"
             href="/"
             aria-label="Marco Cronje Home"
+            onClick={() => handleNavigation("Home Logo", "/")}
           >
             MC
           </Link>
@@ -65,6 +78,7 @@ export const Navbar = () => {
               )}
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
+              onClick={() => handleNavigation(item.label, item.href)}
             >
               {item.label}
               {/* Static underline for active items - no animation */}
@@ -80,14 +94,14 @@ export const Navbar = () => {
       <NavbarContent justify="end">
         <div className="flex items-center gap-3">
           {/* GitHub icon */}
-          <Link
-            isExternal
+          <ExternalLink
             className="text-default-600 dark:text-default-400 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-cerulean-500 rounded-full p-1"
             href={siteConfig.links.github}
             aria-label="GitHub Profile"
+            trackingName="GitHub_Navbar"
           >
             <GithubIcon className="h-5 w-5" aria-hidden="true" />
-          </Link>
+          </ExternalLink>
 
           {/* Theme toggle */}
           <ThemeSwitch />
@@ -100,6 +114,7 @@ export const Navbar = () => {
               href="/contact"
               radius="full"
               size="sm"
+              onClick={() => handleNavigation("Contact Button", "/contact")}
             >
               Contact Me
             </Button>
@@ -122,6 +137,10 @@ export const Navbar = () => {
                 href={item.href}
                 size="lg"
                 aria-current={isActive(item.href) ? "page" : undefined}
+                onClick={() => {
+                  handleNavigation(`${item.label} (Mobile)`, item.href);
+                  setIsMenuOpen(false);
+                }}
               >
                 {item.label}
                 {/* Static indicator for mobile menu */}
@@ -138,6 +157,10 @@ export const Navbar = () => {
               href="/contact"
               radius="full"
               size="md"
+              onClick={() => {
+                handleNavigation("Contact Button (Mobile)", "/contact");
+                setIsMenuOpen(false);
+              }}
             >
               Contact Me
             </Button>

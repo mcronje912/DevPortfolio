@@ -1,11 +1,18 @@
+// src/layouts/default.tsx
 import { Link } from "@heroui/link";
 import { Navbar } from "@/components/navbar";
+import { useScrollTracking } from "@/hooks/useScrollTracking";
+import { useSessionTimeTracking } from "@/hooks/useSessionTimeTracking";
 
 export default function DefaultLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  // Initialize tracking hooks
+  useScrollTracking();
+  useSessionTimeTracking();
+
   return (
     <div className="relative flex flex-col min-h-screen">
       <Navbar />
