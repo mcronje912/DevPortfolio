@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import { ThemeLoader } from "@/components/ThemeLoader";
 import { BackgroundPattern } from "@/components/BackgroundPattern";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import IndexPage from "@/pages/index";
 import ProjectsPage from "@/pages/projects";
@@ -19,8 +20,8 @@ import SkillsPage from "@/pages/skills";
 import ExperiencePage from "@/pages/experience";
 import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
-import { MockupDemo } from "@/components/mockups/MockupDemo";
 import PortfolioProjectPage from "./pages/portfolio";
+import { MockupDemo } from "@/components/mockups/MockupDemo";
 
 function App() {
   const location = useLocation();
@@ -45,42 +46,87 @@ function App() {
       <ThemeLoader />
       <BackgroundPattern />
 
-      <Routes>
-        <Route element={<IndexPage />} path="/" />
-        <Route element={<ProjectsPage />} path="/projects" />
-        <Route element={<EtamaxProjectPage />} path="/projects/etamax" />
-        <Route element={<ReactQuizProjectPage />} path="/projects/react-quiz" />
-        <Route
-          element={<AuctionAppProjectPage />}
-          path="/projects/auction-app"
-        />
-        <Route
-          element={<WorkflowManagerProjectPage />}
-          path="/projects/workflow-manager"
-        />
-        <Route
-          element={<InvoiceCompanionProjectPage />}
-          path="/projects/invoice-companion"
-        />
-        <Route
-          element={<LogisticsManagementSystemPage />}
-          path="/projects/logistics-management-system"
-        />
-        <Route
-          element={<EmotionDetectionProjectPage />}
-          path="/projects/emotion-detection"
-        />
-        <Route
-          element={<LicensePlateRecognitionPage />}
-          path="/projects/license-plate-recognition"
-        />
-        <Route element={<PortfolioProjectPage />} path="/projects/portfolio" />
-        <Route element={<MockupDemo />} path="/mockup-demo" />
-        <Route element={<SkillsPage />} path="/skills" />
-        <Route element={<ExperiencePage />} path="/experience" />
-        <Route element={<AboutPage />} path="/about" />
-        <Route element={<ContactPage />} path="/contact" />
-      </Routes>
+      {/* The correct way to use ErrorBoundary with Routes */}
+      <ErrorBoundary>
+        <Routes>
+          <Route element={<IndexPage />} path="/" />
+          
+          {/* Project routes - each wrapped in its own ErrorBoundary */}
+          <Route element={<ProjectsPage />} path="/projects" />
+          <Route element={
+            <ErrorBoundary>
+              <EtamaxProjectPage />
+            </ErrorBoundary>
+          } path="/projects/etamax" />
+          <Route element={
+            <ErrorBoundary>
+              <ReactQuizProjectPage />
+            </ErrorBoundary>
+          } path="/projects/react-quiz" />
+          <Route element={
+            <ErrorBoundary>
+              <AuctionAppProjectPage />
+            </ErrorBoundary>
+          } path="/projects/auction-app" />
+          <Route element={
+            <ErrorBoundary>
+              <WorkflowManagerProjectPage />
+            </ErrorBoundary>
+          } path="/projects/workflow-manager" />
+          <Route element={
+            <ErrorBoundary>
+              <InvoiceCompanionProjectPage />
+            </ErrorBoundary>
+          } path="/projects/invoice-companion" />
+          <Route element={
+            <ErrorBoundary>
+              <LogisticsManagementSystemPage />
+            </ErrorBoundary>
+          } path="/projects/logistics-management-system" />
+          <Route element={
+            <ErrorBoundary>
+              <EmotionDetectionProjectPage />
+            </ErrorBoundary>
+          } path="/projects/emotion-detection" />
+          <Route element={
+            <ErrorBoundary>
+              <LicensePlateRecognitionPage />
+            </ErrorBoundary>
+          } path="/projects/license-plate-recognition" />
+          <Route element={
+            <ErrorBoundary>
+              <PortfolioProjectPage />
+            </ErrorBoundary>
+          } path="/projects/portfolio" />
+          
+          {/* Other main routes */}
+          <Route element={
+            <ErrorBoundary>
+              <MockupDemo />
+            </ErrorBoundary>
+          } path="/mockup-demo" />
+          <Route element={
+            <ErrorBoundary>
+              <SkillsPage />
+            </ErrorBoundary>
+          } path="/skills" />
+          <Route element={
+            <ErrorBoundary>
+              <ExperiencePage />
+            </ErrorBoundary>
+          } path="/experience" />
+          <Route element={
+            <ErrorBoundary>
+              <AboutPage />
+            </ErrorBoundary>
+          } path="/about" />
+          <Route element={
+            <ErrorBoundary>
+              <ContactPage />
+            </ErrorBoundary>
+          } path="/contact" />
+        </Routes>
+      </ErrorBoundary>
     </>
   );
 }

@@ -1,120 +1,58 @@
 // src/components/projects/EtamaxMobileShowcase.tsx
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Card, CardBody } from "@heroui/card";
 import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/modal";
-
 import { DeviceMockup } from "../mockups/DeviceMockup";
+import { useImageCarousel, Screenshot } from "@/hooks/useImageCarousel";
 
 // Define the screenshots with both paths
-const mobileScreenshots = [
+const mobileScreenshots: Screenshot[] = [
   {
     id: "mobile1",
     name: "Home Screen",
     path: "/images/etamax-mobile1.jpg",
     webpPath: "/images/etamax-mobile1.webp",
-    description:
-      "Main dashboard showing solar geyser status and energy metrics",
+    description: "Main dashboard showing solar geyser status and energy metrics",
   },
   {
     id: "mobile2",
     name: "Daily Schedule Setting",
     path: "/images/etamax-mobile2.jpg",
     webpPath: "/images/etamax-mobile2.webp",
-    description:
-      "Set a custom daily schedule for the geyser to be boosted by grid",
+    description: "Set a custom daily schedule for the geyser to be boosted by grid",
   },
   {
     id: "mobile3",
     name: "Configuration and Leak Status",
     path: "/images/etamax-mobile3.jpg",
     webpPath: "/images/etamax-mobile3.webp",
-    description:
-      "Configuration settings and leak detection status",
+    description: "Configuration settings and leak detection status",
   },
   {
     id: "mobile4",
     name: "Settings",
     path: "/images/etamax-mobile4.jpg",
     webpPath: "/images/etamax-mobile4.webp",
-    description:
-      "Modify device settings and preferences",
+    description: "Modify device settings and preferences",
   },
 ];
 
 export const EtamaxMobileShowcase: React.FC = () => {
-  // State for the mobile images
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [useWebP, setUseWebP] = useState(true);
-
-  // Lightbox state
+  // Use modal disclosure hook
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (isOpen) {
-        if (e.key === 'ArrowRight') {
-          goToNext();
-        } else if (e.key === 'ArrowLeft') {
-          goToPrev();
-        } else if (e.key === 'Escape') {
-          onClose();
-        }
-      }
-    };
-    
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, onClose]);
+  // Use our custom image carousel hook
+  const { 
+    currentIndex, 
+    currentScreenshot, 
+    goToNext, 
+    goToPrev, 
+    goToIndex 
+  } = useImageCarousel(mobileScreenshots, { 
+    modalState: { isOpen } 
+  });
 
-  // Check if WebP images exist on mount
-  useEffect(() => {
-    const checkWebPSupport = async () => {
-      try {
-        // Check if browser supports WebP
-        const webpSupported = document.createElement('canvas')
-          .toDataURL('image/webp')
-          .indexOf('data:image/webp') === 0;
-        
-        if (!webpSupported) {
-          setUseWebP(false);
-          return;
-        }
-        
-        // Try to fetch one WebP image to confirm they exist
-        const testUrl = mobileScreenshots[0].webpPath;
-        const response = await fetch(testUrl, { method: 'HEAD' });
-        
-        if (!response.ok) {
-          console.log('WebP images not available, using originals');
-          setUseWebP(false);
-        } else {
-          console.log('WebP images available and will be used');
-        }
-      } catch (error) {
-        console.error('Error checking WebP support:', error);
-        setUseWebP(false);
-      }
-    };
-    
-    checkWebPSupport();
-  }, []);
-
-  // Navigation functions for mobile screenshots
-  const goToNext = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setCurrentIndex((prev) => (prev + 1) % mobileScreenshots.length);
-  };
-
-  const goToPrev = (e?: React.MouseEvent) => {
-    e?.stopPropagation();
-    setCurrentIndex((prev) =>
-      prev === 0 ? mobileScreenshots.length - 1 : prev - 1,
-    );
-  };
-
-  const currentScreenshot = mobileScreenshots[currentIndex];
-  const currentImagePath = useWebP ? currentScreenshot.webpPath : currentScreenshot.path;
+  const currentImagePath = currentScreenshot.webpPath || currentScreenshot.path;
 
   return (
     <>
@@ -122,9 +60,9 @@ export const EtamaxMobileShowcase: React.FC = () => {
         <CardBody className="flex flex-col items-center justify-center p-4 relative bg-ash-gray-900 dark:bg-rich-black-600">
           {/* Gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-cerulean-900/30 to-rich-black-500/60 dark:from-cerulean-800/50 dark:to-rich-black-800/70" />
-
+          
           {/* Mobile mockup */}
-          <div
+          <div 
             aria-label="View full screen mobile screenshot"
             className="relative z-10 cursor-pointer transition-transform hover:scale-[1.02] duration-300"
             role="button"
@@ -142,18 +80,18 @@ export const EtamaxMobileShowcase: React.FC = () => {
               type="phone"
             />
           </div>
-
+          
           {/* Navigation arrows */}
           <div className="absolute inset-x-0 top-1/2 flex justify-between px-2 -translate-y-1/2 pointer-events-none z-20">
             <button
-              aria-label="Previous mobile screenshot"
+              aria-label="Previous screenshot"
               className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               onClick={goToPrev}
             >
               <span className="text-lg font-bold" aria-hidden="true">←</span>
             </button>
             <button
-              aria-label="Next mobile screenshot"
+              aria-label="Next screenshot"
               className="rounded-full w-8 h-8 flex items-center justify-center bg-white/80 text-rich-black-500 shadow-md pointer-events-auto hover:bg-white transition-colors focus:outline-none focus:ring-2 focus:ring-cerulean-500"
               onClick={goToNext}
             >
@@ -162,10 +100,10 @@ export const EtamaxMobileShowcase: React.FC = () => {
           </div>
         </CardBody>
       </Card>
-
+      
       {/* Pagination indicators */}
       <div
-        aria-label="Mobile screenshot pagination"
+        aria-label="Screenshot pagination"
         className="flex justify-center gap-1.5 mt-3"
         role="group"
       >
@@ -173,13 +111,13 @@ export const EtamaxMobileShowcase: React.FC = () => {
           <button
             key={index}
             aria-current={index === currentIndex ? "true" : "false"}
-            aria-label={`Go to mobile screenshot ${index + 1}`}
+            aria-label={`Go to screenshot ${index + 1}`}
             className={`w-2 h-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-cerulean-500 ${
               index === currentIndex
                 ? "bg-cerulean w-4"
                 : "bg-default-300 dark:bg-rich-black-300"
             }`}
-            onClick={() => setCurrentIndex(index)}
+            onClick={() => goToIndex(index)}
           />
         ))}
       </div>
