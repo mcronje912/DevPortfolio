@@ -71,7 +71,7 @@ export default function SkillsPage() {
         "PostgreSQL",
         "RESTful APIs",
         "Serverless Functions",
-        "Cloud Services",
+        "Google Cloud Platform",
         "Django",
         "Fast API"
       ],

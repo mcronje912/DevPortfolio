@@ -9,7 +9,6 @@ import { GithubIcon } from "@/components/icons";
 import DefaultLayout from "@/layouts/default";
 import { title } from "@/components/primitives";
 import { GlassCard } from "@/components/GlassCard";
-import { TechnicalImplementation } from "@/components/porftolio/TechnicalImplementation"; // Import the new component
 
 export default function PortfolioProjectPage() {
   return (
