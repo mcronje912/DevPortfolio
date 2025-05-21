@@ -4,115 +4,106 @@ import { Chip } from "@heroui/chip";
 
 import { title } from "@/components/primitives";
 import DefaultLayout from "@/layouts/default";
-import { SkillCategory } from "@/components/skills/SkillCategory";
+import { GlassCard } from "@/components/GlassCard";
 
+// src/pages/skills.tsx - Matrix Approach
+// src/pages/skills.tsx - Core Competencies Approach
 export default function SkillsPage() {
-  const skillDomains = [
+  // Core competencies highlighted separately
+  const coreCompetencies = [
+    {
+      name: "Flutter/Dart",
+      description:
+        "Cross-platform mobile app development with hardware integration",
+      icon: "📱",
+    },
+    {
+      name: "React.js",
+      description:
+        "Interactive web applications with modern component patterns",
+      icon: "🖥️",
+    },
+    {
+      name: "Node.js",
+      description: "Backend services and API development",
+      icon: "🔄",
+    },
+    {
+      name: "Supabase/PostgreSQL",
+      description: "Cloud database with real-time capabilities",
+      icon: "☁️",
+    },
+    {
+      name: "Serverless Functions",
+      description: "Event-driven cloud computing for scalable applications",
+      icon: "⚡",
+    },
+  ];
+
+  // Expanded skill categories
+  const skillCategories = [
     {
       name: "Mobile Development",
-      icon: "📱",
-      description:
-        "Cross-platform mobile application development with a focus on hardware integration and user experience.",
       skills: [
-        {
-          name: "Flutter/Dart",
-          projects: ["Etamax Solar App", "Logistics System"],
-        },
-        { name: "BLE Integration", projects: ["Etamax Solar App"] },
-        {
-          name: "Cross-Platform Development",
-          projects: ["React Quiz App", "Invoice Companion"],
-        },
-        { name: "App Store Deployment", projects: ["React Quiz App"] },
+        "Flutter/Dart",
+        "BLE Integration",
+        "App Store Deployment",
+        "Cross-Platform Development",
+        "UI/UX for Mobile",
       ],
     },
     {
-      name: "Frontend Development",
-      icon: "🖥️",
-      description:
-        "Creating responsive, interactive web experiences with modern frameworks and design principles.",
+      name: "Web Development",
       skills: [
-        {
-          name: "React.js",
-          projects: ["Auction Platform", "Portfolio Website"],
-        },
-        {
-          name: "TypeScript",
-          projects: ["Portfolio Website", "Workflow Manager"],
-        },
-        { name: "Next.js", projects: ["Auction Platform"] },
-        { name: "Tailwind CSS", projects: ["Portfolio Website"] },
-        { name: "HeroUI Components", projects: ["Portfolio Website"] },
-        { name: "Responsive Design", projects: ["All Web Projects"] },
+        "React.js",
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS",
+        "HeroUI Components",
+        "Responsive Design",
       ],
     },
     {
-      name: "Backend & Data",
-      icon: "🗄️",
-      description:
-        "Building robust data systems and APIs to power applications with real-time capabilities.",
+      name: "Backend & Cloud",
       skills: [
-        {
-          name: "Supabase/Firebase",
-          projects: ["Etamax Solar App", "Auction Platform"],
-        },
-        { name: "Node.js/Express", projects: ["Auction Platform API"] },
-        {
-          name: "RESTful APIs",
-          projects: ["Logistics System", "Workflow Manager"],
-        },
-        { name: "PostgreSQL", projects: ["Auction Platform"] },
-        { name: "SQLite", projects: ["Invoice Companion"] },
+        "Node.js/Express",
+        "Supabase/Firebase",
+        "PostgreSQL",
+        "RESTful APIs",
+        "Serverless Functions",
+        "Cloud Services",
+        "Django",
+        "Fast API"
       ],
     },
     {
-      name: "Design & Creative",
-      icon: "🎨",
-      description:
-        "Applying over a decade of professional design experience to create intuitive user interfaces and visual identities.",
+      name: "IoT & Hardware",
       skills: [
-        { name: "UI/UX Design", projects: ["All Projects"] },
-        {
-          name: "Adobe Creative Suite",
-          projects: ["Print Production", "Brand Development"],
-        },
-        {
-          name: "Brand Development",
-          projects: ["Company Website", "Product Branding"],
-        },
-        {
-          name: "Digital Marketing",
-          projects: ["Google Ads Campaigns", "Website Optimization"],
-        },
-        { name: "Print Production", projects: ["Workflow Manager System"] },
+        "ESP32/STM32 Programming",
+        "BLE Communication Protocols",
+        "AES Encryption",
+        "Hardware Prototyping",
+        "Firmware Updates",
       ],
     },
     {
-      name: "Project Management",
-      icon: "📊",
-      description:
-        "Leading teams and managing complex workflows with effective communication and resource allocation.",
+      name: "Python & Data",
       skills: [
-        {
-          name: "Production Workflow Optimization",
-          projects: ["Workflow Manager System"],
-        },
-        { name: "Resource Planning", projects: ["Print Quote System"] },
-        { name: "Client Communication", projects: ["All Client Projects"] },
-        { name: "Quality Control", projects: ["Print Production Management"] },
+        "Python",
+        "Data Analysis",
+        "Computer Vision",
+        "OCR Implementation",
+        "Data Visualization",
       ],
     },
     {
       name: "DevOps & Tools",
-      icon: "🛠️",
-      description:
-        "Deploying and maintaining applications with modern development practices.",
       skills: [
-        { name: "Git/GitHub", projects: ["All Software Projects"] },
-        { name: "Vercel Deployment", projects: ["Portfolio Website"] },
-        { name: "Serverless Functions", projects: ["Etamax Cloud Functions"] },
-        { name: "CI/CD", projects: ["Mobile App Deployments"] },
-        { name: "Docker", projects: ["Currently Learning"] },
+        "Git/GitHub",
+        "CI/CD",
+        "Docker",
+        "Vercel/Netlify",
+        "App Store Submission",
       ],
     },
   ];
@@ -124,23 +115,113 @@ export default function SkillsPage() {
           <div className="text-center mb-10">
             <h1 className={title({ size: "lg" })}>Skills & Expertise</h1>
             <p className="text-default-600 mt-4 max-w-2xl mx-auto">
-              My diverse skill set combines technical development capabilities
-              with a strong background in design and production management,
-              allowing me to approach problems from multiple perspectives.
+              From mobile apps to IoT systems, I develop practical solutions
+              across the entire technology stack.
             </p>
           </div>
 
-          {/* Learning Philosophy Card */}
+          {/* Core Competencies Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-heading font-bold mb-6 text-center">
+              Core Competencies
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {coreCompetencies.map((skill) => (
+                <GlassCard key={skill.name} intensity="heavy">
+                  <CardBody className="text-center p-5">
+                    <div className="text-3xl mb-3">{skill.icon}</div>
+                    <h3 className="font-heading font-bold text-lg mb-2">
+                      {skill.name}
+                    </h3>
+                    <p className="text-sm text-default-600">
+                      {skill.description}
+                    </p>
+                  </CardBody>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+
+          {/* Skills Categorization */}
+          <div className="mb-12">
+            <h2 className="text-2xl font-heading font-bold mb-6">
+              Technical Toolkit
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {skillCategories.map((category) => (
+                <GlassCard key={category.name} intensity="medium">
+                  <CardBody>
+                    <h3 className="font-heading font-bold text-xl mb-4">
+                      {category.name}
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill) => (
+                        <Chip key={skill} color="primary" variant="flat">
+                          {skill}
+                        </Chip>
+                      ))}
+                    </div>
+                  </CardBody>
+                </GlassCard>
+              ))}
+            </div>
+          </div>
+
+          {/* R&D and Prototyping Section */}
+          <GlassCard className="mb-12" intensity="light">
+            <CardBody>
+              <h2 className="text-2xl font-heading font-bold mb-3">
+                R&D and Prototyping
+              </h2>
+              <p className="text-default-700 mb-4">
+                A significant part of my role involves bridging software and
+                hardware through research, development, and rapid prototyping. I
+                collaborate with electronic engineers to develop products and
+                integrate software with proprietary hardware, enabling
+                innovative solutions that combine digital interfaces with
+                physical devices.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                <div className="bg-cerulean-50/20 dark:bg-cerulean-900/20 p-4 rounded-lg">
+                  <h3 className="font-medium text-lg mb-2">
+                    Hardware Integration
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>ESP32/STM32 microcontroller programming</li>
+                    <li>Communication protocols (BLE, WiFi, MQTT)</li>
+                    <li>Secure data transmission with AES encryption</li>
+                    <li>Firmware development and OTA updates</li>
+                  </ul>
+                </div>
+
+                <div className="bg-cerulean-50/20 dark:bg-cerulean-900/20 p-4 rounded-lg">
+                  <h3 className="font-medium text-lg mb-2">
+                    Prototyping Process
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 text-sm">
+                    <li>Rapid application development</li>
+                    <li>Proof-of-concept implementations</li>
+                    <li>Testing and validation methodologies</li>
+                    <li>Iterative design and feedback incorporation</li>
+                  </ul>
+                </div>
+              </div>
+            </CardBody>
+          </GlassCard>
+
+          {/* Learning Philosophy */}
           <Card className="mb-12 bg-gradient-to-r from-cerulean-50/80 to-verdigris-50/80 dark:from-cerulean-900/20 dark:to-verdigris-900/20 border-0 shadow-md overflow-hidden">
             <CardBody className="p-6">
               <h2 className="text-xl font-heading font-bold mb-3">
-                My Learning Approach
+                Continuous Learning
               </h2>
               <p className="text-default-700 mb-4">
-                I view software development as a continuous learning journey.
-                Rather than claiming mastery, I focus on practical application
-                and problem-solving. I&apos;m constantly expanding my toolkit through
-                projects, courses, and experimentation with new technologies.
+                I view software development as a continuous learning journey,
+                focusing on practical application and problem-solving rather
+                than claiming mastery. I expand my toolkit through projects,
+                courses, and experimentation with new technologies to deliver
+                increasingly effective solutions.
               </p>
               <div className="mt-4">
                 <h3 className="font-medium mb-2">Currently focusing on:</h3>
@@ -161,13 +242,6 @@ export default function SkillsPage() {
               </div>
             </CardBody>
           </Card>
-
-          {/* Skill Categories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillDomains.map((domain) => (
-              <SkillCategory key={domain.name} domain={domain} />
-            ))}
-          </div>
         </div>
       </section>
     </DefaultLayout>
