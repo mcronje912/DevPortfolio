@@ -1,7 +1,7 @@
 // src/layouts/default.tsx
 import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/Footer";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-// Import other hooks as needed
 
 export default function DefaultLayout({
   children,
@@ -17,9 +17,7 @@ export default function DefaultLayout({
       <main className="flex-grow">
         {children}
       </main>
-      <footer className="bg-rich-black text-white py-12 relative">
-        {/* Footer content */}
-      </footer>
+      <Footer />
     </div>
   );
 }
