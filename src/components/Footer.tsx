@@ -1,5 +1,4 @@
 // src/components/Footer.tsx
-import React from "react";
 import { Link } from "@heroui/link";
 
 import { siteConfig } from "@/config/site";
