@@ -1,5 +1,4 @@
 // src/layouts/default.tsx
-import { Link } from "@heroui/link";
 import { Navbar } from "@/components/navbar";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 // Import other hooks as needed

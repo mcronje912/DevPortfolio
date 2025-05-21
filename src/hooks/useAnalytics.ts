@@ -3,7 +3,6 @@ import { useCallback } from "react";
 
 // Update the type definition to allow undefined values
 type EventPropertyValue = string | number | boolean | undefined;
-type EventProperties = Record<string, EventPropertyValue>;
 
 export function useAnalytics() {
   // Track custom events

@@ -185,6 +185,18 @@ Edit the content in `src/config/site.ts` to update:
 - Component-specific styles use Tailwind CSS
 - Theme configuration is in `tailwind.config.js`
 
+## Testing
+
+This project uses Vitest and React Testing Library for testing. The following test commands are available:
+
+### Run Tests in Watch Mode
+
+This will run tests and rerun them when files change:
+
+```bash
+npm test
+
+
 ## 📫 Contact
 
 <div align="center">
