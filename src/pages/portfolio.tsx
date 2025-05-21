@@ -117,10 +117,7 @@ export default function PortfolioProjectPage() {
             </div>
           </div>
 
-          {/* Technical Implementation section - now using the separate component */}
-          <TechnicalImplementation />
-
-          {/* Key Features section */}
+          {/* Key FTechnical Imeatures section */}
           <div className="mb-12">
             <h2 className="text-2xl font-heading font-bold mb-4">
               Key Features

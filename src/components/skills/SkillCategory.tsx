@@ -1,26 +1,66 @@
-import { Card, CardBody, CardHeader } from "@heroui/card";
+// src/components/skills/SkillCategory.tsx
+import { GlassCard } from "@/components/GlassCard";
+import { ProjectBadge } from "./ProjectBadge";
 
-import { SkillBadge } from "./SkillBadge";
-
-import { SkillCategory as SkillCategoryType } from "@/data/skills";
-
-interface SkillCategoryProps {
-  category: SkillCategoryType;
+interface Skill {
+  name: string;
+  projects: string[];
 }
 
-export const SkillCategory: React.FC<SkillCategoryProps> = ({ category }) => {
+interface SkillDomain {
+  name: string;
+  icon: string;
+  description: string;
+  skills: Skill[];
+}
+
+interface SkillCategoryProps {
+  domain: SkillDomain;
+}
+
+export const SkillCategory: React.FC<SkillCategoryProps> = ({ domain }) => {
   return (
-    <Card className="bg-default-50 dark:bg-rich-black-500 shadow-md">
-      <CardHeader className="flex-col items-start pt-5 pb-3 px-5 bg-gradient-to-r from-cerulean to-verdigris dark:from-cerulean dark:to-verdigris-700">
-        <h3 className="font-heading font-bold text-x text-white">
-          {category.name}
+    <div className="h-full">
+      {/* Single integrated card with header styling */}
+      <GlassCard intensity="heavy">
+        {/* Header section styled to match your design */}
+        <div className="flex items-center gap-3 bg-default-300/70 dark:bg-rich-black-500/70 p-5 rounded-t-lg">
+          <span className="text-2xl" aria-hidden="true">{domain.icon}</span>
+          <h2 className="text-xl font-heading font-bold">{domain.name}</h2>
+        </div>
+        
+        {/* Content section */}
+        <div className="p-5">
+          <p className="text-default-600 dark:text-default-600 mb-6">
+            {domain.description}
+          </p>
+          
+          <div className="space-y-5">
+            {domain.skills.map((skill, index) => (
+              <SkillItem key={index} skill={skill} />
+            ))}
+          </div>
+        </div>
+      </GlassCard>
+    </div>
+  );
+};
+
+// Skill items with better contrast
+const SkillItem: React.FC<{ skill: Skill }> = ({ skill }) => {
+  return (
+    <div>
+      <div className="flex justify-between items-center mb-2">
+        <h3 className="font-medium text-cerulean-600 dark:text-cerulean-600 text-lg">
+          {skill.name}
         </h3>
-      </CardHeader>
-      <CardBody className="overflow-visible py-4 px-5">
-        {category.skills.map((skill) => (
-          <SkillBadge key={skill.name} skill={skill} />
+      </div>
+      
+      <div className="flex flex-wrap gap-2 mt-1">
+        {skill.projects.map((project, idx) => (
+          <ProjectBadge key={idx} project={project} />
         ))}
-      </CardBody>
-    </Card>
+      </div>
+    </div>
   );
 };
