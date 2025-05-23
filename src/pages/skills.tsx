@@ -38,6 +38,12 @@ export default function SkillsPage() {
       description: "Event-driven cloud computing for scalable applications",
       icon: "⚡",
     },
+    {
+      name: "IoT Integration",
+      description:
+        "Connecting software with hardware through secure communication protocols",
+      icon: "🔗",
+    },
   ];
 
   // Expanded skill categories
@@ -73,7 +79,7 @@ export default function SkillsPage() {
         "Serverless Functions",
         "Google Cloud Platform",
         "Django",
-        "Fast API"
+        "Fast API",
       ],
     },
     {
@@ -122,20 +128,14 @@ export default function SkillsPage() {
 
           {/* Core Competencies Section */}
           <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold mb-6 text-center">
-              Core Competencies
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <h2 className="text-2xl font-heading font-bold mb-6 text-center">Core Competencies</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {coreCompetencies.map((skill) => (
                 <GlassCard key={skill.name} intensity="heavy">
                   <CardBody className="text-center p-5">
                     <div className="text-3xl mb-3">{skill.icon}</div>
-                    <h3 className="font-heading font-bold text-lg mb-2">
-                      {skill.name}
-                    </h3>
-                    <p className="text-sm text-default-600">
-                      {skill.description}
-                    </p>
+                    <h3 className="font-heading font-bold text-lg mb-2">{skill.name}</h3>
+                    <p className="text-sm text-default-600">{skill.description}</p>
                   </CardBody>
                 </GlassCard>
               ))}
@@ -237,6 +237,9 @@ export default function SkillsPage() {
                   </Chip>
                   <Chip color="primary" variant="flat">
                     Testing Strategies
+                  </Chip>
+                  <Chip color="primary" variant="flat">
+                    LoRaWAN
                   </Chip>
                 </div>
               </div>
