@@ -95,21 +95,34 @@ export default function AboutPage() {
               <h1 className={title({ size: "lg", class: "mb-6" })}>About Me</h1>
 
               <div className="prose max-w-none mb-8">
-                {/* Professional Overview without image */}
+                {/* Career Transition Story */}
                 <div>
                   <h2 className="text-2xl font-heading font-bold mb-4">
-                    Professional Overview
+                    From Business Operations to Software Development
                   </h2>
                   <p className="text-lg mb-4">
-                    As a <strong>Full Stack Developer</strong>, I create
-                    comprehensive software solutions that solve real business
-                    challenges across web, mobile, and cloud platforms. My
-                    passion lies in building systems that handle real-time data
-                    effectively, creating responsive applications that deliver
-                    immediate value to users.
+                    After 13+ years managing print production operations, I
+                    discovered my passion for software development through{" "}
+                    <strong>
+                      automating business processes that others found
+                      frustrating
+                    </strong>
+                    . This unique journey from business management to full-stack
+                    development gives me a practical perspective—I build
+                    software that solves real problems because I&apos;ve lived
+                    with those problems.
                   </p>
 
                   <p className="mb-4">
+                    Today, I create comprehensive software solutions across web,
+                    mobile, and IoT platforms, always with an eye toward{" "}
+                    <strong>delivering immediate business value</strong>. My
+                    background in operations helps me understand not just how to
+                    build software, but why it needs to be built and how users
+                    will actually interact with it.
+                  </p>
+
+                  <p className="mb-6">
                     I&apos;m comfortable working throughout the entire
                     development stack—from crafting intuitive user interfaces to
                     implementing efficient backend systems and database
@@ -119,30 +132,59 @@ export default function AboutPage() {
                   </p>
                 </div>
 
+                {/* Business Background - moved up and reframed */}
+                <h2 className="text-2xl font-heading font-bold mb-4">
+                  Business Operations Foundation
+                </h2>
+                <p className="mb-4">
+                  My 13+ years in graphic design, print production management,
+                  and digital marketing at Joint Ventures Electronic Services
+                  provided invaluable real-world experience in{" "}
+                  <strong>
+                    identifying operational inefficiencies and implementing
+                    solutions
+                  </strong>
+                  . I managed the company&apos;s digital printing department,
+                  developed automated workflows that significantly improved
+                  production efficiency, and executed digital marketing
+                  strategies that drove measurable business growth.
+                </p>
+                <p className="mb-6">
+                  This business foundation gives me a unique advantage as a
+                  developer—I understand the difference between features that
+                  look good on paper and solutions that actually improve daily
+                  operations. I know how to gather requirements from
+                  stakeholders, design user-friendly interfaces, and build
+                  systems that people will actually want to use.
+                </p>
+
                 <h2 className="text-2xl font-heading font-bold mb-4">
                   Key Achievements
                 </h2>
                 <p className="mb-4">
                   At Joint Ventures Electronic Services, I identified a critical
                   opportunity when our team was struggling with a legacy
-                  application. Taking initiative, I developed a comprehensive{" "}
+                  application. Taking initiative, I{" "}
                   <strong>
-                    cross-platform mobile application using Flutter
+                    designed and developed a complete IoT ecosystem
                   </strong>{" "}
-                  that integrated with proprietary hardware through BLE
-                  communications.
+                  including a cross-platform Flutter mobile application,
+                  React-based admin dashboard, cloud database architecture, and
+                  real-time synchronization services—all integrated with
+                  proprietary hardware through secure BLE communications.
                 </p>
 
                 <p className="mb-6">
                   The solution was so effective that management decided to
-                  replace their original B4A app with my implementation—
+                  replace their original B4A app with my comprehensive
+                  implementation—
                   <strong>
                     improving user experience while eliminating external
                     development costs
                   </strong>
-                  . This transformation showcased my ability to recognize
-                  opportunities and execute solutions that exceed expectations.
-                  You can see more details in my{" "}
+                  . This end-to-end system design showcased my ability to
+                  architect complete solutions that bridge software and hardware
+                  seamlessly. You can see more details in my{" "}
                   <Link color="primary" href="/projects/etamax">
                     Etamax Solar Monitoring System
                   </Link>{" "}
@@ -150,7 +192,7 @@ export default function AboutPage() {
                 </p>
 
                 <h2 className="text-2xl font-heading font-bold mb-4">
-                  Technical Expertise
+                  Technical Capabilities
                 </h2>
                 <p className="mb-2">My technical skills encompass:</p>
                 <ul className="mb-6 list-disc pl-5 space-y-1">
@@ -166,10 +208,9 @@ export default function AboutPage() {
                     technologies
                   </li>
                   <li>
-                    <strong>Serverless Functions</strong>: Developing cloud
-                    functions for automated business processes, data
-                    transformations, and system integrations without requiring
-                    dedicated server infrastructure
+                    <strong>IoT Integration</strong>: Connecting software
+                    systems with hardware devices through secure communication
+                    protocols like BLE and MQTT
                   </li>
                   <li>
                     <strong>API Development</strong>: Creating robust interfaces
@@ -177,38 +218,17 @@ export default function AboutPage() {
                     communication protocols
                   </li>
                   <li>
-                    <strong>Integration Solutions</strong>: Connecting software
-                    systems with various platforms, devices, and third-party
-                    services to create cohesive solutions
+                    <strong>System Architecture</strong>: Designing complete
+                    software ecosystems that integrate multiple platforms and
+                    services
                   </li>
                 </ul>
 
+                {/* Simplified Development Philosophy */}
                 <h2 className="text-2xl font-heading font-bold mb-4">
-                  Professional Background
+                  Development Approach
                 </h2>
                 <p className="mb-4">
-                  Since 2010, I&apos;ve built valuable experience in graphic
-                  design, print production management, and digital marketing
-                  while managing my company&apos;s digital printing department.
-                  This background has developed my eye for visual design,
-                  attention to detail, and understanding of business operations.
-                </p>
-                <p className="mb-6">
-                  My experience includes developing automated workflows that
-                  increased production efficiency, implementing technical
-                  systems for tracking production status, and executing digital
-                  marketing strategies including website optimization and
-                  targeted campaigns. These skills have proven highly
-                  transferable to software development, particularly in
-                  understanding user requirements and designing intuitive
-                  interfaces.
-                </p>
-
-                {/* Development Philosophy - condensed but retained */}
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Development Philosophy
-                </h2>
-                <p className="mb-2">
                   My approach centers on creating practical solutions for real
                   business problems, leveraging modern tools and
                   technologies—including AI assistants for rapid prototyping and
@@ -220,7 +240,7 @@ export default function AboutPage() {
                       Problem-First Thinking
                     </h3>
                     <p className="text-sm">
-                      Understanding challenges thoroughly before developing
+                      Understanding business challenges before developing
                       solutions
                     </p>
                   </div>
@@ -235,20 +255,18 @@ export default function AboutPage() {
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
                     <h3 className="font-medium mb-1 text-cerulean-200">
-                      Clean, Maintainable Code
+                      End-to-End Solutions
                     </h3>
                     <p className="text-sm">
-                      Building well-organized architectures with clear
-                      documentation
+                      Designing complete ecosystems that integrate seamlessly
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
                     <h3 className="font-medium mb-1 text-cerulean-200">
-                      Practical, Solution-Driven Approach
+                      Business Impact Focus
                     </h3>
                     <p className="text-sm">
-                      Creating systems that directly address business needs and
-                      deliver tangible improvements
+                      Building software that delivers measurable business value
                     </p>
                   </div>
                 </div>
@@ -258,9 +276,10 @@ export default function AboutPage() {
                 </h2>
                 <p className="mb-4">
                   My projects span multiple domains—from IoT systems and mobile
-                  applications to data science implementations. This versatility
-                  allows me to approach problems holistically and select the
-                  most appropriate technologies for each specific challenge.
+                  applications to data science implementations and business
+                  process automation. This versatility allows me to approach
+                  problems holistically and select the most appropriate
+                  technologies for each specific challenge.
                 </p>
                 <p className="mb-6">
                   While primarily focused on full-stack development with
