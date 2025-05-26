@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody } from "@heroui/card";
+import { CardHeader, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 
 import { Experience } from "@/data/experience";
