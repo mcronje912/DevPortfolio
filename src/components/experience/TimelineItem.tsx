@@ -48,7 +48,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
                   className="border-l-2 border-cerulean-200 pl-4"
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <h4 className="font-medium text-lg text-cerulean-700 dark:text-cerulean-300">
+                    <h4 className="font-heavy text-lg text-cerulean-600 dark:text-cerulean-600">
                       {period.title}
                     </h4>
                     <Chip color="secondary" size="sm" variant="flat">

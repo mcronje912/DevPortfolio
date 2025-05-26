@@ -164,31 +164,59 @@ export default function AboutPage() {
 
                 <div className="mb-6">
                   <h3 className="text-lg font-medium mb-2 text-cerulean-600">
-                    2020-Present: Software Development & Technical Leadership
+                    2020-2022: Technical Leadership & Business Automation
                   </h3>
                   <ul className="list-disc pl-5 space-y-1 mb-4">
                     <li>
                       Led digital transformation initiatives and technical
-                      project management
+                      project planning
                     </li>
                     <li>
-                      Developed custom business automation tools that reduced
-                      manual processes
+                      Developed initial automation tools and workflow
+                      improvements
                     </li>
+                    <li>
+                      Collaborated closely with engineering teams on technical
+                      solutions
+                    </li>
+                    <li>
+                      Began learning software development methodologies to solve
+                      business challenges
+                    </li>
+                    <li>
+                      Established foundation for in-house development
+                      capabilities
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium mb-2 text-cerulean-600">
+                    2022-Present: Software Development & IoT Systems
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 mb-4">
                     <li>
                       Built complete IoT ecosystem including mobile apps, web
                       dashboards, and cloud integration
                     </li>
                     <li>
-                      Established in-house software development capabilities
+                      Developed custom business automation tools that reduced
+                      manual processes significantly
                     </li>
                     <li>
-                      Managed secure IoT communication protocols and real-time
-                      data synchronization
+                      Established comprehensive in-house software development
+                      capabilities
+                    </li>
+                    <li>
+                      Implemented secure IoT communication protocols and
+                      real-time data synchronization
+                    </li>
+                    <li>
+                      Self-taught Flutter, React, and IoT integration through
+                      practical application
                     </li>
                   </ul>
                 </div>
-
                 {/* Key Achievement */}
                 <h2 className="text-2xl font-heading font-bold mb-4">
                   Signature Achievement: Etamax IoT Ecosystem
@@ -230,7 +258,7 @@ export default function AboutPage() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                    <h3 className="font-medium mb-2 text-cerulean-400 dark:text-cerulean-300">
                       Mobile & Cross-Platform Development
                     </h3>
                     <p className="text-sm">
@@ -239,7 +267,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                    <h3 className="font-medium mb-2 text-cerulean-400 dark:text-cerulean-300">
                       Web Applications & Dashboards
                     </h3>
                     <p className="text-sm">
@@ -248,7 +276,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                    <h3 className="font-medium mb-2 text-cerulean-400 dark:text-cerulean-300">
                       IoT & Hardware Integration
                     </h3>
                     <p className="text-sm">
@@ -257,7 +285,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                    <h3 className="font-medium mb-2 text-cerulean-400 dark:text-cerulean-300">
                       Cloud Architecture & Databases
                     </h3>
                     <p className="text-sm">
@@ -283,7 +311,7 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                    <h3 className="font-medium mb-1 text-verdigris-300 dark:text-verdigris-500">
                       Problem-First Thinking
                     </h3>
                     <p className="text-sm">
@@ -292,7 +320,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                    <h3 className="font-medium mb-1 text-verdigris-300 dark:text-verdigris-500">
                       Practical Implementation
                     </h3>
                     <p className="text-sm">
@@ -301,7 +329,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                    <h3 className="font-medium mb-1 text-verdigris-300 dark:text-verdigris-500">
                       End-to-End Solutions
                     </h3>
                     <p className="text-sm">
@@ -310,7 +338,7 @@ export default function AboutPage() {
                     </p>
                   </div>
                   <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                    <h3 className="font-medium mb-1 text-verdigris-300 dark:text-verdigris-500">
                       Business Impact Focus
                     </h3>
                     <p className="text-sm">
@@ -329,8 +357,8 @@ export default function AboutPage() {
                   <strong>focus more on hands-on software development</strong>{" "}
                   while leveraging my business operations experience. My ideal
                   role would involve building practical solutions for real
-                  business challenges—whether that&apos;s IoT integrations, business
-                  automation tools, or cross-platform applications.
+                  business challenges—whether that&apos;s IoT integrations,
+                  business automation tools, or cross-platform applications.
                 </p>
 
                 <p className="mb-4">
@@ -359,9 +387,9 @@ export default function AboutPage() {
                 <p className="mb-4">
                   When not coding or integrating IoT devices, I enjoy exploring
                   emerging technologies and expanding my skill set through
-                  continuous learning. I&apos;m also passionate about 3D modeling
-                  with Fusion 360, which complements my IoT work by helping me
-                  helping me visualize hardware components and their
+                  continuous learning. I&apos;m also passionate about 3D
+                  modeling with Fusion 360, which complements my IoT work by
+                  helping me helping me visualize hardware components and their
                   interactions with software systems.
                 </p>
                 <p className="mb-4">

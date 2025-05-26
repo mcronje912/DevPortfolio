@@ -10,10 +10,9 @@ export default function ExperiencePage() {
           <div className="text-center mb-10">
             <h1 className={title({ size: "lg" })}>My Experience</h1>
             <p className="text-default-600 mt-4 max-w-2xl mx-auto">
-              A 15+ year evolution from business operations to software
-              development leadership, showcasing how technical challenges drove
-              my transition into hands-on development and IoT systems
-              engineering.
+              From identifying business challenges to building the software
+              solutions that solve them—a journey through the roles and projects
+              that shaped my development career.
             </p>
           </div>
           <div className="max-w-4xl mx-auto">
