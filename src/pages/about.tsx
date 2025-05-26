@@ -23,7 +23,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row gap-10">
             {/* Left column - details cards */}
             <div className="w-full md:w-1/3">
-              {/* Profile image without any card */}
+              {/* Profile image */}
               <div className="flex justify-center mb-6">
                 <ProfileImage
                   effectVariant="subtle"
@@ -61,7 +61,7 @@ export default function AboutPage() {
                 </CardBody>
               </Card>
 
-              {/* Languages Card with improved styling */}
+              {/* Languages Card */}
               <Card className="overflow-hidden">
                 <CardBody className="p-5">
                   <h2 className="font-heading font-bold text-xl mb-4">
@@ -95,211 +95,280 @@ export default function AboutPage() {
               <h1 className={title({ size: "lg", class: "mb-6" })}>About Me</h1>
 
               <div className="prose max-w-none mb-8">
-                {/* Career Transition Story */}
+                {/* Evolution Story */}
                 <div>
                   <h2 className="text-2xl font-heading font-bold mb-4">
-                    From Business Operations to Software Development
+                    Technical Problem Solver with Business Operations Expertise
                   </h2>
                   <p className="text-lg mb-4">
-                    After 13+ years managing print production operations, I
-                    discovered my passion for software development through{" "}
+                    My journey at Joint Ventures Electronic Services since 2010
+                    has been one of{" "}
                     <strong>
-                      automating business processes that others found
-                      frustrating
+                      natural evolution from business operations to hands-on
+                      software development
                     </strong>
-                    . This unique journey from business management to full-stack
-                    development gives me a practical perspective—I build
-                    software that solves real problems because I&apos;ve lived
-                    with those problems.
+                    . What started as managing digital printing operations
+                    gradually shifted toward technical challenges as I
+                    identified opportunities where custom software solutions
+                    could dramatically improve our business processes.
                   </p>
 
                   <p className="mb-4">
-                    Today, I create comprehensive software solutions across web,
-                    mobile, and IoT platforms, always with an eye toward{" "}
-                    <strong>delivering immediate business value</strong>. My
-                    background in operations helps me understand not just how to
-                    build software, but why it needs to be built and how users
-                    will actually interact with it.
+                    Rather than outsourcing development, I chose to learn these
+                    technologies myself— first collaborating closely with our
+                    electronic engineers, then developing automation tools, and
+                    eventually building complete IoT ecosystems with mobile and
+                    web interfaces. This hands-on approach gave me{" "}
+                    <strong>
+                      a unique perspective on how software integrates with real
+                      business operations
+                    </strong>
+                    .
                   </p>
 
                   <p className="mb-6">
-                    I&apos;m comfortable working throughout the entire
-                    development stack—from crafting intuitive user interfaces to
-                    implementing efficient backend systems and database
-                    architectures. This versatility allows me to approach
-                    projects holistically and select the right technologies for
-                    each specific challenge.
+                    Today, I focus on software development and technical
+                    leadership while leveraging my deep understanding of
+                    business challenges to build solutions that users actually
+                    want to use. My background helps me bridge the gap between
+                    technical possibilities and practical business needs.
                   </p>
                 </div>
 
-                {/* Business Background - moved up and reframed */}
+                {/* Role Evolution */}
                 <h2 className="text-2xl font-heading font-bold mb-4">
-                  Business Operations Foundation
+                  Role Evolution at Joint Ventures Electronic Services
+                </h2>
+
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium mb-2 text-cerulean-600">
+                    2010-2020: Operations & Digital Systems Management
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 mb-4">
+                    <li>
+                      Established and managed the digital printing department
+                    </li>
+                    <li>
+                      Implemented production tracking and workflow systems
+                    </li>
+                    <li>
+                      Collaborated closely with electronic engineers on
+                      technical solutions
+                    </li>
+                    <li>
+                      Identified operational inefficiencies that could be solved
+                      through automation
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mb-6">
+                  <h3 className="text-lg font-medium mb-2 text-cerulean-600">
+                    2020-Present: Software Development & Technical Leadership
+                  </h3>
+                  <ul className="list-disc pl-5 space-y-1 mb-4">
+                    <li>
+                      Led digital transformation initiatives and technical
+                      project management
+                    </li>
+                    <li>
+                      Developed custom business automation tools that reduced
+                      manual processes
+                    </li>
+                    <li>
+                      Built complete IoT ecosystem including mobile apps, web
+                      dashboards, and cloud integration
+                    </li>
+                    <li>
+                      Established in-house software development capabilities
+                    </li>
+                    <li>
+                      Managed secure IoT communication protocols and real-time
+                      data synchronization
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Key Achievement */}
+                <h2 className="text-2xl font-heading font-bold mb-4">
+                  Signature Achievement: Etamax IoT Ecosystem
                 </h2>
                 <p className="mb-4">
-                  My 13+ years in graphic design, print production management,
-                  and digital marketing at Joint Ventures Electronic Services
-                  provided invaluable real-world experience in{" "}
+                  When our team needed a comprehensive solar monitoring
+                  solution, I{" "}
                   <strong>
-                    identifying operational inefficiencies and implementing
-                    solutions
+                    designed and developed the complete system from the ground
+                    up
                   </strong>
-                  . I managed the company&apos;s digital printing department,
-                  developed automated workflows that significantly improved
-                  production efficiency, and executed digital marketing
-                  strategies that drove measurable business growth.
-                </p>
-                <p className="mb-6">
-                  This business foundation gives me a unique advantage as a
-                  developer—I understand the difference between features that
-                  look good on paper and solutions that actually improve daily
-                  operations. I know how to gather requirements from
-                  stakeholders, design user-friendly interfaces, and build
-                  systems that people will actually want to use.
-                </p>
-
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Key Achievements
-                </h2>
-                <p className="mb-4">
-                  At Joint Ventures Electronic Services, I identified a critical
-                  opportunity when our team was struggling with a legacy
-                  application. Taking initiative, I{" "}
-                  <strong>
-                    designed and developed a complete IoT ecosystem
-                  </strong>{" "}
-                  including a cross-platform Flutter mobile application,
-                  React-based admin dashboard, cloud database architecture, and
-                  real-time synchronization services—all integrated with
-                  proprietary hardware through secure BLE communications.
+                  — a cross-platform Flutter mobile application, React-based
+                  administrative dashboard, cloud database architecture, and
+                  secure BLE communication with proprietary hardware.
                 </p>
 
                 <p className="mb-6">
-                  The solution was so effective that management decided to
-                  replace their original B4A app with my comprehensive
-                  implementation—
+                  The solution was so effective that it{" "}
                   <strong>
-                    improving user experience while eliminating external
-                    development costs
+                    replaced the original third-party application entirely
                   </strong>
-                  . This end-to-end system design showcased my ability to
-                  architect complete solutions that bridge software and hardware
-                  seamlessly. You can see more details in my{" "}
+                  , improving user experience while eliminating external
+                  development costs. The system now achieves 50-85% solar
+                  utilization across deployments, delivering measurable value to
+                  end users. You can explore the technical details in my{" "}
                   <Link color="primary" href="/projects/etamax">
                     Etamax Solar Monitoring System
                   </Link>{" "}
                   project.
                 </p>
 
+                {/* Technical Capabilities */}
                 <h2 className="text-2xl font-heading font-bold mb-4">
                   Technical Capabilities
                 </h2>
-                <p className="mb-2">My technical skills encompass:</p>
-                <ul className="mb-6 list-disc pl-5 space-y-1">
-                  <li>
-                    <strong>Mobile & Web Development</strong>: Building
-                    cross-platform applications with Flutter and responsive web
-                    interfaces with React and TypeScript
-                  </li>
-                  <li>
-                    <strong>Database & Cloud Systems</strong>: Designing
-                    efficient data architectures and implementing real-time
-                    synchronization using Firebase, Supabase, and similar
-                    technologies
-                  </li>
-                  <li>
-                    <strong>IoT Integration</strong>: Connecting software
-                    systems with hardware devices through secure communication
-                    protocols like BLE and MQTT
-                  </li>
-                  <li>
-                    <strong>API Development</strong>: Creating robust interfaces
-                    between systems, including RESTful services and real-time
-                    communication protocols
-                  </li>
-                  <li>
-                    <strong>System Architecture</strong>: Designing complete
-                    software ecosystems that integrate multiple platforms and
-                    services
-                  </li>
-                </ul>
-
-                {/* Simplified Development Philosophy */}
-                <h2 className="text-2xl font-heading font-bold mb-4">
-                  Development Approach
-                </h2>
                 <p className="mb-4">
-                  My approach centers on creating practical solutions for real
-                  business problems, leveraging modern tools and
-                  technologies—including AI assistants for rapid prototyping and
-                  troubleshooting—to deliver high-quality results efficiently.
+                  My development expertise spans the full stack, with particular
+                  strength in:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-cerulean-200">
-                      Problem-First Thinking
+                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                      Mobile & Cross-Platform Development
                     </h3>
                     <p className="text-sm">
-                      Understanding business challenges before developing
-                      solutions
+                      Flutter/Dart applications with hardware integration, BLE
+                      communication, and offline functionality
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-cerulean-200">
-                      User-Centered Design
+                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                      Web Applications & Dashboards
                     </h3>
                     <p className="text-sm">
-                      Creating systems that prioritize intuitive user
-                      experiences
+                      React/TypeScript interfaces with real-time data
+                      visualization, responsive design, and cloud integration
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-cerulean-200">
-                      End-to-End Solutions
+                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                      IoT & Hardware Integration
                     </h3>
                     <p className="text-sm">
-                      Designing complete ecosystems that integrate seamlessly
+                      ESP32/STM32 programming, secure communication protocols,
+                      and bridging software with proprietary hardware
                     </p>
                   </div>
                   <div className="bg-cerulean-50 dark:bg-cerulean-900/30 p-4 rounded-lg">
-                    <h3 className="font-medium mb-1 text-cerulean-200">
-                      Business Impact Focus
+                    <h3 className="font-medium mb-2 text-cerulean-700 dark:text-cerulean-300">
+                      Cloud Architecture & Databases
                     </h3>
                     <p className="text-sm">
-                      Building software that delivers measurable business value
+                      Real-time synchronization, serverless functions, and
+                      scalable database design
                     </p>
                   </div>
                 </div>
 
+                {/* Development Approach */}
                 <h2 className="text-2xl font-heading font-bold mb-4">
-                  Technical Versatility
+                  Development Philosophy
                 </h2>
                 <p className="mb-4">
-                  My projects span multiple domains—from IoT systems and mobile
-                  applications to data science implementations and business
-                  process automation. This versatility allows me to approach
-                  problems holistically and select the most appropriate
-                  technologies for each specific challenge.
-                </p>
-                <p className="mb-6">
-                  While primarily focused on full-stack development with
-                  Flutter, React, and cloud databases, I also work with Python
-                  for specialized integrations and custom business tools. I
-                  enhance my productivity by incorporating AI-assisted
-                  development practices, which helps me rapidly explore solution
-                  options and optimize implementations.
+                  My approach to software development is rooted in{" "}
+                  <strong>
+                    understanding the real problem before writing any code
+                  </strong>
+                  . Having experienced firsthand how technology can either solve
+                  or complicate business operations, I prioritize building
+                  solutions that integrate seamlessly into existing workflows.
                 </p>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
+                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                      Problem-First Thinking
+                    </h3>
+                    <p className="text-sm">
+                      Understanding business challenges and user needs before
+                      selecting technical solutions
+                    </p>
+                  </div>
+                  <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
+                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                      Practical Implementation
+                    </h3>
+                    <p className="text-sm">
+                      Building working solutions quickly, then iterating based
+                      on real user feedback
+                    </p>
+                  </div>
+                  <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
+                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                      End-to-End Solutions
+                    </h3>
+                    <p className="text-sm">
+                      Designing complete ecosystems that integrate seamlessly
+                      across platforms and technologies
+                    </p>
+                  </div>
+                  <div className="bg-verdigris-50 dark:bg-verdigris-900/30 p-4 rounded-lg">
+                    <h3 className="font-medium mb-1 text-verdigris-700 dark:text-verdigris-300">
+                      Business Impact Focus
+                    </h3>
+                    <p className="text-sm">
+                      Measuring success by operational improvements and
+                      measurable business outcomes
+                    </p>
+                  </div>
+                </div>
+
+                {/* Current Focus */}
                 <h2 className="text-2xl font-heading font-bold mb-4">
-                  Beyond Code
+                  Current Focus & Goals
                 </h2>
                 <p className="mb-4">
-                  When not developing software or integrating IoT devices, I
-                  enjoy exploring emerging technologies and expanding my skill
-                  set through continuous learning. I&apos;m also passionate
-                  about 3D modeling with Fusion 360, which complements my IoT
-                  work by allowing me to visualize hardware components and their
+                  I&apos;m now looking to{" "}
+                  <strong>focus more on hands-on software development</strong>{" "}
+                  while leveraging my business operations experience. My ideal
+                  role would involve building practical solutions for real
+                  business challenges—whether that&apos;s IoT integrations, business
+                  automation tools, or cross-platform applications.
+                </p>
+
+                <p className="mb-4">
+                  I&apos;m particularly interested in opportunities where I can
+                  contribute to:
+                </p>
+                <ul className="list-disc pl-5 space-y-1 mb-6">
+                  <li>
+                    Flutter mobile application development with hardware
+                    integration
+                  </li>
+                  <li>IoT systems that bridge software and physical devices</li>
+                  <li>
+                    Business automation solutions that improve operational
+                    efficiency
+                  </li>
+                  <li>
+                    Cross-platform applications that solve real user problems
+                  </li>
+                </ul>
+
+                {/* Personal Touch */}
+                <h2 className="text-2xl font-heading font-bold mb-4">
+                  Beyond Development
+                </h2>
+                <p className="mb-4">
+                  When not coding or integrating IoT devices, I enjoy exploring
+                  emerging technologies and expanding my skill set through
+                  continuous learning. I&apos;m also passionate about 3D modeling
+                  with Fusion 360, which complements my IoT work by helping me
+                  helping me visualize hardware components and their
                   interactions with software systems.
+                </p>
+                <p className="mb-4">
+                  My journey has taught me that the best technology solutions
+                  come from come from understanding both the technical
+                  possibilities and the human challenges they&apos;re meant to
+                  solve.
                 </p>
               </div>
             </div>
