@@ -2,6 +2,7 @@ import { Card, CardHeader, CardBody } from "@heroui/card";
 import { Chip } from "@heroui/chip";
 
 import { Experience } from "@/data/experience";
+import { GlassCard } from "../GlassCard";
 
 interface TimelineItemProps {
   experience: Experience;
@@ -21,7 +22,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
       </div>
 
       {/* Content */}
-      <Card className="w-full">
+      <GlassCard className="w-full">
         <CardHeader className="flex flex-col items-start gap-1">
           <div className="flex items-center gap-2">
             <h3 className="font-heading font-bold text-xl">
@@ -84,7 +85,7 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
             </div>
           )}
         </CardBody>
-      </Card>
+      </GlassCard>
     </div>
   );
 };

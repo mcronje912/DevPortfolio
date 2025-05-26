@@ -141,7 +141,7 @@ export default function AboutPage() {
                 </h2>
 
                 <div className="mb-6">
-                  <h3 className="text-lg font-medium mb-2 text-cerulean-600">
+                  <h3 className="text-lg font-medium mb-2 text-cerulean-400 dark:text-cerulean-700">
                     2010-2020: Operations & Digital Systems Management
                   </h3>
                   <ul className="list-disc pl-5 space-y-1 mb-4">
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="text-lg font-medium mb-2 text-cerulean-600">
+                  <h3 className="text-lg font-medium mb-2 text-cerulean-400 dark:text-cerulean-700">
                     2020-2022: Technical Leadership & Business Automation
                   </h3>
                   <ul className="list-disc pl-5 space-y-1 mb-4">
@@ -191,7 +191,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="mb-6">
-                  <h3 className="text-lg font-medium mb-2 text-cerulean-600">
+                  <h3 className="text-lg font-medium mb-2 text-cerulean-400 dark:text-cerulean-700">
                     2022-Present: Software Development & IoT Systems
                   </h3>
                   <ul className="list-disc pl-5 space-y-1 mb-4">
